@@ -36,7 +36,7 @@ def parse(path):
     return env
 
 
-#password = parse("variables.txt")["password"]
+password = parse("variables.txt")["password"]
 
 
 def mail(to, subject, content):
