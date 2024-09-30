@@ -11,8 +11,6 @@ app = Flask(__name__)
 
 # temp
 registered = []
-key = "zResKRyB9NX4tUn7yp/Hyg2V/7oxVMwzJzD5uGtPbbI="
-
 
 def make_response(data, mimetype=None, status=None):
     if type(data) in [str, int, float, bool, list, dict]:
@@ -38,7 +36,7 @@ def parse(path):
     return env
 
 
-password = parse("variables.txt")["password"]
+#password = parse("variables.txt")["password"]
 
 
 def mail(to, subject, content):
@@ -103,7 +101,7 @@ def home():
     return render("index", locals() | globals())
 
 
-@app.get("/register")
+@app.get("/api/register")
 def register():
     name = request.args.get("name")
     email = request.args.get("email")
@@ -122,7 +120,7 @@ def register():
     return "User already exists"
 
 
-@app.get("/login")
+@app.get("/api/login")
 def login():
     name = request.args.get("name")
     email = request.args.get("email")
@@ -154,9 +152,7 @@ def login():
     return resp
 
 
-@app.get("/auth")
-def auth():
-    token = request.cookies.get("token")
+def auth(token):
     if not token:
         return "User is logged out"
 
@@ -171,11 +167,12 @@ def auth():
     return res
 
 
-@app.get("/logout")
+@app.get("/api/logout")
 def logout():
     resp = make_response("Logged out")
     resp.delete_cookie("token")
     return resp
+
 
 
 app.run(host="0.0.0.0", port=int(sys.argv[1]))
