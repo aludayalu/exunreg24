@@ -18,6 +18,7 @@
             var email=document.getElementById("email").value
             if (isValidEmail(email)) {
                 fetch("/email?email="+encodeURIComponent(email)).then(async (x)=>{
+                    document.getElementById("email").value=""
                     x=await x.json()
                     console.log(x)
                 })

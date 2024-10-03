@@ -25,7 +25,7 @@ def send_mail(to, subject, html, reply_to="exun@dpsrkp.net"):
         "reply_to": reply_to
     }
     email = resend.Emails.send(params)
-    print(email)
+    return email
 
 send_mail("aarav@dayal.org", "test", "<div>hi</div>")
 
@@ -77,6 +77,10 @@ def home():
 def email_send():
     args=dict(request.args)
     key="".join([str(x) for x in otp(args["email"])])
+    otp_render=open("components/mail/mail.html").read()
+    for x in range(0, 6):
+        otp_render=otp_render.replace(f"{{digit{x+1}}}", key[x])
+    send_mail(args["email"], "Exun Registration Authentication OTP - "+key, otp_render)
     return make_response(key)
 
 app.run(host="127.0.0.1", port=int(sys.argv[1]))
