@@ -1,7 +1,7 @@
 from flask import request, redirect, Response
-from monster import render, Flask
+from monster import render, Flask, escapeString
 import sys, json
-import hashlib
+import hashlib, base64
 import resend, secrets_parser
 
 app = Flask(__name__)
@@ -29,11 +29,7 @@ def send_mail(to, subject, html, reply_to="exun@dpsrkp.net"):
 
 send_mail("aarav@dayal.org", "test", "<div>hi</div>")
 
-daisyui = (
-    "<script>"
-    + open("public/pako.js").read()
-    + "</script>"
-    + """<script>
+daisyui = "<script>"+ open("public/pako.js").read()+ "</script>"+ """<script>
     function decompressGzippedString(base64String) {
         try {
             const binaryString = atob(base64String);
@@ -49,17 +45,15 @@ daisyui = (
             return null;
         }
     }
-    """
-    + f"""
+    """+ f"""
     var daisycss="{open("public/daisyui.b64").read()}";
     var style=document.createElement("style");
     style.textContent=decompressGzippedString(daisycss);
     document.head.appendChild(style);
     </script>
     """
-)
 
-tailwind = "<script>" + open("public/tailwind.js").read() + "</script>"
+tailwind = "<script>eval(atob(`" + base64.b64encode(open("public/tailwind.js").read().encode()).decode() + "`))</script>"
 
 def otp(a):
     if type(a) == str:
@@ -69,8 +63,12 @@ def otp(a):
     array = int(hex_dig[-6:], 16) % (10 ** 6)
     return [int(digit) for digit in str(array)]
 
-@app.get("/login")
+@app.get("/")
 def home():
+    return render("index", locals() | globals())
+
+@app.get("/login")
+def login():
     return render("login", locals() | globals())
 
 @app.get("/email")
