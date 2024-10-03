@@ -1,7 +1,8 @@
 from flask import request, redirect, Response
-from werkzeug.wrappers import response
 from monster import render, Flask
 import sys, json
+import hashlib
+import resend, secrets_parser
 
 app = Flask(__name__)
 
@@ -12,6 +13,21 @@ def make_response(data, mimetype=None, status=None):
     resp.headers["Access-Control-Allow-Origin"] = "*"
     return resp
 
+resend.api_key = secrets_parser.parse("variables.txt")["RESEND"]
+salt = secrets_parser.parse("variables.txt")["SALT"]
+
+def send_mail(to, subject, html, reply_to="exun@dpsrkp.net"):
+    params = {
+        "from": "Exun Clan <exun@exun.co>",
+        "to": [to],
+        "subject": subject,
+        "html": html,
+        "reply_to": reply_to
+    }
+    email = resend.Emails.send(params)
+    print(email)
+
+send_mail("aarav@dayal.org", "test", "<div>hi</div>")
 
 daisyui = (
     "<script>"
@@ -45,11 +61,22 @@ daisyui = (
 
 tailwind = "<script>" + open("public/tailwind.js").read() + "</script>"
 
+def otp(a):
+    if type(a) == str:
+        a = a.encode()+salt.encode()
+    hash_object = hashlib.sha256(a)
+    hex_dig = hash_object.hexdigest()
+    array = int(hex_dig[-6:], 16) % (10 ** 6)
+    return [int(digit) for digit in str(array)]
 
-@app.get("/")
+@app.get("/login")
 def home():
-    signals = open("public/signals.js").read()
-    return render("index", locals() | globals())
+    return render("login", locals() | globals())
 
+@app.get("/email")
+def email_send():
+    args=dict(request.args)
+    key="".join([str(x) for x in otp(args["email"])])
+    return make_response(key)
 
 app.run(host="127.0.0.1", port=int(sys.argv[1]))

@@ -148,7 +148,7 @@ def innertokeniser(code):
             out.append({"type":"string", "content":buffer})
             buffer=""
             continue
-        if not instring and x==" ":
+        if not instring and x in "\t \r\n":
             if buffer!="":
                 out.append({"type":"variable", "content":buffer})
                 buffer=""
@@ -190,10 +190,10 @@ def tokeniser(code):
                 if count==0:
                     break
                 buffer+=code[i]
-            name=buffer.split(" ", 1)[0]
-            buffer=buffer[len(name):]
             args={}
             tokens=innertokeniser(buffer)
+            name=tokens[0]["content"]
+            tokens=tokens[1:]
             j=-1
             tokens_len=len(tokens)
             while True:
@@ -259,7 +259,7 @@ def compiler(tokens):
             script=""
             rendered_attributes=[]
             for attribute in token["args"]:
-                if "<js" in token["args"][attribute]:
+                if type(token["args"][attribute])!=bool and "<js" in token["args"][attribute]:
                     to_render={}
                     raw_attributes=""
                     code=token["args"][attribute]
