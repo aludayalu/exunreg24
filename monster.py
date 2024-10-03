@@ -126,7 +126,10 @@ def ssr(code, variables={}):
                 to_evaluate="def _():\n"+base+"\nresult=_()"
             exec(to_evaluate, variables)
             if type(variables["result"])!=str:
-                variables["result"]=json.dumps(variables["result"])
+                if type(variables["result"])==Render:
+                    variables["result"]=variables["result"].render
+                else:
+                    variables["result"]=json.dumps(variables["result"])
             code=str(code.replace(x, variables["result"]))
     return code
 
