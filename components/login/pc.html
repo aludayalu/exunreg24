@@ -91,6 +91,41 @@
                         <input id="digit_5" style="color: black; width: 55px; height: 55px; text-align: center; font-size: 20px; margin: 5px;" class="input" oninput="OnOTP(event)"></input>
                     </div>
                     <script>
+                        document.addEventListener("paste", ()=>{
+                            var anyActive=false
+                            for (let index = 0; index < 6; index++) {
+                                if (document.getElementById("digit_"+String(index))==document.activeElement) {
+                                    anyActive=true
+                                    break
+                                }
+                            }
+                            if (!anyActive) {
+                                const pastedData = (event.clipboardData || window.clipboardData).getData('text');
+                                var text=""
+                                for (let index = 0; index < pastedData.length; index++) {
+                                    const element = pastedData[index];
+                                    if ("1234567890".includes(element)) {
+                                        text+=element
+                                    }
+                                }
+                                for (let index = 0; index < 6; index++) {
+                                    const element = text[index];
+                                    console.log(element)
+                                    if (element!==undefined) {
+                                        document.getElementById("digit_"+String(index)).value=element
+                                        if (index!==5) {
+                                            document.getElementById("digit_"+String(index+1)).focus()
+                                        }
+                                    } else {
+                                        ((index)=>{
+                                            setTimeout(()=>{
+                                                document.getElementById("digit_"+String(index)).value=""
+                                            }, 0)
+                                        })(index)
+                                    }
+                                }
+                            }
+                        })
                         for (let index = 0; index < 6; index++) {
                             ((index)=>{
                                 document.getElementById("digit_"+String(index)).addEventListener("paste", (event)=>{

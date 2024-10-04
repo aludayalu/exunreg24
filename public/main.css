@@ -25,9 +25,19 @@ body {
     background-color: #ccc;
     box-shadow: inset 2px 5px 10px rgba(0,0,0,0.1);
     transition: 300ms ease-in-out;
-  }
+}
   
 .input:focus {
     background-color: white;
     box-shadow: 14px 14px 100px #969696, -14px -14px 100px #ffffff;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    padding-right: 11px;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
 }

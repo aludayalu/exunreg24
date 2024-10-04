@@ -61,13 +61,48 @@
     </if>
     <if mode condition="mode.Value()=='otp'">
         <div class="wrapper">
-            <input id="digit_0" style="color: black; width: 120px; height: 120px; border-radius: 33px; text-align: center; font-size: 40px; margin: 10px;" class="input" oninput="OnOTP(event)"></input>
-            <input id="digit_1" style="color: black; width: 120px; height: 120px; border-radius: 33px; text-align: center; font-size: 40px; margin: 10px;" class="input" oninput="OnOTP(event)"></input>
-            <input id="digit_2" style="color: black; width: 120px; height: 120px; border-radius: 33px; text-align: center; font-size: 40px; margin: 10px;" class="input" oninput="OnOTP(event)"></input>
-            <input id="digit_3" style="color: black; width: 120px; height: 120px; border-radius: 33px; text-align: center; font-size: 40px; margin: 10px;" class="input" oninput="OnOTP(event)"></input>
-            <input id="digit_4" style="color: black; width: 120px; height: 120px; border-radius: 33px; text-align: center; font-size: 40px; margin: 10px;" class="input" oninput="OnOTP(event)"></input>
-            <input id="digit_5" style="color: black; width: 120px; height: 120px; border-radius: 33px; text-align: center; font-size: 40px; margin: 10px;" class="input" oninput="OnOTP(event)"></input>
+            <input id="digit_0" type="number" style="color: black; width: 120px; height: 120px; border-radius: 33px; text-align: center; font-size: 40px; margin: 10px;" class="input" oninput="OnOTP(event)"></input>
+            <input id="digit_1" type="number" style="color: black; width: 120px; height: 120px; border-radius: 33px; text-align: center; font-size: 40px; margin: 10px;" class="input" oninput="OnOTP(event)"></input>
+            <input id="digit_2" type="number" style="color: black; width: 120px; height: 120px; border-radius: 33px; text-align: center; font-size: 40px; margin: 10px;" class="input" oninput="OnOTP(event)"></input>
+            <input id="digit_3" type="number" style="color: black; width: 120px; height: 120px; border-radius: 33px; text-align: center; font-size: 40px; margin: 10px;" class="input" oninput="OnOTP(event)"></input>
+            <input id="digit_4" type="number" style="color: black; width: 120px; height: 120px; border-radius: 33px; text-align: center; font-size: 40px; margin: 10px;" class="input" oninput="OnOTP(event)"></input>
+            <input id="digit_5" type="number" style="color: black; width: 120px; height: 120px; border-radius: 33px; text-align: center; font-size: 40px; margin: 10px;" class="input" oninput="OnOTP(event)"></input>
             <script>
+                document.addEventListener("paste", ()=>{
+                    var anyActive=false
+                    for (let index = 0; index < 6; index++) {
+                        if (document.getElementById("digit_"+String(index))==document.activeElement) {
+                            anyActive=true
+                            break
+                        }
+                    }
+                    if (!anyActive) {
+                        const pastedData = (event.clipboardData || window.clipboardData).getData('text');
+                        var text=""
+                        for (let index = 0; index < pastedData.length; index++) {
+                            const element = pastedData[index];
+                            if ("1234567890".includes(element)) {
+                                text+=element
+                            }
+                        }
+                        for (let index = 0; index < 6; index++) {
+                            const element = text[index];
+                            console.log(element)
+                            if (element!==undefined) {
+                                document.getElementById("digit_"+String(index)).value=element
+                                if (index!==5) {
+                                    document.getElementById("digit_"+String(index+1)).focus()
+                                }
+                            } else {
+                                ((index)=>{
+                                    setTimeout(()=>{
+                                        document.getElementById("digit_"+String(index)).value=""
+                                    }, 0)
+                                })(index)
+                            }
+                        }
+                    }
+                })
                 for (let index = 0; index < 6; index++) {
                     ((index)=>{
                         document.getElementById("digit_"+String(index)).addEventListener("paste", (event)=>{
