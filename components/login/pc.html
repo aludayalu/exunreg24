@@ -12,8 +12,8 @@
             event.target.value=""
         }
     }
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Backspace') {
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Backspace") {
             for (let index = 0; index < 6; index++) {
                 if (document.getElementById("digit_"+String(index))==document.activeElement && index!==0) {
                     if (document.getElementById("digit_"+String(index)).value!=="") {
