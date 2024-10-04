@@ -1,4 +1,7 @@
-<html data-theme="light">
+<html>
+    <script>
+        document.currentScript.parentElement.setAttribute("data-theme", "light")
+    </script>
     <head>
         <link href="main.css" rel="stylesheet"></link>
         <post>
@@ -33,7 +36,15 @@
     
     <body>
         <div class="wrapper" style="width: 100vw; height: 100vh;">
-            <div style="border: 2.5px solid rgba(0, 0, 0, 0.25); border-radius: 25px; padding-right: 50px; height: 45vh; width: 60vw;">
+            <div style="
+            <js isMobile>
+                if (isMobile.Value()) {
+                    
+                } else {
+                    return 'border: 2.5px solid rgba(0, 0, 0, 0.25); border-radius: 25px; height: 36vh; max-width: 1000px;'
+                }
+            </js>
+            ">
                 <if isMobile>
                     <py>render("login/mobile")</py>
                 </if>
@@ -43,4 +54,4 @@
             </div>
         </div>
     </body>
-</html> 
+</html>

@@ -27,8 +27,6 @@ def send_mail(to, subject, html, reply_to="exun@dpsrkp.net"):
     email = resend.Emails.send(params)
     return email
 
-send_mail("aarav@dayal.org", "test", "<div>hi</div>")
-
 daisyui = "<script>"+ open("public/pako.js").read()+ "</script>"+ """<script>
     function decompressGzippedString(base64String) {
         try {

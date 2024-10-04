@@ -1,10 +1,34 @@
-<div style="width: 100%;">
-    <div class="wrapper">
-        <img src="exun.png" style="height: 140px; width: 280px; margin-left: 20%; padding-top: 25px;"></img>
-    </div>
-    <p style="font-size: 30px; font-weight: bold;" class="vertical">
-        <js>
-            authMode.Value()
+<div style="width: 100vw; padding: 75px; height: 100vh;">
+    <img src="exun_base.webp" style="height: 140px;"></img>
+    <div style="margin-top: 4vh;"></div>
+    <p style="font-size: 100px; font-weight: 500; margin-bottom: 1vh;">
+        <js authMode>
+            return authMode.Value()
         </js>
     </p>
+    <p style="font-size: 40px;">with your official email to continue to Exun 2024 Registration Platform.</p>
+    <div style="margin-bottom: 6vh;"></div>
+    <input style="padding: 6vw; font-size: 40px; width: 100%; padding-left: 4vw;" class="input" placeholder="Please enter your email"></input>
+    <a href="mailto:exun@dpsrkp.net">
+        <p style="font-size: 40px; margin-top: 25px;">
+            Forgot Email?
+        </p>
+    </a>
+    <div style="margin-top: 10vh;">
+        <div class="wrapper" style="width: fit-content;">
+            <button style="font-size: 40px; color: black; border: 2px solid black; padding: 30px; padding-left: 50px; padding-right: 50px;" class="rounded-xl text-sm text-black/[0.95] hover:scale-[1.02] transition" onclick="OnSubmit()">
+                <js authMode>authMode.Value()</js>
+            </button>
+            <div style="cursor: pointer; font-size: 40px; margin-left: 50px;" onclick="Switch()">
+                <js authMode>
+                    if (authMode.Value()=="Register") {
+                        return "Login "
+                    } else {
+                        return "Register "
+                    }
+                </js>
+                Instead?
+            </div>
+        </div>
+    </div>
 </div>
