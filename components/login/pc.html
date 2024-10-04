@@ -1,45 +1,134 @@
+<script>
+    var mode=Signal("mode", "otp")
+    function OnOTP(event) {
+        var id=event.target.id
+        if (!Number.isNaN(Number(event.target.value)) && event.target.value[event.target.value.length-1]!==undefined) {
+            event.target.value=event.target.value[event.target.value.length-1]
+            var n=Number(id[id.length-1])
+            if (n!=5) {
+                document.getElementById("digit_"+String(n+1)).focus()
+            }
+        } else {
+            event.target.value=""
+        }
+    }
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Backspace') {
+            for (let index = 0; index < 6; index++) {
+                if (document.getElementById("digit_"+String(index))==document.activeElement && index!==0) {
+                    if (document.getElementById("digit_"+String(index)).value!=="") {
+                        document.getElementById("digit_"+String(index)).value=""
+                    } else {
+                        document.getElementById("digit_"+String(index-1)).value=""
+                        document.getElementById("digit_"+String(index-1)).focus()
+                    }
+                    break
+                }
+            }
+        }
+    });
+</script>
+
 <div class="wrapper" style="width: 100%; justify-content: space-between;  padding-right: 50px;">
     <div style="height: 32vh; padding-right: 50px; padding-left: 30px; padding-top: 25px;">
         <img src="exun.png" style="height: 60px; width: 120px;"></img>
         <h1 style="font-size: 40px; padding-top: 20px;">
-            <js authMode>
-                return authMode.Value()
-            </js>
+            <if mode condition="mode.Value()=='auth'">
+                <js authMode>
+                    return authMode.Value()
+                </js>
+            </if>
+            <if mode condition="mode.Value()=='otp'">
+                Enter OTP
+            </if>
         </h1>
         <p style="font-size: 16px; padding-top: 10px;">
             to continue to Exun Reg
         </p>
     </div>
     <div style="width: auto;"></div>
-    <div style="padding-left: 80px; height: 32vh;">
-        <div style="height: 27vh;" class="wrapper">
-            <div style="padding-top: 2.5vh;">
-                <input id="email" style="color: black; width: 25vw; max-width: 350px;" type="email" placeholder="Enter your email" class="input"></input>
-                <div style="padding-top: 10px;">
-                    <a href="mailto:exun@dpsrkp.net">
-                        <p>
-                            Forgot Email?
+    <div style="padding-left: 80px; height: 37vh;">
+        <if mode condition="mode.Value()=='auth'">
+            <div style="height: 27vh;" class="wrapper">
+                <div style="padding-top: 2.5vh;">
+                    <input id="email" style="color: black; width: 25vw; max-width: 350px;" type="email" placeholder="Enter your email" class="input"></input>
+                    <div style="padding-top: 10px;">
+                        <a href="mailto:exun@dpsrkp.net">
+                            <p>
+                                Forgot Email?
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 100%; height: 10vh;">
+                <div style="float: right;" class="wrapper">
+                    <div style="height: 40px; cursor: pointer; padding-right: 25px;" class="wrapper" onclick="Switch()">
+                        <js authMode>
+                            if (authMode.Value()=="Register") {
+                                return "Login "
+                            } else {
+                                return "Register "
+                            }
+                        </js>
+                        Instead?
+                    </div>
+                    <button style="height: 40px; background-color: #338EF7; color: white; padding-left: 25px; padding-right: 25px;" class="py-[8px] rounded-xl text-sm lg:text-base font-semibold text-black/[0.95] hover:scale-[1.02] transition" onclick="OnSubmit()">
+                        <js authMode>authMode.Value()</js>
+                    </button>
+                </div>
+            </div>
+        </if>
+        <if mode condition="mode.Value()=='otp'">
+            <div style="height: 30vh;" class="wrapper">
+                <div>
+                    <div class="wrapper">
+                        <input id="digit_0" style="color: black; width: 55px; height: 55px; text-align: center; font-size: 20px; margin: 5px;" class="input" oninput="OnOTP(event)"></input>
+                        <input id="digit_1" style="color: black; width: 55px; height: 55px; text-align: center; font-size: 20px; margin: 5px;" class="input" oninput="OnOTP(event)"></input>
+                        <input id="digit_2" style="color: black; width: 55px; height: 55px; text-align: center; font-size: 20px; margin: 5px;" class="input" oninput="OnOTP(event)"></input>
+                        <input id="digit_3" style="color: black; width: 55px; height: 55px; text-align: center; font-size: 20px; margin: 5px;" class="input" oninput="OnOTP(event)"></input>
+                        <input id="digit_4" style="color: black; width: 55px; height: 55px; text-align: center; font-size: 20px; margin: 5px;" class="input" oninput="OnOTP(event)"></input>
+                        <input id="digit_5" style="color: black; width: 55px; height: 55px; text-align: center; font-size: 20px; margin: 5px;" class="input" oninput="OnOTP(event)"></input>
+                    </div>
+                    <script>
+                        for (let index = 0; index < 6; index++) {
+                            document.getElementById("digit_"+String(index)).addEventListener("paste", (event)=>{
+                                const pastedData = (event.clipboardData || window.clipboardData).getData('text');
+                                setTimeout(()=>{
+                                    var text=""
+                                    for (let index = 0; index < pastedData.length; index++) {
+                                        const element = pastedData[index];
+                                        if ("1234567890".includes(element)) {
+                                            text+=element
+                                        }
+                                    }
+                                    for (let index = 0; index < 6; index++) {
+                                        const element = text[index];
+                                        if (element!==undefined) {
+                                            document.getElementById("digit_"+String(index)).value=element
+                                            if (index!==5) {
+                                                document.getElementById("digit_"+String(index+1)).focus()
+                                            }
+                                        }
+                                    }
+                                }, 10)
+                            })
+                        }
+                    </script>
+                    <a>
+                        <p style="margin-top: 20px; margin-left: 5px;">
+                            Resend OTP
                         </p>
                     </a>
                 </div>
             </div>
-        </div>
-        <div style="width: 100%; height: 10vh;">
-            <div style="float: right;" class="wrapper">
-                <div style="height: 40px; cursor: pointer; padding-right: 25px;" class="wrapper" onclick="Switch()">
-                    <js authMode>
-                        if (authMode.Value()=="Register") {
-                            return "Login "
-                        } else {
-                            return "Register "
-                        }
-                    </js>
-                    Instead?
+            <div style="width: 100%; height: 10vh; margin-top: -5vh;">
+                <div style="float: right;">
+                    <button style="height: 40px; background-color: #338EF7; color: white; padding-left: 25px; padding-right: 25px;" class="py-[8px] rounded-xl text-sm lg:text-base font-semibold text-black/[0.95] hover:scale-[1.02] transition" onclick="OnSubmit()">
+                        Submit
+                    </button>
                 </div>
-                <button style="height: 40px; color: rgba(0, 0, 0, 0.8); border: 1px solid rgba(0, 0, 0, 0.25); padding-left: 25px; padding-right: 25px;" class="py-[8px] rounded-xl text-sm lg:text-base font-semibold text-black/[0.95] hover:scale-[1.02] transition" onclick="OnSubmit()">
-                    <js authMode>authMode.Value()</js>
-                </button>
             </div>
-        </div>
+        </if>
     </div>
 </div>
