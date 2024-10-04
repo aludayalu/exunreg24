@@ -92,27 +92,32 @@
                     </div>
                     <script>
                         for (let index = 0; index < 6; index++) {
-                            document.getElementById("digit_"+String(index)).addEventListener("paste", (event)=>{
-                                const pastedData = (event.clipboardData || window.clipboardData).getData('text');
-                                setTimeout(()=>{
-                                    var text=""
-                                    for (let index = 0; index < pastedData.length; index++) {
-                                        const element = pastedData[index];
-                                        if ("1234567890".includes(element)) {
-                                            text+=element
-                                        }
-                                    }
-                                    for (let index = 0; index < 6; index++) {
-                                        const element = text[index];
-                                        if (element!==undefined) {
-                                            document.getElementById("digit_"+String(index)).value=element
-                                            if (index!==5) {
-                                                document.getElementById("digit_"+String(index+1)).focus()
+                            ((index)=>{
+                                document.getElementById("digit_"+String(index)).addEventListener("paste", (event)=>{
+                                    setTimeout(()=>{
+                                        document.getElementById("digit_"+String(index)).value=""
+                                    }, 0)
+                                    const pastedData = (event.clipboardData || window.clipboardData).getData('text');
+                                    setTimeout(()=>{
+                                        var text=""
+                                        for (let index = 0; index < pastedData.length; index++) {
+                                            const element = pastedData[index];
+                                            if ("1234567890".includes(element)) {
+                                                text+=element
                                             }
                                         }
-                                    }
-                                }, 10)
-                            })
+                                        for (let index = 0; index < 6; index++) {
+                                            const element = text[index];
+                                            if (element!==undefined) {
+                                                document.getElementById("digit_"+String(index)).value=element
+                                                if (index!==5) {
+                                                    document.getElementById("digit_"+String(index+1)).focus()
+                                                }
+                                            }
+                                        }
+                                    }, 10)
+                                })
+                            })(index)
                         }
                     </script>
                     <a>
