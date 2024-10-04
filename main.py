@@ -69,7 +69,7 @@ def home():
 
 @app.get("/login")
 def login():
-    return render("login", locals() | globals())
+    return render("login/login", locals() | globals())
 
 @app.get("/email")
 def email_send():
@@ -81,4 +81,4 @@ def email_send():
     send_mail(args["email"], "Exun Registration Authentication OTP - "+key, otp_render)
     return make_response(key)
 
-app.run(host="127.0.0.1", port=int(sys.argv[1]))
+app.run(host="0.0.0.0", port=int(sys.argv[1]))
