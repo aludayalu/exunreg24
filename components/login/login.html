@@ -9,6 +9,7 @@
         </post>
         <script>
             var authMode=Signal("authMode", "Register")
+            var email=""
             function Switch() {
                 authMode.setValue(
                     authMode.Value()=="Register" ? "Login" : "Register"
@@ -19,16 +20,43 @@
                 return emailRegex.test(email);
             }
             function OnSubmit() {
-                var email=document.getElementById("email").value
+                email=document.getElementById("email").value
                 if (isValidEmail(email)) {
                     fetch("/email?email="+encodeURIComponent(email)).then(async (x)=>{
                         document.getElementById("email").value=""
                         x=await x.json()
-                        console.log(x)
+                        if (x) {
+                            GetSignal("mode").setValue("otp")
+                        }
                     })
                 } else {
                     document.getElementById("email").value=""
                 }
+            }
+            function SubmitOtp() {
+                var otp=""
+                for (let index = 0; index < 6; index++) {
+                    otp+=String(document.getElementById("digit_"+String(index)).value)
+                }
+                function getCookie(name) {
+                    const value = `; ${document.cookie}`;
+                    const parts = value.split(`; ${name}=`);
+                    if (parts.length === 2) return parts.pop().split(';').shift();
+                }
+
+                fetch("/submit_otp?otp="+encodeURIComponent(otp)+"&email="+encodeURIComponent(email)).then(async (x)=>{
+                    x=await x.json()
+                    if (x) {
+                        const currentUrl = window.location.href;
+                        const url = new URL(currentUrl);
+                        const params = new URLSearchParams(url.search);
+                        if (params.get("redirect")=="queries") {
+                            window.location="https://queries.exunclan.com/auth?auth_token="+encodeURIComponent(getCookie("auth_token"))
+                            return
+                        }
+                        window.location.href="/"
+                    }
+                })
             }
             var isMobile=Signal("isMobile", window.innerHeight>=window.innerWidth)
         </script>

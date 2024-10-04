@@ -3,6 +3,7 @@ from monster import render, Flask, escapeString
 import sys, json
 import hashlib, base64
 import resend, secrets_parser
+import flask
 
 app = Flask(__name__)
 
@@ -53,16 +54,28 @@ daisyui = "<script>"+ open("public/pako.js").read()+ "</script>"+ """<script>
 
 tailwind = "<script>eval(atob(`" + base64.b64encode(open("public/tailwind.js").read().encode()).decode() + "`))</script>"
 
-def otp(a):
+def auth_token(a):
     if type(a) == str:
         a = a.encode()+salt.encode()
-    hash_object = hashlib.sha256(a)
-    hex_dig = hash_object.hexdigest()
+    return hashlib.sha256(a).hexdigest()
+
+def otp(a):
+    hex_dig = auth_token(a)
     array = int(hex_dig[-6:], 16) % (10 ** 6)
     return [int(digit) for digit in str(array)]
 
+def authd():
+    try:
+        if request.cookies["auth_token"]==auth_token(request.cookies["email"]):
+            return True
+        return False
+    except:
+        return False
+
 @app.get("/")
 def home():
+    if not authd():
+        return redirect("/login")
     return render("index", locals() | globals())
 
 @app.get("/login")
@@ -71,12 +84,29 @@ def login():
 
 @app.get("/email")
 def email_send():
+    try:
+        args=dict(request.args)
+        key="".join([str(x) for x in otp(args["email"])])
+        otp_render=open("components/mail/mail.html").read()
+        for x in range(0, 6):
+            otp_render=otp_render.replace(f"{{digit{x+1}}}", key[x])
+        send_mail(args["email"], "Exun Registration Authentication OTP - "+key, otp_render)
+    except:
+        return make_response(False)
+    return make_response(True)
+
+@app.get("/submit_otp")
+def submit_otp():
     args=dict(request.args)
-    key="".join([str(x) for x in otp(args["email"])])
-    otp_render=open("components/mail/mail.html").read()
-    for x in range(0, 6):
-        otp_render=otp_render.replace(f"{{digit{x+1}}}", key[x])
-    send_mail(args["email"], "Exun Registration Authentication OTP - "+key, otp_render)
-    return make_response(key)
+    if "".join([str(x) for x in otp(args["email"])])==args["otp"]:
+        resp=make_response(True)
+        resp.set_cookie("email", args["email"])
+        resp.set_cookie("auth_token", auth_token(args["email"]))
+        return resp
+    else:
+        resp=make_response(False)
+        resp.delete_cookie("email")
+        resp.delete_cookie("auth_cookie")
+        return resp
 
 app.run(host="0.0.0.0", port=int(sys.argv[1]))

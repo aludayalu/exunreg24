@@ -1,5 +1,5 @@
 <script>
-    var mode=Signal("mode", "otp")
+    var mode=Signal("mode", "auth")
     function OnOTP(event) {
         var id=event.target.id
         if (!Number.isNaN(Number(event.target.value)) && event.target.value[event.target.value.length-1]!==undefined) {
@@ -52,7 +52,7 @@
     </p>
     <div style="margin-bottom: 6vh;"></div>
     <if mode condition="mode.Value()=='auth'">
-        <input style="padding: 6vw; font-size: 40px; width: 100%; padding-left: 4vw;" class="input" placeholder="Please enter your email"></input>
+        <input style="padding: 6vw; font-size: 40px; width: 100%; padding-left: 4vw;" class="input" placeholder="Please enter your email" id="email"></input>
         <a href="mailto:exun@dpsrkp.net">
             <p style="font-size: 40px; margin-top: 25px;">
                 Forgot Email?
@@ -152,7 +152,7 @@
                 </div>
             </if>
             <if mode condition="mode.Value()=='otp'">
-                <button style="font-size: 40px; height: 100px; background-color: #338EF7; color: white; padding: 30px; padding-left: 50px; padding-right: 50px; border-radius: 20px;" class="py-[8px] rounded-xl text-sm lg:text-base font-semibold text-black/[0.95] hover:scale-[1.02] transition" onclick="OnSubmit()">
+                <button style="font-size: 40px; height: 100px; background-color: #338EF7; color: white; padding: 30px; padding-left: 50px; padding-right: 50px; border-radius: 20px;" class="py-[8px] rounded-xl text-sm lg:text-base font-semibold text-black/[0.95] hover:scale-[1.02] transition" onclick="SubmitOtp()">
                     Submit
                 </button>
             </if>
