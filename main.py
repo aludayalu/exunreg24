@@ -149,7 +149,10 @@ def api_for_completing_signup():
     fullname=args["fullname"]
     phone_number=args["phone_number"]
     principals_email=args["principals_email"]
-    accounts.set(email, {"name":fullname, "phone_number":phone_number, "principals_email":principals_email})
+    out={"name":fullname, "phone_number":phone_number, "principals_email":principals_email}
+    for x in ["institution_name", "address", "principals_name"]:
+        out[x]=args[x]
+    accounts.set(email, out)
     return make_response(True)
 
 @app.get("/event")
