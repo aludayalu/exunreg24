@@ -3,6 +3,7 @@
         document.currentScript.parentElement.setAttribute("data-theme", "light")
     </script>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
         <link href="main.css" rel="stylesheet"></link>
         <post>
             return tailwind+daisyui
@@ -20,7 +21,7 @@
         <py>
             render("navbar", locals() | globals())
         </py>
-        <div class="w-full px-40 grid grid-cols-3">
+        <div class="w-full px-8 sm:px-20 lg:px-40 justify-center md:justify-start flex flex-wrap">
             <div class="w-[350px] p-5 pb-8 flex flex-col gap-5 border border-black/[0.15] rounded-xl relative shadow-[0px_0px_15px_0px_rgba(0,0,0,0.03),0px_2px_30px_0px_rgba(0,0,0,0.08),0px_0px_1px_0px_rgba(0,0,0,0.3)] group overflow-hidden">
                 <div class="flex-1 [mask-image:linear-gradient(to_top,transparent_15%,#000_100%)] overflow-hidden">
                     <img src="illustrations/Build.svg"></img>
