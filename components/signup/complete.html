@@ -1,0 +1,53 @@
+<html>
+    <script>
+        document.currentScript.parentElement.setAttribute("data-theme", "light")
+    </script>
+    <head>
+        <link href="main.css" rel="stylesheet"></link>
+        <post>
+            return tailwind+daisyui
+        </post>
+        <script>
+            var email=""
+            function isValidEmail(email) {
+                const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                return emailRegex.test(email);
+            }
+            var isMobile=Signal("isMobile", window.innerHeight>=window.innerWidth)
+            setInterval(()=>{
+                if (window.innerHeight>=window.innerWidth!==isMobile.Value()) {
+                    isMobile.setValue(window.innerHeight>=window.innerWidth)
+                }
+            }, 10)
+            function SubmitForm() {
+                fetch("/api/complete_signup?fullname="+encodeURIComponent(document.getElementById("fullname").value)+"&phone_number="+encodeURIComponent(document.getElementById("phone_number").value)+"&principals_email="+encodeURIComponent(document.getElementById("email").value)).then(async (x)=>{
+                    x=await x.json()
+                    if (x) {
+                        window.location.href="/"
+                    }
+                })
+            }
+        </script>
+    </head>
+    
+    <body>
+        <div class="wrapper" style="width: 100vw; height: 100vh;">
+            <div style="
+            <js isMobile>
+                if (isMobile.Value()) {
+                    return ''
+                } else {
+                    return 'border: 2.5px solid rgba(0, 0, 0, 0.25); border-radius: 25px; height: 36vh; max-width: 1000px;'
+                }
+            </js>
+            ">
+                <if isMobile>
+                    <py>render("signup/mobile")</py>
+                </if>
+                <if isMobile condition="!isMobile.Value()">
+                    <py>render("signup/pc")</py>
+                </if>
+            </div>
+        </div>
+    </body>
+</html>

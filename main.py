@@ -83,6 +83,9 @@ def account_details():
 def home():
     if not authd():
         return redirect("/login")
+    account=account_details()
+    if account==None:
+        return redirect("/complete_signup")
     return render("index", locals() | globals())
 
 @app.get("/login")
@@ -122,7 +125,31 @@ def events_page():
         return redirect("/login")
     account=account_details()
     if account==None:
-        return render("")
+        return redirect("/complete_signup")
     return render("events/events", locals() | globals())
+
+@app.get("/complete_signup")
+def complete_signup():
+    if not authd():
+        return redirect("/login")
+    account=account_details()
+    if account!=None:
+        return redirect("/")
+    return render("signup/complete", locals() | globals())
+
+@app.get("/api/complete_signup")
+def api_for_completing_signup():
+    if not authd():
+        return make_response(False)
+    account=account_details()
+    if account!=None:
+        return make_response(False)
+    args=dict(request.args)
+    email=request.cookies["email"]
+    fullname=args["fullname"]
+    phone_number=args["phone_number"]
+    principals_email=args["principals_email"]
+    accounts.set(email, {"name":fullname, "phone_number":phone_number, "principals_email":principals_email})
+    return make_response(True)
 
 app.run(host="0.0.0.0", port=int(sys.argv[1]))

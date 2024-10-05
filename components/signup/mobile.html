@@ -1,0 +1,52 @@
+<script>
+    var mode=Signal("mode", "auth")
+    function OnOTP(event) {
+        var id=event.target.id
+        if (!Number.isNaN(Number(event.target.value)) && event.target.value[event.target.value.length-1]!==undefined) {
+            event.target.value=event.target.value[event.target.value.length-1]
+            var n=Number(id[id.length-1])
+            if (n!=5) {
+                document.getElementById("digit_"+String(n+1)).focus()
+            }
+        } else {
+            event.target.value=""
+        }
+    }
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Backspace") {
+            for (let index = 0; index < 6; index++) {
+                if (document.getElementById("digit_"+String(index))==document.activeElement && index!==0) {
+                    if (document.getElementById("digit_"+String(index)).value!=="") {
+                        document.getElementById("digit_"+String(index)).value=""
+                    } else {
+                        document.getElementById("digit_"+String(index-1)).value=""
+                        document.getElementById("digit_"+String(index-1)).focus()
+                    }
+                    break
+                }
+            }
+        }
+    });
+</script>
+
+<div style="width: 100vw; padding: 75px; height: 100vh;">
+    <img src="exun_base.webp" style="height: 140px;"></img>
+    <div style="margin-top: 4vh;"></div>
+    <p style="font-size: 100px; font-weight: 500; margin-bottom: 1vh;">
+        Complete
+    </p>
+    <p style="font-size: 40px;">
+        your signup process with additional details required to verify your details.
+    </p>
+    <div style="margin-bottom: 6vh;"></div>
+    <input style="padding: 6vw; font-size: 40px; width: 100%; padding-left: 4vw;" class="input" placeholder="Full Name" id="fullname"></input>
+    <input style="padding: 6vw; font-size: 40px; width: 100%; padding-left: 4vw; margin-top: 25px;" class="input" placeholder="Principal's Email" id="email"></input>
+    <input style="padding: 6vw; font-size: 40px; width: 100%; padding-left: 4vw; margin-top: 25px;" type="number" class="input" placeholder="Your phone number" id="phone_number"></input>
+    <div style="margin-top: 10vh;">
+        <div class="wrapper" style="width: fit-content;">
+            <button style="font-size: 40px; height: 100px; background-color: #338EF7; color: white; padding: 30px; padding-left: 50px; padding-right: 50px; border-radius: 20px;" class="py-[8px] rounded-xl text-sm lg:text-base font-semibold text-black/[0.95] hover:scale-[1.02] transition" onclick="SubmitForm()">
+                Submit
+            </button>
+        </div>
+    </div>
+</div>

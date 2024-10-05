@@ -59,7 +59,7 @@
                 })
             }
             var isMobile=Signal("isMobile", window.innerHeight>=window.innerWidth)
-            setTimeout(()=>{
+            setInterval(()=>{
                 if (window.innerHeight>=window.innerWidth!==isMobile.Value()) {
                     isMobile.setValue(window.innerHeight>=window.innerWidth)
                 }
@@ -68,9 +68,6 @@
     </head>
     
     <body>
-        <py>
-            return render("navbar", globals() | locals())
-        </py>
         <div class="wrapper" style="width: 100vw; height: 100vh;">
             <div style="
             <js isMobile>
