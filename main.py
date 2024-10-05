@@ -180,6 +180,14 @@ def event_page():
 
 @app.get("/admin")
 def admin():
-    return render("admin", locals() | globals())
+    if not authd():
+        return redirect("/login")
+    account=account_details()
+    if account==None:
+        return redirect("/complete_signup")
+    if request.cookies["email"]=="exun@dpsrkp.net":
+        return render("admin", locals() | globals())
+    else:
+        return redirect("/")
 
 app.run(host="0.0.0.0", port=int(sys.argv[1]))
