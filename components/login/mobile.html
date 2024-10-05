@@ -137,7 +137,7 @@
     <div style="margin-top: 10vh;">
         <div class="wrapper" style="width: fit-content;">
             <if mode condition="mode.Value()=='auth'">
-                <button style="font-size: 40px; height: 100px; background-color: #338EF7; color: white; padding: 30px; padding-left: 50px; padding-right: 50px; border-radius: 20px;" class="py-[8px] rounded-xl text-sm lg:text-base font-semibold text-black/[0.95] hover:scale-[1.02] transition" onclick="OnSubmit()">
+                <button style="font-size: 40px; height: 100px; background-color: #338EF7; color: white; padding: 30px; padding-left: 50px; padding-right: 50px; border-radius: 20px;" class="py-[8px] rounded-xl text-sm lg:text-base font-semibold text-black/[0.95] hover:scale-[1.02] transition shadow-[#338EF7]/[0.6] shadow-lg" onclick="OnSubmit()">
                     <js authMode>authMode.Value()</js>
                 </button>
                 <div style="cursor: pointer; font-size: 40px; margin-left: 50px;" onclick="Switch()">
@@ -152,7 +152,7 @@
                 </div>
             </if>
             <if mode condition="mode.Value()=='otp'">
-                <button style="font-size: 40px; height: 100px; background-color: #338EF7; color: white; padding: 30px; padding-left: 50px; padding-right: 50px; border-radius: 20px;" class="py-[8px] rounded-xl text-sm lg:text-base font-semibold text-black/[0.95] hover:scale-[1.02] transition" onclick="SubmitOtp()">
+                <button style="font-size: 40px; height: 100px; background-color: #338EF7; color: white; padding: 30px; padding-left: 50px; padding-right: 50px; border-radius: 20px;" class="py-[8px] rounded-xl text-sm lg:text-base font-semibold text-black/[0.95] hover:scale-[1.02] transition shadow-[#338EF7]/[0.6] shadow-lg" onclick="SubmitOtp()">
                     Submit
                 </button>
             </if>

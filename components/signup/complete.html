@@ -3,7 +3,9 @@
         document.currentScript.parentElement.setAttribute("data-theme", "light")
     </script>
     <head>
-        <link href="main.css" rel="stylesheet"></link>
+        <post>
+            return "<"+"style>"+open("public/main.css").read()+"<"+"/style>"
+        </post>
         <post>
             return tailwind+daisyui
         </post>
@@ -20,7 +22,13 @@
                 }
             }, 10)
             function SubmitForm() {
-                fetch("/api/complete_signup?fullname="+encodeURIComponent(document.getElementById("fullname").value)+"&phone_number="+encodeURIComponent(document.getElementById("phone_number").value)+"&principals_email="+encodeURIComponent(document.getElementById("email").value)).then(async (x)=>{
+                var extra=""
+                extra+="&phone_number="+encodeURIComponent(document.getElementById("phone_number").value);
+                extra+="&principals_email="+encodeURIComponent(document.getElementById("email").value);
+                (["institution_name", "address", "principals_name"]).forEach(element => {
+                    extra+="&"+element+"="+encodeURIComponent(document.getElementById(element).value)
+                })
+                fetch("/api/complete_signup?fullname="+encodeURIComponent(document.getElementById("fullname").value)+extra).then(async (x)=>{
                     x=await x.json()
                     if (x) {
                         window.location.href="/"
@@ -31,7 +39,7 @@
     </head>
     
     <body>
-        <div class="wrapper" style="width: 100vw; height: 100vh;">
+        <div class="wrapper" style="width: 100vw; height: auto; min-height: 100vh;">
             <div style="
             <js isMobile>
                 if (isMobile.Value()) {
