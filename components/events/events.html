@@ -20,12 +20,12 @@
         <py>
             render("navbar", locals() | globals())
         </py>
-        <div class="w-full px-8 sm:px-20 lg:px-40 justify-center md:justify-start flex flex-wrap">
+        <div class="w-full px-8 sm:px-20 lg:px-40 justify-center md:justify-start flex flex-wrap gap-5">
             <py>
                 out=""
                 for event in events.get_all():
                     event=json.loads(event[1])
-                    out+=json.dumps(event)
+                    out+=render("events/event", locals() | globals()).render.replace("{image}", event["image"]).replace("{name}", event["name"]).replace("{mode}", event["mode"])
                 return out
             </py>
         </div>
