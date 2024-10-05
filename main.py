@@ -4,11 +4,17 @@ import sys, json
 import hashlib, base64
 import resend, secrets_parser
 import litedb
+from flask_compress import Compress
 
 accounts=litedb.get_conn("accounts")
 events=litedb.get_conn("events")
 
 app = Flask(__name__)
+
+app.config['COMPRESS_LEVEL'] = 9
+app.config['COMPRESS_MIN_SIZE'] = 500
+
+Compress(app)
 
 def make_response(data, mimetype=None, status=None):
     if type(data) in [str, int, float, bool, list, dict]:

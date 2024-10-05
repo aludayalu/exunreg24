@@ -3,7 +3,9 @@
         document.currentScript.parentElement.setAttribute("data-theme", "light")
     </script>
     <head>
-        <link href="main.css" rel="stylesheet"></link>
+        <post>
+            return "<"+"style>"+open("public/main.css").read()+"<"+"/style>"
+        </post>
         <post>
             return tailwind+daisyui
         </post>
