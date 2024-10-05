@@ -3,7 +3,6 @@ from monster import render, Flask, escapeString
 import sys, json
 import hashlib, base64
 import resend, secrets_parser
-import flask
 
 app = Flask(__name__)
 
@@ -108,5 +107,11 @@ def submit_otp():
         resp.delete_cookie("email")
         resp.delete_cookie("auth_cookie")
         return resp
+
+@app.get("/events")
+def events_page():
+    if not authd():
+        return redirect("/login")
+    return render("events/events", locals() | globals())
 
 app.run(host="0.0.0.0", port=int(sys.argv[1]))

@@ -116,7 +116,7 @@ def ssr(code, tag="py", variables={}):
         code=str(code).replace(x[0], x[1], 1)
     for x in pysegments:
         try:
-            result=eval(pysegments[x])
+            result=eval(pysegments[x], variables, variables)
             if type(result)!=str:
                 if type(result)==Render:
                     result=result.render
@@ -124,11 +124,11 @@ def ssr(code, tag="py", variables={}):
                     result=json.dumps(result)
             code=str(code.replace(x, result))
         except:
-            exec("result=None", variables)
+            exec("result=None", variables, variables)
             base="\n".join([" "+x for x in pysegments[x].split("\n")])
             if base!="":
                 to_evaluate="def _():\n"+base+"\nresult=_()"
-            exec(to_evaluate, variables)
+            exec(to_evaluate, variables, variables)
             if type(variables["result"])!=str:
                 if type(variables["result"])==Render:
                     variables["result"]=variables["result"].render
@@ -229,7 +229,7 @@ def tokeniser(code):
                 if count==0:
                     break
             buffer=buffer[:len(buffer)-len("</"+name+">")]
-            if name not in ["script", "js", "post"]:
+            if name not in ["script", "js", "post", "style"]:
                 children=tokeniser(buffer)
             else:
                 children=buffer
@@ -359,7 +359,7 @@ def compiler(tokens, variables={}):
             rendered_attributes=" ".join(rendered_attributes)
             if len(rendered_attributes)!=0:
                 rendered_attributes=" "+rendered_attributes.strip()
-            if token["tag"] in ["script", "post"]:
+            if token["tag"] in ["script", "post", "style"]:
                 child_render=token["children"]
             else:
                 child_render=compiler(token["children"])
