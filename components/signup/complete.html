@@ -20,7 +20,11 @@
                 }
             }, 10)
             function SubmitForm() {
-                fetch("/api/complete_signup?fullname="+encodeURIComponent(document.getElementById("fullname").value)+"&phone_number="+encodeURIComponent(document.getElementById("phone_number").value)+"&principals_email="+encodeURIComponent(document.getElementById("email").value)).then(async (x)=>{
+                var extra=""
+                extra+="&phone_number="+encodeURIComponent(document.getElementById("phone_number").value)
+                extra+="&principals_email="+encodeURIComponent(document.getElementById("email").value)
+                
+                fetch("/api/complete_signup?fullname="+encodeURIComponent(document.getElementById("fullname").value)+extra).then(async (x)=>{
                     x=await x.json()
                     if (x) {
                         window.location.href="/"

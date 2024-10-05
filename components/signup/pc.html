@@ -1,5 +1,7 @@
 <script>
     var mode=Signal("mode", "auth")
+    var view=Signal("view", 0)
+    var Individual=Signal("Individual", false)
     function OnOTP(event) {
         var id=event.target.id
         if (!Number.isNaN(Number(event.target.value)) && event.target.value[event.target.value.length-1]!==undefined) {
@@ -44,7 +46,18 @@
     <div style="padding-left: 80px; height: 37vh;">
         <if mode condition="mode.Value()=='auth'">
             <div style="height: 27vh;" class="wrapper">
-                <div style="padding-top: 2.5vh;">
+                <div style="padding-top: 2.5vh; <js view>view.Value()==1 ? 'display: none;' : 'display:block;'</js>">
+                    <div>
+                        <input id="fullname" style="color: black; width: 25vw; max-width: 350px;" a="<js>return '1'</js>" class="input"></input>
+                    </div>
+                    <div>
+                        <input id="email" style="color: black; width: 25vw; max-width: 350px; margin-top: 10px;" type="email" placeholder="Principal's Email" class="input"></input>
+                    </div>
+                    <div>
+                        <input id="phone_number" style="color: black; width: 25vw; max-width: 350px; margin-top: 10px;" type="number" placeholder="Your phone number" class="input"></input>
+                    </div>
+                </div>
+                <div style="padding-top: 2.5vh; <js view>view.Value()==0 ? 'display: none;' : 'display:block;'</js>">
                     <div>
                         <input id="fullname" style="color: black; width: 25vw; max-width: 350px;" placeholder="Your Full Name" class="input"></input>
                     </div>
@@ -57,10 +70,28 @@
                 </div>
             </div>
             <div style="width: 100%; height: 10vh;">
-                <div style="float: right;" class="wrapper">
-                    <button style="height: 40px; background-color: #338EF7; color: white; padding-left: 25px; padding-right: 25px;" class="py-[8px] rounded-xl text-sm lg:text-base font-semibold text-black/[0.95] hover:scale-[1.02] transition" onclick="SubmitForm()">
-                        Submit
-                    </button>
+                <div style="<js view>view.Value()==1 ? 'display: none;' : 'display:block;'</js>">
+                    <div style="float: left; height: 5vh;" class="wrapper">
+                        <div class="wrapper">
+                            <input type="checkbox" class="ui-checkbox" style="margin-right: 7.5px;" oninput="Individual.setValue(event.target.checked)"></input>
+                            <p class="text-sm">Individual Registration?</p>
+                        </div>
+                    </div>
+                    <div style="float: right; height: 5vh;" class="wrapper">
+                        <button style="height: 40px; background-color: #338EF7; color: white; padding-left: 25px; padding-right: 25px;" class="py-[8px] rounded-xl text-sm lg:text-base font-semibold text-black/[0.95] hover:scale-[1.02] transition" onclick="view.setValue(1)">
+                            Continue
+                        </button>
+                    </div>
+                </div>
+                <div style="<js view>view.Value()==0 ? 'display: none;' : 'display:block;'</js>">
+                    <div style="float: right;" class="wrapper">
+                        <button style="height: 40px; background-color: white; color: #338EF7; padding-left: 25px; padding-right: 25px; margin-right: 5px;" class="py-[8px] rounded-xl text-sm lg:text-base font-semibold text-black/[0.95] hover:scale-[1.02] transition" onclick="view.setValue(0)">
+                            Back
+                        </button>
+                        <button style="height: 40px; background-color: #338EF7; color: white; padding-left: 25px; padding-right: 25px;" class="py-[8px] rounded-xl text-sm lg:text-base font-semibold text-black/[0.95] hover:scale-[1.02] transition" onclick="SubmitForm()">
+                            Submit
+                        </button>
+                    </div>
                 </div>
             </div>
         </if>
