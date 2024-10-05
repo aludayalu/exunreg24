@@ -3,6 +3,10 @@ from monster import render, Flask, escapeString
 import sys, json
 import hashlib, base64
 import resend, secrets_parser
+import litedb
+
+accounts=litedb.get_conn("accounts")
+events=litedb.get_conn("events")
 
 app = Flask(__name__)
 
@@ -71,6 +75,10 @@ def authd():
     except:
         return False
 
+def account_details():
+    account=accounts.get(request.cookies["email"])
+    return account
+
 @app.get("/")
 def home():
     if not authd():
@@ -112,6 +120,9 @@ def submit_otp():
 def events_page():
     if not authd():
         return redirect("/login")
+    account=account_details()
+    if account==None:
+        return render("")
     return render("events/events", locals() | globals())
 
 app.run(host="0.0.0.0", port=int(sys.argv[1]))
