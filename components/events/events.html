@@ -25,7 +25,11 @@
                 out=""
                 for event in events.get_all():
                     event=json.loads(event[1])
-                    current=render("events/event", locals() | globals()).render.replace("{image}", event["image"]).replace("{name}", event["name"]).replace("{mode}", event["mode"])
+                    current=render("events/event", locals() | globals()).render.replace("{image}", event["image"]).replace("{name}", event["name"]).replace("{mode}", event["mode"]).replace("{participants}", str(event["participants"]))
+                    if event["open_to_all"]:
+                        current=current.replace("{classes}", "open to all")
+                    else:
+                        current=current.replace("{classes}", str(event["eligibility"][0])+"-"+str(event["eligibility"][1]))
                     out+=current
                 return out
             </py>
