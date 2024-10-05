@@ -165,6 +165,8 @@ def event_page():
     except:
         return redirect("/events")
     event=events.get(id)
+    if event==None:
+        return redirect("/events")
     return render("events/event", locals() | globals())
 
 app.run(host="0.0.0.0", port=int(sys.argv[1]))
