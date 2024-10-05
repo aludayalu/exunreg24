@@ -44,7 +44,10 @@ class Connection:
             traceback.print_exc()
 
     def get(self, key):
-        return get(self.collection, key)
+        try:
+            return json.loads(get(self.collection, key))
+        except:
+            return None
     
     def get_all(self):
         return get_all(self.collection)

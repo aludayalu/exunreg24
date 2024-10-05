@@ -28,6 +28,10 @@
         "open_to_all":false,
         "eligibility":[6, 12],
         "participants":4,
-        "mode":"online"
+        "mode":"online",
+        "descriptions":{
+            "long":"",
+            "short":""
+        }
     }
 }
