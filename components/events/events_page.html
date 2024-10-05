@@ -30,7 +30,7 @@
                     if event["open_to_all"]:
                         current=current.replace("{classes}", "open to all")
                     else:
-                        current=current.replace("{classes}", str(event["eligibility"][0])+"-"+str(event["eligibility"][1]))
+                        current=current.replace("{classes}", str(event["eligibility"][0])+"th - "+str(event["eligibility"][1]))+"th"
                     out+=current
                 return out
             </py>
