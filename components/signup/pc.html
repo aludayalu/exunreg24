@@ -48,24 +48,40 @@
             <div style="height: 27vh;" class="wrapper">
                 <div style="padding-top: 2.5vh; <js view>view.Value()==1 ? 'display: none;' : 'display:block;'</js>">
                     <div>
-                        <input id="fullname" style="color: black; width: 25vw; max-width: 350px;" class="input"></input>
+                        <input id="fullname" style="color: black; width: 25vw; max-width: 350px;"
+                        placeholder="<js Individual>
+                            if (Individual.Value()) {
+                                return 'Your Full Name'
+                            } else {
+                                return 'Teacher\'s Full Name'
+                            }
+                        </js>"
+                        class="input"></input>
                     </div>
                     <div>
-                        <input id="email" style="color: black; width: 25vw; max-width: 350px; margin-top: 10px;" type="email" placeholder="Principal's Email" class="input"></input>
+                        <input id="phone_number" style="color: black; width: 25vw; max-width: 350px; margin-top: 10px;" type="number" 
+                        placeholder="<js Individual>
+                            if (Individual.Value()) {
+                                return 'Your Phone Number'
+                            } else {
+                                return 'Teacher\'s Phone Number'
+                            }
+                        </js>"
+                        class="input"></input>
                     </div>
                     <div>
-                        <input id="phone_number" style="color: black; width: 25vw; max-width: 350px; margin-top: 10px;" type="number" placeholder="Your phone number" class="input"></input>
+                        <input id="principals_name" style="color: black; width: 25vw; max-width: 350px; margin-top: 10px;" placeholder="Principal's Name" class="input"></input>
                     </div>
                 </div>
                 <div style="padding-top: 2.5vh; <js view>view.Value()==0 ? 'display: none;' : 'display:block;'</js>">
                     <div>
-                        <input id="fullname" style="color: black; width: 25vw; max-width: 350px;" placeholder="Your Full Name" class="input"></input>
+                        <input id="email" style="color: black; width: 25vw; max-width: 350px;" type="email" placeholder="Principal's Email" class="input"></input>
                     </div>
                     <div>
-                        <input id="email" style="color: black; width: 25vw; max-width: 350px; margin-top: 10px;" type="email" placeholder="Principal's Email" class="input"></input>
+                        <input id="institution_name" style="color: black; width: 25vw; max-width: 350px; margin-top: 10px;" placeholder="Institution Name" class="input"></input>
                     </div>
                     <div>
-                        <input id="phone_number" style="color: black; width: 25vw; max-width: 350px; margin-top: 10px;" type="number" placeholder="Your phone number" class="input"></input>
+                        <input id="address" style="color: black; width: 25vw; max-width: 350px; margin-top: 10px;" placeholder="Institution Address" class="input"></input>
                     </div>
                 </div>
             </div>
