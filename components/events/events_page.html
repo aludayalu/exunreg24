@@ -24,8 +24,9 @@
             <py>
                 out=""
                 for event in events.get_all():
+                    event_id=event[0]
                     event=json.loads(event[1])
-                    current=render("events/event_card", locals() | globals()).render.replace("{image}", event["image"]).replace("{name}", event["name"]).replace("{mode}", event["mode"]).replace("{participants}", str(event["participants"]))
+                    current=render("events/event_card", locals() | globals()).render.replace("{image}", event["image"]).replace("{name}", event["name"]).replace("{mode}", event["mode"]).replace("{participants}", str(event["participants"])).replace("{id}", event_id)
                     if event["open_to_all"]:
                         current=current.replace("{classes}", "open to all")
                     else:
