@@ -152,4 +152,18 @@ def api_for_completing_signup():
     accounts.set(email, {"name":fullname, "phone_number":phone_number, "principals_email":principals_email})
     return make_response(True)
 
+@app.get("/event")
+def event_page():
+    if not authd():
+        return redirect("/login")
+    account=account_details()
+    if account==None:
+        return redirect("/complete_signup")
+    args=dict(request.args)
+    try:
+        id=args["id"]
+    except:
+        return redirect("/events")
+    return render("events/event", locals() | globals())
+
 app.run(host="0.0.0.0", port=int(sys.argv[1]))
