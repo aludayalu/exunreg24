@@ -26,7 +26,14 @@
         <div class="w-full max-w-[1200px] px-8 sm:px-20 lg:px-40 justify-center flex flex-col mt-5 divide-y divide-black/20 mx-auto">
             <div class="w-full flex gap-5 divide-x divide-black/20">
                 <div class="flex flex-col items-center gap-3 pb-5">
-                    <img class="min-w-40 h-36" src="illustrations/<py>event['image']</py>" alt="<py>event['name']</py>"></img>
+                    <post>
+                        return open("public/illustrations/"+event['image']).read()
+                    </post>
+                    <script>
+                        document.currentScript.previousElementSibling.setAttribute("class", "min-w-40 h-36")
+                        document.currentScript.previousElementSibling.removeAttribute("width")
+                        document.currentScript.previousElementSibling.removeAttribute("height")
+                    </script>
                     <p class="px-5 py-1 bg-[#338EF7] shadow-[#338EF7]/[0.6] shadow-lg text-white font-medium w-fit h-fit rounded-full"><py>event['mode']</py></p>
                 </div>
                 <div class="flex flex-col gap-2 pl-5 pb-5 w-full">
