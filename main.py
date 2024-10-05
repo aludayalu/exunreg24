@@ -164,6 +164,7 @@ def event_page():
         id=args["id"]
     except:
         return redirect("/events")
+    event=events.get(id)
     return render("events/event", locals() | globals())
 
 app.run(host="0.0.0.0", port=int(sys.argv[1]))
