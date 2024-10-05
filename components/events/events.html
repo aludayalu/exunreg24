@@ -25,7 +25,8 @@
                 out=""
                 for event in events.get_all():
                     event=json.loads(event[1])
-                    out+=render("events/event", locals() | globals()).render.replace("{image}", event["image"]).replace("{name}", event["name"]).replace("{mode}", event["mode"])
+                    current=render("events/event", locals() | globals()).render.replace("{image}", event["image"]).replace("{name}", event["name"]).replace("{mode}", event["mode"])
+                    out+=current
                 return out
             </py>
         </div>

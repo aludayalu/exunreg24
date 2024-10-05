@@ -1,0 +1,33 @@
+{
+    "events": {
+        "Build: Hackathon":"Build.svg",
+        "Build: Designathon":"Build.svg",
+        "Build: Unreality":"Build.svg",
+        "Competitive Programming":"CP.svg",
+        "Sudocrypt":"sudocrypt.svg",
+        "Turing Test":"Turing.svg",
+        "Quiz":"open quiz.svg",
+        "Crossword":"cross.svg",
+        "Hardware":"hardware.svg",
+        "Girls In Tech":"girls in tech.svg",
+        "Group Discussion":"GD.svg",
+        "ExML":"exML.svg",
+        "CyberSecurity":"Build.svg",
+        "SpaceTech":"Spacetech.svg",
+        "DomainSquare+ Gaming: PC":"gaming.svg",
+        "DomainSquare+ Gaming: Surprise":"gaming.svg",
+        "DomainSquare+ Gaming: Quiz":"gaming.svg",
+        "CubXL 2x2":"cubxl.svg",
+        "CubXL 3x3":"cubxl.svg",
+        "CubXL Pyraminx":"cubxl.svg",
+        "CubXL Surprise":"cubxl.svg",
+        "Roboknights: Robosoccer":"robotics.svg",
+        "Roboknights: Mx+C V5.0  Line Following Robot":"robotics.svg"
+    },
+    "default": {
+        "open_to_all":false,
+        "eligibility":[6, 12],
+        "participants":4,
+        "mode":"online"
+    }
+}
