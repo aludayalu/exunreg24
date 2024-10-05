@@ -126,7 +126,7 @@ def events_page():
     account=account_details()
     if account==None:
         return redirect("/complete_signup")
-    return render("events/events_page.html", locals() | globals())
+    return render("events/events_page", locals() | globals())
 
 @app.get("/complete_signup")
 def complete_signup():
