@@ -1,0 +1,92 @@
+<post>return daisyui+tailwind</post>
+<link rel="stylesheet" href="main.css">
+</link>
+<style>
+    h1{font-size: 2em;}
+    h2{font-size: 1.5em;}
+    h3{font-size: 1.17em;}
+    h5{font-size: 0.83em;}
+    h6{font-size: 0.67em;}
+</style>
+<div class="relative w-screen h-screen pt-40 lg:pt-20">
+    <button class="btn" onclick="openDialog()">Open Dialog</button>
+    <dialog id="myDialog" class="rounded-lg border border-[#000000]/10 backdrop-blur-lg backdrop:bg-black/60 h-[90vh] w-[75vw] overflow-hidden">
+        <div class="flex flex-col gap-5 text-black p-5 h-full w-full">
+            <div class="flex gap-5 flex-1">
+                <div class="flex-1 flex flex-col gap-2">
+                    <span class="text-black text-sm font-medium">Markup Writeup</span>
+                    <textarea class="w-full rounded-md p-2 border border-black/20 outline-none focus:outline-none resize-none w-full h-full" placeholder="Enter markup here" required oninput="updatePreview()"></textarea>
+                </div>
+                <div class="flex-1 flex flex-col gap-2">
+                    <span class="text-black text-sm font-medium">Preview</span>
+                    <div id="preview" class="text-black p-2 border border-black/20 rounded-md w-full overflow-y-auto w-full h-full cursor-restricted"></div>
+                </div>
+            </div>
+            <div class="flex flex-col gap-5 flex-1">
+                <div class="flex justify-between gap-5">
+                    <div class="flex flex-col w-full gap-3.5">
+                        <div class="flex flex-col gap-2">
+                            <span class="text-sm font-normal">Mode</span>
+                            <select class="h-[45px] w-full px-2.5 py-3 text-sm bg-black/[0.06] border border-black/[0.08] focus:outline-none rounded-lg" required>
+                                <option value="" disabled selected>Select mode</option>
+                                <option value="Online">Online</option>
+                                <option value="Offline">Offline</option>
+                                <option value="Hybrid">Hybrid</option>
+                            </select>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <span class="text-sm font-normal">Max Teams</span>
+                            <input type="number" class="w-full px-2.5 py-3 text-sm bg-black/[0.06] border border-black/[0.08] focus:outline-none rounded-lg" placeholder="Enter max teams" required></input>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <span class="text-sm font-normal">Max Participants per Team</span>
+                            <input type="number" class=" w-full px-2.5 py-3 text-sm bg-black/[0.06] border border-black/[0.08] focus:outline-none rounded-lg" placeholder="Enter max participants" required></input>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col w-full gap-3.5">
+                        <div class="flex flex-col gap-2">
+                            <span class="text-sm font-normal">Number of Qualification Rounds</span>
+                            <input type="number" class=" w-full px-2.5 py-3 text-sm bg-black/[0.06] border border-black/[0.08] focus:outline-none rounded-lg" placeholder="Enter qualification rounds" required></input>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <span class="text-sm font-normal">Min Class</span>
+                            <input type="number" class=" w-full px-2.5 py-3 text-sm bg-black/[0.06] border border-black/[0.08] focus:outline-none rounded-lg" placeholder="Enter qualification rounds" required></input>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <span class="text-sm font-normal">Max Class</span>
+                            <input type="number" class=" w-full px-2.5 py-3 text-sm bg-black/[0.06] border border-black/[0.08] focus:outline-none rounded-lg" placeholder="Enter qualification rounds" required></input>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex gap-5">
+                    <button class="py-[8px] rounded-xl px-6 py-1.5 bg-[#338EF7] text-white text-sm font-semibold hover:scale-[1.02] transition">
+                        Submit
+                    </button>
+                    <button class="py-[8px] rounded-xl px-6 py-1.5 bg-white text-red-400 border border-red-400/50 text-sm font-semibold hover:scale-[1.02] transition" onclick="document.getElementById('myDialog').close()" autofocus="true">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </dialog>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+<script>
+    const converter = new showdown.Converter();
+
+    function updatePreview() {
+        const textarea = document.querySelector('textarea');
+        const previewDiv = document.getElementById('preview');
+        const markdownText = textarea.value;
+        previewDiv.innerHTML = converter.makeHtml(markdownText);
+    }
+
+    function openDialog() {
+        const textarea = document.querySelector('textarea');
+        textarea.value = ""
+        document.getElementById('myDialog').showModal()
+    }
+</script>

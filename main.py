@@ -170,4 +170,8 @@ def event_page():
     print(event)
     return render("events/event", locals() | globals())
 
+@app.get("/admin")
+def admin():
+    return render("admin", locals() | globals())
+
 app.run(host="0.0.0.0", port=int(sys.argv[1]))
