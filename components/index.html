@@ -1,0 +1,24 @@
+<html>
+    <script>
+        document.currentScript.parentElement.setAttribute("data-theme", "light")
+    </script>
+    <head>
+        <link href="main.css" rel="stylesheet"></link>
+        <post>
+            return tailwind+daisyui
+        </post>
+        <script>
+            var isMobile=Signal("isMobile", window.innerHeight>=window.innerWidth)
+            setTimeout(()=>{
+                if (window.innerHeight>=window.innerWidth!==isMobile.Value()) {
+                    isMobile.setValue(window.innerHeight>=window.innerWidth)
+                }
+            }, 10)
+        </script>
+    </head>
+    <body>
+        <py>
+            render("navbar", locals() | globals())
+        </py>
+    </body>
+</html>
