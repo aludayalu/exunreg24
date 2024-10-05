@@ -59,6 +59,11 @@
                 })
             }
             var isMobile=Signal("isMobile", window.innerHeight>=window.innerWidth)
+            setTimeout(()=>{
+                if (window.innerHeight>=window.innerWidth!==isMobile.Value()) {
+                    isMobile.setValue(window.innerHeight>=window.innerWidth)
+                }
+            }, 10)
         </script>
     </head>
     
