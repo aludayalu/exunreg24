@@ -77,30 +77,33 @@
                 modal_0.showModal()
             }, 100)
         </script>
-        <dialog id="modal_0" class="modal modal-bottom sm:modal-middle" style="padding: 20px; border-radius: 20px; min-width: 700px;">
+
+        <dialog id="modal_0" class="modal modal-bottom sm:modal-middle">
             <div class="modal-box">
                 <h3 class="text-4xl font-bold vertical">Registrations</h3>
-                <py>
-                    registrations=account['registrations']
-                    id=hashlib.sha256(event['name'].encode()).hexdigest()
-                    if id in registrations:
-                        registrations=registrations[id]
-                    else:
-                        registrations=[]
-                    return f"""
-                    <script>
-                        var id="{id}"
-                        var registrations={registrations}
-                    </script>
-                    """
-                </py>
-                <div>
+                    <py>
+                        registrations=account['registrations']
+                        id=hashlib.sha256(event['name'].encode()).hexdigest()
+                        if id in registrations:
+                            registrations=registrations[id]
+                        else:
+                            registrations=[]
+                        return f"""
+                        <script>
+                            var id="{id}"
+                            var registrations={registrations}
+                        </script>
+                        """
+                    </py>
+                    <div>
 
+                    </div>
+                <div class="modal-action">
+                    <form method="dialog">
+                        <button class="btn">Close</button>
+                    </form>
                 </div>
             </div>
-            <form method="dialog" class="modal-backdrop">
-                <button class="btn">Close</button>
-            </form>
         </dialog>
 
         <py>render("footer")</py>
