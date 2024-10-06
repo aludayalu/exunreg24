@@ -190,4 +190,8 @@ def admin():
     else:
         return redirect("/")
 
+@app.get("/registrations")
+def registrations():
+    pass
+
 app.run(host="0.0.0.0", port=int(sys.argv[1]))
