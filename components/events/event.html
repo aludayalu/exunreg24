@@ -93,7 +93,9 @@
                         <script>
                             var id="{id}"
                             var registrations={registrations}
-                            participants.setValue(registrations)
+                            setTimeout(()=>{
+                                participants.setValue(registrations)
+                            }, 10)
                         </script>
                         """
                     </py>
