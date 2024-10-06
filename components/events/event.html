@@ -23,29 +23,28 @@
             render("navbar", locals() | globals())
         </py>
 
-        <div class="w-full max-w-[1200px] px-8 sm:px-20 lg:px-40 justify-center flex flex-col mt-5 divide-y divide-black/20 mx-auto">
-            <div class="w-full flex gap-5 divide-x divide-black/20">
-                <div class="flex flex-col items-center gap-3 pb-5">
+        <div class="w-full max-w-[1200px] px-4 sm:px-10 md:px-20 lg:px-40 justify-center flex flex-col mt-5 divide-y divide-black/20 mx-auto">
+            <div class="w-full flex flex-col sm:flex-row gap-2 sm:gap-5 sm:divide-x divide-black/20">
+                <div class="flex flex-col items-center gap-3 sm:pb-5">
                     <post>
                         return open("public/illustrations/"+event['image']).read()
                     </post>
                     <script>
-                        document.currentScript.previousElementSibling.setAttribute("class", "min-w-40 h-36")
+                        document.currentScript.previousElementSibling.setAttribute("class", "max-w-40 min-w-40 h-40")
                         document.currentScript.previousElementSibling.removeAttribute("width")
                         document.currentScript.previousElementSibling.removeAttribute("height")
                     </script>
-                    <p class="px-5 py-1 bg-[#338EF7] shadow-[#338EF7]/[0.6] shadow-lg text-white font-medium w-fit h-fit rounded-full"><py>event['mode']</py></p>
+
+                    <p class="text-3xl font-semibold block sm:hidden"><py>event['name']</py></p>
+
+                    <p class="px-5 py-1 bg-[#338EF7] shadow-[#338EF7]/[0.6] shadow-lg text-white font-medium w-fit h-fit rounded-full hidden sm:block"><py>event['mode']</py></p>
                 </div>
-                <div class="flex flex-col gap-2 pl-5 pb-5 w-full">
+                <div class="flex flex-col gap-2 sm:pl-5 pb-5 w-full">
                     <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-5">
-                            <p class="text-4xl font-semibold"><py>event['name']</py></p>
-                        </div>
-                        <button class="py-[8px] rounded-xl px-6 py-2 bg-[#338EF7] text-white text-sm lg:text-base font-semibold hover:scale-[1.02] transition shadow-[#338EF7]/[0.6] shadow-lg whitespace-nowrap ml-5" onclick="modal_0.showModal()">
-                            Registration Panel
-                        </button>
+                        <p class="text-4xl font-semibold hidden sm:block"><py>event['name']</py></p>
+                        <button class="py-[8px] rounded-xl px-6 py-2 bg-[#338EF7] text-white text-sm lg:text-base font-semibold hover:scale-[1.02] transition shadow-[#338EF7]/[0.6] shadow-lg whitespace-nowrap ml-5 mb-5 hidden sm:block" onclick="OnSubmit()">Registration Panel</button>
                     </div>
-                    <div class="flex flex-col justify-center mb-1.5">
+                    <div class="flex flex-col justify-center mb-1.5 items-center sm:items-start">
                         <p class="text-lg font-medium">Max Participants allowed: <py>event['participants']</py></p>
                         <p class="text-lg font-medium">
                             <py>
@@ -56,13 +55,18 @@
                             </py>
                         </p>
                     </div>
-                    <p class="text-black/80"><py>event['descriptions']['short'][:300]</py></p>
+                    
+                    <p class="text-black/80 text-sm text-center sm:text-left sm:text-base"><py>event['descriptions']['short'][:300]</py></p>
+
+                    <button class="py-[8px] rounded-xl px-6 py-2 bg-[#338EF7] text-white text-sm lg:text-base font-semibold hover:scale-[1.02] transition shadow-[#338EF7]/[0.6] shadow-lg whitespace-nowrap mt-3.5 block sm:hidden" onclick="OnSubmit()">
+                        Registration Panel
+                    </button>
                 </div>
             </div>
-            <div class="w-full flex gap-5 divide-x divide-black/20">
-                <div class="min-w-40 flex flex-col gap-1 text-black pt-5">
+            <div class="w-full flex gap-5 sm:divide-x divide-black/20">
+                <div class="min-w-28 max-w-28 md:max-w-40 md:min-w-40 flex flex-col gap-1 text-black pt-5 hidden sm:block">
                     <p class="text-xl mb-3 font-medium text-center">Sections</p>
-                    <button class="px-1.5 py-[5px] bg-black/[0.025] hover:bg-black/[0.06] focus:bg-black/[0.09] transition text-sm rounded-lg text-left truncate">Dates and Deadlines</button>
+                    <button class="px-1.5 py-[5px] bg-black/[0.025] hover:bg-black/[0.06] focus:bg-black/[0.09] transition text-xs sm:text-sm rounded-lg text-left truncate">Dates and Deadlines</button>
                 </div>
 
                 <p class="text-black/80 pl-5 pt-5"><py>event['descriptions']['long']</py></p>
