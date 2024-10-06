@@ -1,6 +1,7 @@
 <html>
     <script>
         document.currentScript.parentElement.setAttribute("data-theme", "light")
+        var participants=Signal("participants", [])
     </script>
     <head>
         <post>
@@ -92,76 +93,12 @@
                         <script>
                             var id="{id}"
                             var registrations={registrations}
+                            participants.setValue(registrations)
                         </script>
                         """
                     </py>
                     <div style="max-height: 70vh; overflow-y: auto; margin-top: 10px;">
-                        <div style="padding: 10px; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 20px;">
-                            <p class="text-2xl">
-                                Participant #0
-                            </p>
-                            <div style="padding: 10px;">
-                                <div class="wrapper">
-                                    <input class="w-full px-2.5 py-3 text-sm bg-black/[0.06] border border-black/[0.08] focus:outline-none rounded-lg"
-                                    placeholder="Participant Email (required)"
-                                    style="margin-bottom: 5px;"
-                                    >
-                                    </input>
-                                </div>
-                                <div class="wrapper">
-                                    <input class="w-full px-2.5 py-3 text-sm bg-black/[0.06] border border-black/[0.08] focus:outline-none rounded-lg disabled:bg-black/[0.2] disabled:cursor-not-allowed"
-                                    placeholder="Participant Name" disabled
-                                    title="Kindly fill the participant's email to proceed"
-                                    style="margin-bottom: 5px;"
-                                    >
-                                    </input>
-                                </div>
-                                <div class="wrapper">
-                                    <input class="w-full px-2.5 py-3 text-sm bg-black/[0.06] border border-black/[0.08] focus:outline-none rounded-lg disabled:bg-black/[0.2] disabled:cursor-not-allowed"
-                                    placeholder="Participant Phone Number" disabled
-                                    title="Kindly fill the participant's email to proceed"
-                                    style="margin-bottom: 5px;"
-                                    >
-                                    </input>
-                                </div>
-                                <div class="wrapper">
-                                    <input class="w-full px-2.5 py-3 text-sm bg-black/[0.06] border border-black/[0.08] focus:outline-none rounded-lg disabled:bg-black/[0.2] disabled:cursor-not-allowed"
-                                    placeholder="Participant Class" type="number" disabled
-                                    title="Kindly fill the participant's email to proceed"
-                                    style="margin-bottom: 5px;"
-                                    >
-                                    </input>
-                                </div>
-                                <script>
-                                    var inputs=[
-                                        document.currentScript.parentElement.children.item(0).children.item(0),
-                                        document.currentScript.parentElement.children.item(1).children.item(0),
-                                        document.currentScript.parentElement.children.item(2).children.item(0),
-                                        document.currentScript.parentElement.children.item(3).children.item(0)
-
-                                    ]
-                                    inputs[0].oninput=(event)=>{
-                                        function isValidEmail(email) {
-                                            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                                            return emailPattern.test(email);
-                                        }
-                                        if (isValidEmail(event.target.value)) {
-                                            inputs.slice(1).forEach((x)=>{
-                                                x.removeAttribute("title")
-                                                x.disabled=false
-                                            })
-                                        } else {
-                                            inputs.slice(1).forEach((x)=>{
-                                                x.disabled=true
-                                                x.setAttribute("title", "Kindly fill the participant's email to proceed")
-                                                x.value=""
-                                            })
-                                        }
-                                    }
-                                </script>
-                                <button class="btn btn-error" style="margin-top: 5px; color: white;">Delete Entry</button>
-                            </div>
-                        </div>
+                        
                     </div>
                 <div class="modal-action">
                     <button style="margin-right: 10px;" class="py-[8px] rounded-xl px-6 py-2 bg-[#338EF7] text-white text-sm lg:text-base font-semibold hover:scale-[1.02] transition shadow-[#338EF7]/[0.6] shadow-lg whitespace-nowrap">
