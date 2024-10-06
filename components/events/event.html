@@ -79,8 +79,8 @@
             }, 100)
         </script>
 
-        <dialog id="modal_0" class="modal modal-bottom sm:modal-middle">
-            <div class="modal-box">
+        <dialog id="modal_0" class="modal modal-bottom sm:modal-middle" style="overflow-y: hidden;">
+            <div class="modal-box" style="overflow-y: hidden;">
                 <h3 class="text-4xl font-bold vertical">Registrations</h3>
                     <py>
                         registrations=account['registrations']
@@ -99,13 +99,29 @@
                         </script>
                         """
                     </py>
-                    <div style="max-height: 70vh; overflow-y: auto; margin-top: 10px;">
-                        <py>
-                            return "<"+"script>"+"var participantsHTML=`"+escapeString(render("events/participants").render)+"`<"+"/script"+">"
-                        </py>
+                    <py>
+                        return "<"+"script>"+"var participantsHTML=`"+escapeString(render("events/participants").render)+"`<"+"/script"+">"
+                    </py>
+                    <script>
+                        OnChange("participants", ()=>{
+                            Array.from(document.getElementById("participants").children).forEach((x)=>{
+                                document.getElementById("participants").removeChild(x)
+                            })
+                            participants.Value().forEach((x)=>{
+                                document.getElementById("participants").innerHTML+=participantsHTML
+                            })
+                            executeScripts(document.getElementById("participants"))
+                        })
+                    </script>
+                    <div style="max-height: 65vh; overflow-y: auto; margin-top: 10px;" id="participants">
+                        
                     </div>
                 <div class="modal-action">
-                    <button style="margin-right: 10px;" class="py-[8px] rounded-xl px-6 py-2 bg-[#338EF7] text-white text-sm lg:text-base font-semibold hover:scale-[1.02] transition shadow-[#338EF7]/[0.6] shadow-lg whitespace-nowrap">
+                    <button style="margin-right: 10px;" class="py-[8px] rounded-xl px-6 py-2 bg-[#338EF7] text-white text-sm lg:text-base font-semibold hover:scale-[1.02] transition shadow-[#338EF7]/[0.6] shadow-lg whitespace-nowrap"
+                    onclick="
+                    participants.setValue([...participants.Value(), {'name':'', 'email':'', 'phone':'', 'class':''}])
+                    "
+                    >
                         Add Student
                     </button>
                     <button class="btn">Close</button>

@@ -1,4 +1,4 @@
-<div style="padding: 10px; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 20px;">
+<div style="padding: 10px; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 20px; margin-bottom: 10px;">
     <p class="text-2xl">
         Participant #0
     </p>
@@ -35,37 +35,38 @@
             </input>
         </div>
         <script>
-            var inputs=[
+            (()=>{
+                var inputs=[
                 document.currentScript.parentElement.children.item(0).children.item(0),
                 document.currentScript.parentElement.children.item(1).children.item(0),
                 document.currentScript.parentElement.children.item(2).children.item(0),
                 document.currentScript.parentElement.children.item(3).children.item(0)
-
-            ]
-            if (isValidEmail(inputs[0].value)) {
-                inputs.slice(1).forEach((x)=>{
-                    x.removeAttribute("title")
-                    x.disabled=false
-                })
-            }
-            inputs[0].oninput=(event)=>{
+                ]
                 function isValidEmail(email) {
-                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    return emailPattern.test(email);
-                }
-                if (isValidEmail(event.target.value)) {
+                        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        return emailPattern.test(email);
+                    }
+                if (isValidEmail(inputs[0].value)) {
                     inputs.slice(1).forEach((x)=>{
                         x.removeAttribute("title")
                         x.disabled=false
                     })
-                } else {
-                    inputs.slice(1).forEach((x)=>{
-                        x.disabled=true
-                        x.setAttribute("title", "Kindly fill the participant's email to proceed")
-                        x.value=""
-                    })
                 }
-            }
+                inputs[0].oninput=(event)=>{
+                    if (isValidEmail(event.target.value)) {
+                        inputs.slice(1).forEach((x)=>{
+                            x.removeAttribute("title")
+                            x.disabled=false
+                        })
+                    } else {
+                        inputs.slice(1).forEach((x)=>{
+                            x.disabled=true
+                            x.setAttribute("title", "Kindly fill the participant's email to proceed")
+                            x.value=""
+                        })
+                    }
+                }
+            })()
         </script>
         <button class="btn btn-error" style="margin-top: 5px; color: white;">Delete Entry</button>
     </div>
