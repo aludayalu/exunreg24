@@ -97,6 +97,9 @@
                         </script>
                         """
                     </py>
+                    <py>
+                        return "<"+"script>"+"var participantsHTML=\""+escapeString(render("events/participants").render)+"\"</"+"script"+">"
+                    </py>
                     <div style="max-height: 70vh; overflow-y: auto; margin-top: 10px;">
                         
                     </div>
