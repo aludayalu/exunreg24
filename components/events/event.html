@@ -189,16 +189,16 @@
                             })
                             for (let index = 0; index < inputs.length; index++) {
                                 if (index==0 && !isValidEmail(inputs[0].value)) {
-                                    Toast("Invalid Email in participant #"+String(index))
+                                    Toast("Invalid Email in participant #"+String(i))
                                     return
                                 }
                                 if (index==3 && !(12>=inputs[3].value && inputs[3].value>=6)) {
-                                    Toast("Invalid Class (6-12) in participant #"+String(index))
+                                    Toast("Invalid Class (6-12) in participant #"+String(i))
                                     return
                                 }
                                 var element = inputs[index];
                                 if (element.value=="") {
-                                    Toast("Missing field value in participant #"+String(index))
+                                    Toast("Missing field value in participant #"+String(i))
                                     return
                                 }
                             }
