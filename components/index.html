@@ -22,6 +22,63 @@
         <py>
             render("navbar", locals() | globals())
         </py>
+
+        <div class="w-full flex flex-col gap-24 pt-10">
+            <div class="flex flex-col-reverse lg:flex-row justify-center gap-10 lg:gap-24 pr-8 lg:pr-14 pl-8 sm:pl-20 lg:pl-40">
+                <div class="flex flex-col w-full lg:w-1/2 gap-10"> 
+                    <h1 class="text-5xl font-bold text-center lg:text-left">The biggest tech symposium of India</h1>
+                    
+                    <p class="text-center lg:text-left">Exun 2023, a plethora of events and a profusion of memories, awaits you. The 28th iteration of Exun Clan's annual international technology symposium is being organized on 4th and 5th November, with the preliminary rounds starting from 27th October. Budding from the success of Exun 2022 with over 22,000 participants both from India and across the globe, we hope Exun 2023 scales to new heights. Check out our list of events below, with something for every variety of tech enthusiasts!</p>
+
+                    <div class="flex gap-6 justify-center lg:justify-start">
+                        <button class="text-white py-2.5 px-10 rounded-xl text-sm md:text-base font-semibold text-black/[0.95] hover:scale-[1.02] bg-[#338EF7] transition shadow-[#338EF7]/[0.6] shadow-md w-fit" onclick="OnSubmit()">
+                            Eplore Events
+                        </button>
+                        <button class="text-black py-2.5 px-10 rounded-xl text-sm md:text-base font-semibold text-black/[0.95] hover:scale-[1.02] transition w-fit border border-[#338EF7]" onclick="OnSubmit()">
+                            View Invite
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="flex w-full lg:w-1/2 justify-center"> 
+                    <img src="mainillus.png" class="w-[250px] lg:w-[300px] h-fit"></img>
+                </div>
+            </div>
+
+            <div class="w-full flex flex-col items-center gap-5 px-8 sm:px-20 lg:px-40">
+                <h1 class="text-5xl font-bold">Title Sponsor</h1>
+
+                <div class="flex flex-wrap items-center justify-center gap-8">
+                    <img src="exun.png" class="h-52"></img>
+                    <img src="exun.png" class="h-52"></img>    
+                    <img src="exun.png" class="h-52"></img>    
+                    <img src="exun.png" class="h-52"></img>    
+                    <img src="exun.png" class="h-52"></img>    
+                </div>
+            </div>
+
+            <div class="w-full px-8 sm:px-20 lg:px-40 items-center flex flex-col gap-14">
+                <h1 class="text-5xl font-bold">Our Events</h1>
+
+                <div class="w-full justify-center flex flex-wrap gap-8">
+                    <py>
+                        out=""
+                        for event in events.get_all():
+                            event_id=event[0]
+                            event=json.loads(event[1])
+                            current=render("events/event_card", locals() | globals()).render.replace("{image}", event["image"]).replace("{name}", event["name"]).replace("{mode}", event["mode"]).replace("{participants}", str(event["participants"])).replace("{id}", event_id)
+                            if event["open_to_all"]:
+                                current=current.replace("{classes}", "open to all")
+                            else:
+                                current=current.replace("{classes}", str(event["eligibility"][0])+"th - "+str(event["eligibility"][1])+"th")
+                            out+=current
+                        return out
+                    </py>
+                </div>            
+            </div>            
+
+        </div>
+            
         <py>render("footer")</py>
     </body>
 </html>
