@@ -71,7 +71,8 @@ def auth_token(a):
 def otp(a):
     hex_dig = auth_token(a)
     array = int(hex_dig[-6:], 16) % (10 ** 6)
-    return [int(digit) for digit in str(array)]
+    otp_str = f"{array:06d}"
+    return [int(digit) for digit in otp_str]
 
 def authd():
     try:
