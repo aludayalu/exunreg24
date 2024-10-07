@@ -16,6 +16,7 @@
                 }
             }))
         }
+        var modalOpen=Signal("modalOpen", false)
     </script>
     <py>
         return open("components/toast.html").read()
@@ -40,7 +41,6 @@
         <py>
             render("navbar", locals() | globals())
         </py>
-
         <div class="w-full max-w-[1200px] px-4 sm:px-10 md:px-20 lg:p`-40 justify-center flex flex-col mt-5 divide-y divide-black/20 mx-auto">
             <div class="w-full flex flex-col sm:flex-row gap-2 sm:gap-5 sm:divide-x divide-black/20">
                 <div class="flex flex-col items-center gap-3 sm:pb-5">
@@ -60,7 +60,7 @@
                 <div class="flex flex-col gap-2 sm:pl-5 pb-5 w-full">
                     <div class="flex items-center justify-between">
                         <p class="text-4xl font-semibold hidden sm:block"><py>event['name']</py></p>
-                        <button class="py-[8px] rounded-xl px-6 py-2 bg-[#338EF7] text-white text-sm lg:text-base font-semibold hover:scale-[1.02] transition shadow-[#338EF7]/[0.6] shadow-lg whitespace-nowrap ml-5 mb-5 hidden sm:block" onclick="modal_0.showModal()">Registration Panel</button>
+                        <button class="py-[8px] rounded-xl px-6 py-2 bg-[#338EF7] text-white text-sm lg:text-base font-semibold hover:scale-[1.02] transition shadow-[#338EF7]/[0.6] shadow-lg whitespace-nowrap ml-5 mb-5 hidden sm:block" onclick="modal_0.showModal();modalOpen.setValue(true)">Registration Panel</button>
                     </div>
                     <div class="flex flex-col justify-center mb-1.5 items-center sm:items-start">
                         <p class="text-lg font-medium">Max Participants allowed: <py>event['participants']</py></p>
@@ -76,7 +76,7 @@
                     
                     <p class="text-black/80 text-sm text-center sm:text-left sm:text-base"><py>event['descriptions']['short'][:300]</py></p>
 
-                    <button class="py-[8px] rounded-xl px-6 py-2 bg-[#338EF7] text-white text-sm lg:text-base font-semibold hover:scale-[1.02] transition shadow-[#338EF7]/[0.6] shadow-lg whitespace-nowrap mt-3.5 block sm:hidden" onclick="modal_0.showModal()">
+                    <button class="py-[8px] rounded-xl px-6 py-2 bg-[#338EF7] text-white text-sm lg:text-base font-semibold hover:scale-[1.02] transition shadow-[#338EF7]/[0.6] shadow-lg whitespace-nowrap mt-3.5 block sm:hidden" onclick="modal_0.showModal();modalOpen.setValue(true)">
                         Registration Panel
                     </button>
                 </div>
@@ -90,8 +90,35 @@
                 <p class="text-black/80 pl-5 pt-5"><py>event['descriptions']['long']</py></p>
             </div>
         </div>
+        <style>
 
-        <dialog id="modal_0" class="modal modal-bottom sm:modal-middle" style="overflow-y: hidden;">
+        </style>
+        <script>
+            var styleTag=document.currentScript.previousElementSibling
+            OnChange("modalOpen", () => {
+                if (modalOpen.Value()) {
+                    styleTag.innerHTML = `
+                        body::before {
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            background: rgba(0, 0, 0, 0.2);
+                            pointer-events: none;
+                            z-index: 1;
+                        }
+                        dialog::backdrop {
+                            background: none !important;
+                        }
+                    `;
+                } else {
+                    styleTag.innerHTML = ``;
+                }
+            })
+        </script>
+        <dialog id="modal_0" class="modal modal-bottom sm:modal-middle" style="overflow-y: hidden; z-index: 1000;">
             <div class="modal-box" style="overflow-y: hidden;">
                 <h3 class="text-4xl font-bold vertical">Registrations</h3>
                     <py>
@@ -139,7 +166,33 @@
                     <div style="max-height: 65vh; overflow-y: auto; margin-top: 10px;" id="participants">
                         
                     </div>
+                <script>
+                    function SubmitRegistration() {
+                        var array= Array.from(document.getElementById("participants").children)
+                        for (let i = 0; i < array.length; i++) {
+                            var x = array[i];
+                            x=x.children.item(1)
+                            var inputs=Array.from(x.children).slice(0, 4).map((x)=>{
+                                return x.children.item(0)
+                            })
+                            for (let index = 0; index < inputs.length; index++) {
+                                var element = inputs[index];
+                                if (element.value=="") {
+                                    Toast("Missing field value in participant #"+String(index))
+                                    return
+                                }
+                            }
+                        }
+                    }
+                </script>
                 <div class="modal-action">
+                    <if participants condition="participants.Value().length!=0">
+                        <button style="margin-right: 10px;" class="py-[8px] rounded-xl px-6 py-2 bg-[#338EF7] text-white text-sm lg:text-base font-semibold hover:scale-[1.02] transition shadow-[#338EF7]/[0.6] shadow-lg whitespace-nowrap"
+                        onclick="SubmitRegistration()"
+                        >
+                            Submit
+                        </button>
+                    </if>
                     <button style="margin-right: 10px;" class="py-[8px] rounded-xl px-6 py-2 bg-[#338EF7] text-white text-sm lg:text-base font-semibold hover:scale-[1.02] transition shadow-[#338EF7]/[0.6] shadow-lg whitespace-nowrap"
                     onclick="
                     participants.setValue([...participants.Value(), {'name':'', 'email':'', 'phone':'', 'class':''}])
@@ -147,10 +200,14 @@
                     >
                         Add Student
                     </button>
-                    <button class="btn" onclick="modal_0.close()">Close</button>
+                    <button class="btn" onclick="modal_0.close();modalOpen.setValue(false)">Close</button>
                 </div>
             </div>
         </dialog>
+
+        <script>
+
+        </script>
 
         <py>render("footer")</py>
     </body>

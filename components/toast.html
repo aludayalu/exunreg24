@@ -2,7 +2,7 @@
 <link rel="stylesheet" type="text/css" href="toast/toastify.css"></link>
 
 <script>
-    function Toast(text, duration=5000, background="#F31260") {
+    function Toast(text, duration=50000, background="#F31260") {
         Toastify({
             text: "This is a toast",
             duration: duration,
@@ -13,7 +13,9 @@
             position: "center", // `left`, `center` or `right`
             stopOnFocus: true, // Prevents dismissing of toast on hover
             style: {
+                position: "absolute",
                 background: background,
+                "z-index": 5000
             },
             onClick: function(){} // Callback after click
             }).showToast();
