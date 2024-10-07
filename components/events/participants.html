@@ -42,11 +42,20 @@
         <script>
             (()=>{
                 var inputs=[
-                document.currentScript.parentElement.children.item(0).children.item(0),
-                document.currentScript.parentElement.children.item(1).children.item(0),
-                document.currentScript.parentElement.children.item(2).children.item(0),
-                document.currentScript.parentElement.children.item(3).children.item(0)
+                    document.currentScript.parentElement.children.item(0).children.item(0),
+                    document.currentScript.parentElement.children.item(1).children.item(0),
+                    document.currentScript.parentElement.children.item(2).children.item(0),
+                    document.currentScript.parentElement.children.item(3).children.item(0)
                 ]
+                inputs[1].oninput=(x)=>{
+                    ChangeField({i}, "name", x.target.value)
+                }
+                inputs[2].oninput=(x)=>{
+                    ChangeField({i}, "phone", x.target.value)
+                }
+                inputs[3].oninput=(x)=>{
+                    ChangeField({i}, "class", x.target.value)
+                }
                 function isValidEmail(email) {
                         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                         return emailPattern.test(email);
@@ -58,6 +67,7 @@
                     })
                 }
                 inputs[0].oninput=(event)=>{
+                    ChangeField({i}, "email", event.target.value)
                     if (isValidEmail(event.target.value)) {
                         inputs.slice(1).forEach((x)=>{
                             x.removeAttribute("title")
@@ -73,6 +83,6 @@
                 }
             })()
         </script>
-        <button class="btn btn-error" style="margin-top: 5px; color: white;">Delete Entry</button>
+        <button class="btn btn-error" style="margin-top: 5px; color: white;" onclick="Delete({i})">Delete Entry</button>
     </div>
 </div>
