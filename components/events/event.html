@@ -101,7 +101,6 @@
                     </py>
                     <py>
                         out="<"+"script>"+"var participantsHTML=`"+escapeString(render("events/participants").render)
-                        out=out.replace("")
                         out+="`<"+"/script"+">"
                         return out
                     </py>
@@ -110,8 +109,14 @@
                             Array.from(document.getElementById("participants").children).forEach((x)=>{
                                 document.getElementById("participants").removeChild(x)
                             })
-                            participants.Value().forEach((x)=>{
-                                document.getElementById("participants").innerHTML+=participantsHTML
+                            participants.Value().forEach((x, i)=>{
+                                var out=String(participantsHTML)
+                                out=out.replace("{name}", x["name"])
+                                out=out.replace("{i}", String(i))
+                                out=out.replace("{class}", String(x["class"]))
+                                out=out.replace("{phone}", x["phone"])
+                                out=out.replace("{email}", x["email"])
+                                document.getElementById("participants").innerHTML+=out
                             })
                             executeScripts(document.getElementById("participants"))
                         })
