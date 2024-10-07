@@ -100,7 +100,10 @@
                         """
                     </py>
                     <py>
-                        return "<"+"script>"+"var participantsHTML=`"+escapeString(render("events/participants").render)+"`<"+"/script"+">"
+                        out="<"+"script>"+"var participantsHTML=`"+escapeString(render("events/participants").render)
+                        out=out.replace("")
+                        out+="`<"+"/script"+">"
+                        return out
                     </py>
                     <script>
                         OnChange("participants", ()=>{
