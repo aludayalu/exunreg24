@@ -76,6 +76,8 @@ def otp(a):
 
 def authd():
     try:
+        if "auth_token" not in request.cookies or "email" not in request.cookies:
+            return False
         if request.cookies["auth_token"]==auth_token(request.cookies["email"]):
             return True
         return False
@@ -97,8 +99,8 @@ def home():
 
 @app.get("/login")
 def login():
-    if authd():
-        return redirect("/")
+    if not authd():
+        return render("login/login", locals() | globals())
     account=account_details()
     if account==None:
         return redirect("/complete_signup")
