@@ -1,14 +1,9 @@
 <html>
-    <script>
-        document.currentScript.parentElement.setAttribute("data-theme", "light")
-    </script>
+    <script>document.currentScript.parentElement.setAttribute("data-theme", "light")</script>
     <head>
-        <post>
-            return "<"+"style>"+open("public/main.css").read()+"<"+"/style>"
-        </post>
-        <post>
-            return tailwind+daisyui
-        </post>
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+        <post>return "<"+"style>"+open("public/main.css").read()+"<"+"/style>"</post>
+        <post>return tailwind+daisyui</post>
         <script>
             var authMode=Signal("authMode", "Register")
             var email=""
@@ -60,31 +55,169 @@
                     }
                 })
             }
-            var isMobile=Signal("isMobile", window.innerHeight>=window.innerWidth)
+
+            var isMobile = Signal("isMobile", window.innerHeight>=window.innerWidth)
             setInterval(()=>{
-                if (window.innerHeight>=window.innerWidth!==isMobile.Value()) {
-                    isMobile.setValue(window.innerHeight>=window.innerWidth)
+                if (window.innerHeight >= window.innerWidth !== isMobile.Value()) {
+                    isMobile.setValue(window.innerHeight >= window.innerWidth)
                 }
-            }, 10)
+            }, 100)
+        </script>
+
+        <script>
+            var mode = Signal("mode", "auth")
+            function OnOTP(event) {
+                var id = event.target.id
+                if (!Number.isNaN(Number(event.target.value)) && event.target.value[event.target.value.length-1]!==undefined) {
+                    event.target.value=event.target.value[event.target.value.length-1]
+                    var n=Number(id[id.length-1])
+                    if (n!=5) {
+                        document.getElementById("digit_"+String(n+1)).focus()
+                    }
+                } else {
+                    event.target.value = ""
+                }
+            }
+            document.addEventListener("keydown", function(event) {
+                if (event.key === "Backspace") {
+                    for (let index = 0; index < 6; index++) {
+                        if (document.getElementById("digit_"+String(index))==document.activeElement && index!==0) {
+                            if (document.getElementById("digit_"+String(index)).value!=="") {
+                                document.getElementById("digit_"+String(index)).value=""
+                            } else {
+                                document.getElementById("digit_"+String(index-1)).value=""
+                                document.getElementById("digit_"+String(index-1)).focus()
+                            }
+                            break
+                        }
+                    }
+                }
+            });
         </script>
     </head>
     <body>
-        <div class="wrapper" style="width: 100vw; height: 100vh;">
-            <div style="
-            <js isMobile>
-                if (isMobile.Value()) {
-                    return ''
-                } else {
-                    return 'border: 2.5px solid rgba(0, 0, 0, 0.25); border-radius: 25px; height: 36vh; max-width: 1000px;'
-                }
-            </js>
-            ">
-                <if isMobile>
-                    <py>render("login/mobile")</py>
-                </if>
-                <if isMobile condition="!isMobile.Value()">
-                    <py>render("login/pc")</py>
-                </if>
+        <div class="flex justify-center items-start sm:items-center w-screen h-screen pt-20 sm:pt-0 sm:px-14">
+            <div class="flex justify-between flex-col lg:flex-row w-full max-w-[800px] px-8 sm:px-14 sm:py-10 sm:rounded-xl sm:border sm:border-black/[0.2]">
+                <div class="w-full lg:w-1/3 h-full flex flex-col justify-between gap-5">
+                    <img src="<js isMobile>isMobile.Value() ? 'exun_base.webp' : 'exun.png'</js>" class="w-[135px] sm:w-[170px]"></img>
+                    <div class="flex flex-col gap-2">
+                        <h1 class="text-4xl font-medium sm:font-normal">
+                            <if mode condition="mode.Value()=='auth'">
+                                <js authMode>authMode.Value()</js>
+                            </if>
+                            <if mode condition="mode.Value()=='otp'">
+                                Enter OTP
+                            </if>
+                        </h1>
+                        <p class="text-black/[0.85]">
+                            <if isMobile>
+                                with your official email to continue to Exun 2024 Registration Platform.
+                            </if>
+                            <if condition="!isMobile.Value()" isMobile>
+                                to continue to Exun Reg
+                            </if>
+                        </p>
+                    </div>
+                </div>
+            
+                <div class="w-full lg:w-2/3 h-full flex flex-col gap-14 lg:pl-14 pt-8 sm:pt-14">
+                    <if mode condition="mode.Value()=='auth'">
+                        <div class="flex flex-1 flex-col justify-center w-full gap-4">
+                            <input id="email" type="email" placeholder="Enter your email" class="w-full px-2.5 py-3 text-sm bg-black/[0.06] border border-black/[0.08] focus:outline-none rounded-lg"></input>
+                            <a href="mailto:exun@dpsrkp.net" class="text-sm hover:underline cursor-pointer">Forgot Email?</a>
+                        </div>
+            
+                        <div class="w-full flex justify-end items-center gap-5">
+                            <button class="py-2.5 px-5 rounded-xl text-base text-black/[0.95] hover:scale-[1.02] transition hover:bg-black/[0.08]" onclick="Switch()">
+                                <js authMode> authMode.Value() == "Register" ? "Login " : "Register "</js> Instead
+                            </button>
+                            <button class="text-white py-2.5 px-5 rounded-xl text-base font-semibold text-black/[0.95] hover:scale-[1.02] bg-[#338EF7] transition shadow-[#338EF7]/[0.6] shadow-lg" onclick="OnSubmit()">
+                                <js authMode>authMode.Value()</js>
+                            </button>
+                        </div>
+                    </if>
+                    <if mode condition="mode.Value()=='otp'">
+                        <div class="flex flex-1 flex-col justify-center w-fit mx-auto gap-4">
+                            <div class="flex justify-center items-center w-fit justify-center gap-3">
+                                <input id="digit_0" class="input p-[0.8em] sm:p-[1em] w-[45px] max-h-[45px] sm:h-[48px] sm:w-[48px] box-border text-center" oninput="OnOTP(event)"></input>
+                                <input id="digit_1" class="input p-[0.8em] sm:p-[1em] w-[45px] max-h-[45px] sm:h-[48px] sm:w-[48px] box-border text-center" oninput="OnOTP(event)"></input>
+                                <input id="digit_2" class="input p-[0.8em] sm:p-[1em] w-[45px] max-h-[45px] sm:h-[48px] sm:w-[48px] box-border text-center" oninput="OnOTP(event)"></input>
+                                <input id="digit_3" class="input p-[0.8em] sm:p-[1em] w-[45px] max-h-[45px] sm:h-[48px] sm:w-[48px] box-border text-center" oninput="OnOTP(event)"></input>
+                                <input id="digit_4" class="input p-[0.8em] sm:p-[1em] w-[45px] max-h-[45px] sm:h-[48px] sm:w-[48px] box-border text-center" oninput="OnOTP(event)"></input>
+                                <input id="digit_5" class="input p-[0.8em] sm:p-[1em] w-[45px] max-h-[45px] sm:h-[48px] sm:w-[48px] box-border text-center" oninput="OnOTP(event)"></input>
+                            </div>
+                            <script>
+                                document.addEventListener("paste", ()=>{
+                                    var anyActive=false
+                                    for (let index = 0; index < 6; index++) {
+                                        if (document.getElementById("digit_"+String(index))==document.activeElement) {
+                                            anyActive=true
+                                            break
+                                        }
+                                    }
+                                    if (!anyActive) {
+                                        const pastedData = (event.clipboardData || window.clipboardData).getData('text');
+                                        var text=""
+                                        for (let index = 0; index < pastedData.length; index++) {
+                                            const element = pastedData[index];
+                                            if ("1234567890".includes(element)) {
+                                                text+=element
+                                            }
+                                        }
+                                        for (let index = 0; index < 6; index++) {
+                                            const element = text[index];
+                                            console.log(element)
+                                            if (element!==undefined) {
+                                                document.getElementById("digit_"+String(index)).value=element
+                                                if (index!==5) {
+                                                    document.getElementById("digit_"+String(index+1)).focus()
+                                                }
+                                            } else {
+                                                ((index)=>{
+                                                    setTimeout(()=>{
+                                                        document.getElementById("digit_"+String(index)).value=""
+                                                    }, 0)
+                                                })(index)
+                                            }
+                                        }
+                                    }
+                                })
+                                for (let index = 0; index < 6; index++) {
+                                    ((index)=>{
+                                        document.getElementById("digit_"+String(index)).addEventListener("paste", (event)=>{
+                                            setTimeout(()=>{
+                                                document.getElementById("digit_"+String(index)).value=""
+                                            }, 0)
+                                            const pastedData = (event.clipboardData || window.clipboardData).getData('text');
+                                            setTimeout(()=>{
+                                                var text=""
+                                                for (let index = 0; index < pastedData.length; index++) {
+                                                    const element = pastedData[index];
+                                                    if ("1234567890".includes(element)) {
+                                                        text+=element
+                                                    }
+                                                }
+                                                for (let index = 0; index < 6; index++) {
+                                                    const element = text[index];
+                                                    if (element!==undefined) {
+                                                        document.getElementById("digit_"+String(index)).value=element
+                                                        if (index!==5) {
+                                                            document.getElementById("digit_"+String(index+1)).focus()
+                                                        }
+                                                    }
+                                                }
+                                            }, 10)
+                                        })
+                                    })(index)
+                                }
+                            </script>
+                        </div>
+                        <div class="w-full flex justify-end items-center gap-5">
+                            <button class="py-2.5 px-5 rounded-xl text-base text-black/[0.95] hover:scale-[1.02] transition hover:bg-black/[0.08]" onclick="console.log('lol')">Resend OTP</button>
+                            <button class="text-white py-2.5 px-8 rounded-xl text-base font-semibold text-black/[0.95] hover:scale-[1.02] bg-[#338EF7] transition shadow-[#338EF7]/[0.6] shadow-lg whitespace-nowrap" onclick="SubmitOtp()">Submit</button>
+                        </div>
+                    </if>
+                </div>
             </div>
         </div>
     </body>

@@ -97,6 +97,11 @@ def home():
 
 @app.get("/login")
 def login():
+    if authd():
+        return redirect("/")
+    account=account_details()
+    if account==None:
+        return redirect("/complete_signup")
     return render("login/login", locals() | globals())
 
 @app.get("/email")
@@ -203,4 +208,4 @@ def submit_registrations():
     accounts.set(request.cookies["email"], account)
     return make_response(True)
 
-app.run(host="127.0.0.1", port=int(sys.argv[1]))
+app.run(host="0.0.0.0", port=int(sys.argv[1]))
