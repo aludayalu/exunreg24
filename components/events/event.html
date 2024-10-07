@@ -2,6 +2,18 @@
     <script>
         document.currentScript.parentElement.setAttribute("data-theme", "light")
         var participants=Signal("participants", [])
+        function ChangeField(index, field, value) {
+            var current=participants.Value()
+            current[index][field]=value
+            participants.setValue(current)
+        }
+        function Delete(index) {
+            participants.setValue(participants.Value().map((x, i)=>{
+                if (i!==index) {
+                    return x
+                }
+            }))
+        }
     </script>
     <py>
         return open("components/toast.html").read()
