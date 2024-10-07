@@ -191,4 +191,18 @@ def admin():
     else:
         return redirect("/")
 
+@app.post("/submit_registrations")
+def submit_registrations():
+    data = request.get_json()
+    if not authd():
+        return redirect("/login")
+    account=account_details()
+    if account==None:
+        return redirect("/complete_signup")
+    id=data["id"]
+    del data["id"]
+    account["registrations"][id]=data
+    accounts.set(account["email"], account)
+    return make_response(True)
+
 app.run(host="0.0.0.0", port=int(sys.argv[1]))
