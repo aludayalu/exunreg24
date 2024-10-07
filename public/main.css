@@ -20,6 +20,10 @@ body {
     font-family: "Raleway", sans-serif;
 }
 
+html {
+  background-color: white !important;
+}
+
 .input {
     border: none;
     outline: none;
