@@ -2,12 +2,10 @@
 <link rel="stylesheet" type="text/css" href="toast/toastify.css"></link>
 
 <script>
-    function Toast(text, duration=50000, background="#F31260") {
+    function Toast(text, duration=10000, background="#F31260") {
         Toastify({
-            text: "This is a toast",
+            text: text,
             duration: duration,
-            destination: "https://github.com/apvarun/toastify-js",
-            newWindow: true,
             close: true,
             gravity: "top", // `top` or `bottom`
             position: "center", // `left`, `center` or `right`
