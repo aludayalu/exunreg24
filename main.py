@@ -156,7 +156,7 @@ def api_for_completing_signup():
     fullname=args["fullname"]
     phone_number=args["phone_number"]
     principals_email=args["principals_email"]
-    out={"name":fullname, "phone_number":phone_number, "principals_email":principals_email, "registrations":{}}
+    out={"name":fullname, "phone_number":phone_number, "principals_email":principals_email, "registrations":{}, "email":email}
     for x in ["institution_name", "address", "principals_name"]:
         out[x]=args[x]
     accounts.set(email, out)
@@ -199,10 +199,8 @@ def submit_registrations():
     account=account_details()
     if account==None:
         return redirect("/complete_signup")
-    id=data["id"]
-    del data["id"]
-    account["registrations"][id]=data
-    accounts.set(account["email"], account)
+    account["registrations"][data["id"]]=data["data"]
+    accounts.set(request.cookies["email"], account)
     return make_response(True)
 
-app.run(host="0.0.0.0", port=int(sys.argv[1]))
+app.run(host="127.0.0.1", port=int(sys.argv[1]))

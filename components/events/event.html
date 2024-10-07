@@ -1,5 +1,7 @@
 <html>
     <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        var eventId=urlParams.get("id")
         document.currentScript.parentElement.setAttribute("data-theme", "light")
         var participants=Signal("participants", [])
         function ChangeField(index, field, value) {
@@ -195,6 +197,15 @@
                                 }
                             }
                         }
+                        fetch("/submit_registrations", {
+                            "method":"post", "body": JSON.stringify({
+                                "id":eventId, "data":participants.Value()
+                            }), "headers": {
+                                "Content-Type":"application/json"
+                            }
+                        }).then((x)=>{
+                            Toast("Registrations Update Successfully")
+                        })
                     }
                 </script>
                 <div class="modal-action">
