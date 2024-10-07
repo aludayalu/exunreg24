@@ -3,6 +3,9 @@
         document.currentScript.parentElement.setAttribute("data-theme", "light")
         var participants=Signal("participants", [])
     </script>
+    <py>
+        return open("components/toast.html").read()
+    </py>
     <head>
         <post>
             return "<"+"style>"+open("public/main.css").read()+"<"+"/style>"
@@ -73,11 +76,6 @@
                 <p class="text-black/80 pl-5 pt-5"><py>event['descriptions']['long']</py></p>
             </div>
         </div>
-        <script>
-            setTimeout(()=>{
-                modal_0.showModal()
-            }, 100)
-        </script>
 
         <dialog id="modal_0" class="modal modal-bottom sm:modal-middle" style="overflow-y: hidden;">
             <div class="modal-box" style="overflow-y: hidden;">

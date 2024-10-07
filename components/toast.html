@@ -1,0 +1,24 @@
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"></link>
+
+<script>
+    function Toast(text, duration=5000, background="#F31260") {
+        Toastify({
+            text: "This is a toast",
+            duration: duration,
+            destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "center", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+                background: background,
+            },
+            onClick: function(){} // Callback after click
+            }).showToast();
+        setTimeout(()=>{
+            modal_0.showModal()
+        }, 100)
+    }
+</script>
