@@ -125,7 +125,8 @@
                 <h3 class="text-4xl font-bold vertical">Registrations</h3>
                     <py>
                         registrations=account['registrations']
-                        id=hashlib.sha256(event['name'].encode()).hexdigest()
+                        id=hashlib.sha256(event['name'].encode()).hexdigest()[:6]
+                        print(registrations, id)
                         if id in registrations:
                             registrations=registrations[id]
                         else:
