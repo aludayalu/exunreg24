@@ -6,7 +6,7 @@ If your school did not get an official email yet, please submit your school's em
 
 ## **Exun Clan**
 
-Founded in 1991, Exun Clan is the Computer Science and technology club of Delhi Public School, R.K. Puram, and the premier student-run STEM club in the country. Our motto, “We, not I”, emphasizes our dedication to the principles of teamwork, sharing knowledge, and the spirit of collaboration.
+Founded in 1991, Exun Clan is the Computer Science and technology club of Delhi Public School, R.K. Puram, and the premier student-run STEM club in the country. Our motto, "We, not I", emphasizes our dedication to the principles of teamwork, sharing knowledge, and the spirit of collaboration.
 
 For the past couple of decades, we have set the bar for technology competitions in India with new and exciting additions each year and then surpassed it ourselves, striving to continuously improve the symposium, club and ourselves. Examples include Exun Talks, our Girls in Tech initiative, and novel event concepts.
 
@@ -45,7 +45,7 @@ Podium points from each win will contribute towards a school’s overall points 
 
 Exun Clan’s flagship event of the year, we present Sudocrypt 14.0 this year, our annual international cryptic hunt. With thousands of participants and an exciting new system of game mechanics each year, levels are rewarding and sometimes challenging. Keep a lookout for the announcement and format for this year’s hunt (to be out soon)!
 
-However, first, what is a “cryptic hunt”? To put it simply: Cryptic hunts are the online equivalent of treasure hunts and require you to hunt the internet for clues to solve questions. For more information, you can check out [**this**](https://docs.google.com/document/d/1bpeRtE2YC09lHyKIuPUFJkxxp1gfuPPvRneCMJxPv7U/edit?usp=sharing) resource.
+However, first, what is a "cryptic hunt"? To put it simply: Cryptic hunts are the online equivalent of treasure hunts and require you to hunt the internet for clues to solve questions. For more information, you can check out [**this**](https://docs.google.com/document/d/1bpeRtE2YC09lHyKIuPUFJkxxp1gfuPPvRneCMJxPv7U/edit?usp=sharing) resource.
 
 
 ## **Dates:**
@@ -66,7 +66,7 @@ Be sure to mark your calendars for Exun 2024!
 
 ## **Independent vs School Participation**
 
-Participants can either represent their respective schools (counted as “school participation”), or represent a team or go themselves for an event without affiliation to any school (counted as “independent participation”) with a customized team name.
+Participants can either represent their respective schools (counted as "school participation"), or represent a team or go themselves for an event without affiliation to any school (counted as "independent participation") with a customized team name.
 
 Independent participation will only be allowed for events that will be completely online, i.e., Sudocrypt v14.0, ExML, Turing Test, Build: Unreality, Spacetech and Competitive Programming Prelims.
 
@@ -79,7 +79,7 @@ Participants can be part of both school and independent participation teams, as 
 
 Registration can be done at [**reg.exunclan.com**](https://reg.exunclan.com/). Only a single representative needs to register on behalf of a team (if independent) and school (if participating with your school), where they will have to verify their emails and be verified by us to be legitimate participants. 
 
-Teams can be edited by the representative on the website itself by clicking on the “Registration Panel” button on the event details page.
+Teams can be edited by the representative on the website itself by clicking on the "Registration Panel" button on the event details page.
 
 We will be setting up the [**queries.exunclan.com**](https://queries.exunclan.com) ****website that will serve as the primary mode for addressing queries. It will receive the quickest responses. Only the registered participants and the team representatives will be able to use the platform.
 

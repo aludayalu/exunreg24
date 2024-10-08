@@ -46,7 +46,7 @@
         <div class="w-full relative flex flex-row gap-5 lg:divide-x lg:divide-black/20 pl-5 lg:pl-8 pr-5 lg:pr-20">
             <div class="max-w-52 min-w-52 text-white h-screen lg:overflow-y-auto hidden lg:block">
                 <h3 class="text-3xl font-semibold mb-4 text-[#338EF7]">Sections</h3>
-                <ul id="nav-list" class="space-y-2 text-black"></ul>
+                <ul id="nav-list" class="space-y-1 text-black lg:overflow-y-auto overflow-x-hidden w-full"></ul>
             </div>
 
             <style>
@@ -115,21 +115,21 @@
                         document.getElementById(id).style.color="#456484"
                         const item = document.createElement('li');
                         item.setAttribute("class", "w-full flex")
-                        item.innerHTML = `<a href="#${id}" class="font-semibold px-2 py-[2px] w-full border border-transparent rounded-md hover:bg-black/[0.03] hover:border-black/[0.06]">${title}</a>`;
+                        item.innerHTML = `<a href="#${id}" class="font-bold w-full block px-2 py-[2px] w-full border border-transparent rounded-md hover:bg-black/[0.03] hover:border-black/[0.06] truncate">${title}</a>`;
                         navList.appendChild(item);
                     } else if (line.startsWith('## ')) {
                         const title = trim(line.substring(3), ["#", "*"])
                         const id = Filter(trim(title.replace(/\s+/g, '-').toLowerCase(), ["#", "*"]))
                         document.getElementById(id).style.color="#456484"
                         const item = document.createElement('li');
-                        item.innerHTML = `<a href="#${id}" class="ml-2 font-medium px-2 py-[2px] w-full border border-transparent rounded-md hover:bg-black/[0.03] hover:border-black/[0.06]">${title}</a>`;
+                        item.innerHTML = `<a href="#${id}" class="ml-3 w-full block font-medium px-2 py-[2px] w-full border border-transparent rounded-md hover:bg-black/[0.03] hover:border-black/[0.06] truncate">${title}</a>`;
                         navList.appendChild(item);
                     } else if (line.startsWith('### ')) {
                         const title = trim(line.substring(4), ["#", "*"])
                         const id = Filter(trim(title.replace(/\s+/g, '-').toLowerCase(), ["#", "*"]))
                         document.getElementById(id).style.color="#456484"
                         const item = document.createElement('li');
-                        item.innerHTML = `<a href="#${id}" class="ml-7 hover:underline">${title}</a>`;
+                        item.innerHTML = `<a href="#${id}" class="ml-8 font-light hover:underline w-full block truncate">${title}</a>`;
                         navList.appendChild(item);
                     }
                 });
