@@ -1,8 +1,3 @@
-# **Exun 2024**
-
-Unique Events - Unique Memories
-
-
 # **Invite**
 
 You can always return to this page to have a quick recap on the event, and how it works.\
