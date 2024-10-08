@@ -35,5 +35,99 @@
         },
         "independent_registrations":true,
         "points":0
+    },
+    "descriptions": {
+        "Quiz": {
+            "long":"The Exun quiz is structured in two phases: an initial online preliminary round and a final stage showdown. On the final offline day, the six highest-scoring teams will take the stage, competing across diverse topics such as the history of technology, current events, major tech companies and their CEOs, programming challenges, and more. It's a battle of wits and knowledge, and only the best will emerge victorious.",
+            "short":"The Exun quiz consists of an online preliminary round followed by an offline final stage where six top teams compete on topics like technology history, current affairs, and programming."
+        },
+        "Build: Designathon": {
+            "long":"The Designathon is an event that merges innovation and design thinking, providing a platform for designers to collaboratively create ingenious solutions to real-world problems. Participants are encouraged to contribute bold, fresh ideas that can leave a lasting impact. Deliverables range from UI/UX designs, posters, and 3D models to promotional videos and more. Following an initial selection, 6-8 teams will advance to the final round, where they will complete additional side tasks and pitch their projects to a panel of expert judges, demonstrating both their creativity and strategic approach.",
+            "short":"The Designathon invites teams to present innovative design solutions, including UI/UX, posters, and videos, with finalists pitching their ideas to a panel of expert judges."
+        },
+        "Build: Unreality": {
+            "long":"Unleash your creativity in Build: Unreality, an exciting game development event that challenges participants to create the best game around a given theme—all against the clock. Competitors are free to use any game engine or tools of their choice, incorporating assets from public sources like 2D, 3D, audio, and textures, with extra points for creating original assets. The event is judged on four main criteria: originality, gameplay, audio, and visuals, ensuring a comprehensive evaluation of the final product. Spanning from preliminaries to the final judging, the entire event will be held online. Join in to showcase your skills and take your game development abilities to new heights!",
+            "short":"Build: Unreality is a game development competition where participants create a game based on a given theme, judged on originality, gameplay, audio, and visuals. Extra points are awarded for self-made assets."
+        },
+        "Competitive Programming": {
+            "long":"Prepare for an exhilarating challenge of logic and problem-solving in the Competitive Programming Competition! This event is specifically designed for programmers who thrive on tackling problems and competing under pressure. Participants will face a series of algorithmic problems, increasing in difficulty, all within a fixed time limit and using their preferred programming languages. The competition begins with an online preliminary round, leading to an intense final round where the top teams will battle for supremacy. The problems will cover a wide array of topics, including dynamic programming, graph theory, and data structures, ensuring a comprehensive test of programming skills. Whether you're a seasoned coder or new to the scene, this is your opportunity to showcase your abilities and engage with some of the most exciting challenges in competitive programming!",
+            "short":"Join the Competitive Programming Competition, where participants solve algorithmic problems under time constraints. The event includes an online preliminary round and an intense final round covering topics like dynamic programming and graph theory."
+        },
+        "Sudocrypt": {
+            "long":"Sudocrypt is the flagship event of Exun—a thrilling 36-hour Capture The Flag (CTF) and Cryptic Hunt that promises excitement and challenge. Featuring new game mechanics each year, participants experience fresh twists and tests of their cryptography, problem-solving, and analytical abilities. The event's puzzles escalate in difficulty, pushing competitors to adapt and think creatively. Occasional hints and giveaways add an extra layer of reward and engagement, ensuring that the experience remains exciting and accessible for participants of all skill levels.",
+            "short":"Sudocrypt, Exun's flagship event, is a 36-hour Capture The Flag and Cryptic Hunt that tests cryptography, problem-solving, and analytical skills, with evolving challenges, hints, and giveaways."
+        },
+        "Turing Test": {
+            "long":"",
+            "short":""
+        },
+        "Build: Hackathon": {
+            "long":"The hackathon is an engaging event designed for participants to develop and present forward-thinking ideas by combining critical thinking with the latest technologies. Teams are tasked with creating a web, mobile, or command line application based on a provided prompt, working under a time limit to deliver their projects. After an initial round, 6-8 teams will qualify for the finals, where they will tackle additional side tasks and pitch their ideas to a panel of expert judges, making the event a comprehensive test of innovation, teamwork, and presentation skills.",
+            "short":"The hackathon challenges teams to develop innovative web, mobile, or command line applications based on a given prompt, culminating in a final pitch to expert judges after qualifying rounds."
+        },
+        "Crossword": {
+            "long":"The crossword competition is a true test of wit, wordplay, and clever puns. It begins with an online preliminary round, from which the six best teams will move on to the finals. The final stage will use a grid-style format incorporating the bounce-pounce system, adding an extra layer of strategy. Every clue and answer is centered around computers, technology, famous tech personalities, and relevant IT terminologies, making it a specialized challenge for tech enthusiasts.",
+            "short":"The crossword challenge features an online preliminary round, with six top teams advancing to a finals round focused on computers, technology, and IT, using a bounce-pounce grid style."
+        },
+        "Hardware": {
+            "long":"Dive into an exciting world where cutting-edge components, innovative networking equipment, and the software that powers them take the spotlight! Hardware is at the core of all technology—every interaction we have with tech starts and ends with it. This event emphasizes the crucial role hardware plays in modern technology. Participants are invited to showcase their skills as they take on and solve a series of hardware-related challenges. It's a unique opportunity to demonstrate expertise, gain hands-on experience, and celebrate the powerful intersection of hardware and innovation.",
+            "short":"This event highlights cutting-edge hardware, networking gear, and software, inviting participants to demonstrate their skills in solving hardware-focused challenges."
+        },
+        "Girls In Tech": {
+            "long":"The Girls in Tech event is designed to inspire and empower girls with a passion for technology, providing them with an inclusive and educational environment. Following an initial shortlisting, participants will be randomly paired into groups of two for the offline round. This event emphasizes collaboration and problem-solving, aiming to bridge the gender gap and encourage more women to pursue careers in STEM. With no prerequisites required, it offers an open opportunity for girls to explore their potential, connect with like-minded peers, and develop skills that will help them grow in the tech world.",
+            "short":"The Girls in Tech event empowers tech-enthusiast girls by building a supportive community. Shortlisted participants are paired for an offline round, promoting collaboration to increase women's participation in STEM."
+        },
+        "Group Discussion": {
+            "long":"Embark on an inspiring journey that challenges participants to rethink fundamental principles and present compelling, thought-provoking ideas. This event emphasizes growth through well-reasoned arguments, solid facts, and strong conviction rather than mere victory. It encourages a stimulating exchange of ideas focused on the intersection of technology and ethics. The first round will involve video submissions responding to prompts announced on (date). Selected participants will then proceed to the offline semifinal and final rounds on (date). Remember, it's not just about debating—those who shape the questions often shape the outcome!",
+            "short":"This event invites participants to rethink core principles and present arguments on technology and ethics. Starting with video submissions, selected participants advance to offline semifinal and final rounds."
+        },
+        "ExML": {
+            "long":"ExML 2024 is an exciting event that challenges participants to explore the frontiers of artificial intelligence. In this dynamic competition, teams will face a complex AI-based task that requires not only technical expertise but also strategic thinking and real-time innovation. The problem presented will assess the participants' abilities to develop intelligent systems capable of adapting to evolving and unpredictable conditions. Performance will be measured based on the technical proficiency of the solutions as well as the creativity and innovation behind them. This ensures that the most inventive and effective systems are recognized and rewarded, making ExML 2024 a premier platform for showcasing AI talent and ingenuity.",
+            "short":"ExML 2024 is a fast-paced competition where teams tackle complex AI tasks, showcasing their technical skills and innovative thinking in real-time to develop adaptable intelligent systems."
+        },
+        "CyberSecurity": {
+            "long":"",
+            "short":""
+        },
+        "SpaceTech": {
+            "long":"SpaceTech is an exciting event that immerses students in the captivating realm of space exploration and technology. This competition challenges participants to innovate and develop solutions inspired by actual space missions and cutting-edge technologies. Students will tackle prompts designed to push the boundaries of what is possible in space systems and engineering. Teams will explore various concepts, presenting their ideas through comprehensive proposals, presentations, and technical solutions. SpaceTech emphasizes creativity, problem-solving, and collaboration, making it the ideal platform for students who are passionate about space and eager to explore its limitless possibilities. Get ready to unleash your creativity, venture into the unknown, and elevate your passion for space to new heights!",
+            "short":"SpaceTech invites students to explore space exploration and technology by innovating solutions inspired by space missions. Participants will present detailed proposals and technical solutions while fostering creativity and collaboration."
+        },
+        "DomainSquare+ Gaming: PC": {
+            "long":"The Preliminary Rounds will be hosted online on the 30th and 31st of October. Participants must join the Discord Server since all communication will be done there. Participants must have at least a low-end PC/Laptop for the Preliminaries. The remaining rounds will be hosted within school grounds on 9th and 10th November. The Discord Server link will be sent to the participants' emails shortly after registration. The equipment will be provided for the offline rounds.",
+            "short":""
+        },
+        "DomainSquare+ Gaming: Surprise": {
+            "long":"Preliminary Rounds will be hosted online on the 30th and 31st of October. It is mandatory for participants to join the Discord Server as all communication will be done there. The Online Prelims will be hosted on a PC/Laptop. Participants must have at least a low-end PC/Laptop for the Preliminary round. The remaining rounds will be hosted within school grounds on 9th and 10th November. The Discord Server link will be sent to the emails of the participants shortly after registration. The equipment will be provided for the offline rounds.",
+            "short":"A hybrid gaming event with a surprise software format. Teams of one compete in online prelims using low-end PCs, with offline finals at the school. All equipment is provided for the offline rounds."
+        },
+        "DomainSquare+ Gaming: Quiz": {
+            "long":"A quiz crafted for all gaming enthusiasts awaits! The preliminary round will be hosted online via Zoom on 31st October. It is mandatory for participants to join on time. If you face any issues during the duration of the quiz, kindly let a team member know in due time. The offline round will be held on 9th and 10th November.",
+            "short":"A hybrid gaming quiz for teams of two, starting with an online prelim on Zoom and concluding with offline rounds. Participants must join on time, and any issues must be reported promptly."
+        },
+        "CubXL 2x2": {
+            "long":"Stoke the spirit of competition and join us for a day of speed, skill, and thrill. A smaller but faster event bringing together talented students from various schools to showcase their cubing prowess in a competitive yet friendly atmosphere. Participants will compete in timed rounds and will be following all the WCA regulations. Qualify the 1st online round to join us offline.",
+            "short":"A fast-paced 2x2 speedcubing competition for students from grades 6-12, with online prelims and offline finals. Participants will compete under WCA regulations, combining speed and strategy."
+        },
+        "CubXL 3x3": {
+            "long":"Ignite your competitive spirit and join us for an exciting day of speed and skill at the 3x3 event. Bringing together talented students from various schools to showcase their cubing prowess in a competitive yet friendly atmosphere. Participants will compete in timed rounds and will be following all the WCA regulations. Pass the preliminary round to join us offline in the finals.",
+            "short":"A speedcubing event for students from grades 6-12, starting with an online round followed by offline finals. Competitors must follow WCA regulations, showcasing their cubing skills in timed rounds."
+        },
+        "CubXL Pyraminx": {
+            "long":"Unleash your competitive spirit as you dive into the exciting world of speed in strategy with Pyraminx! A unique twisty puzzle event brings together seasoned and beginner cubers from various schools to showcase their cubing skills in a competitive yet friendly atmosphere. Participants will compete in timed rounds and follow all the WCA regulations Qualify the 1st online round to vie in the final round.",
+            "short":"A Pyraminx speedcubing event for students from grades 6-12, starting with online prelims and concluding with offline finals. Competitors must follow WCA regulations, showcasing their skills in timed rounds."
+        },
+        "CubXL Surprise": {
+            "long":"It's all in the name… Brace yourself for this exhilarating event where adaptability and strategy are key. To solve the challenging prompts given on the spot, one must think out of the box!",
+            "short":"A thrilling offline cubing event with a surprise twist. Participants from grades 6-12 must adapt quickly to solve challenging prompts given on the spot, requiring creativity and strategic thinking."
+        },
+        "Roboknights: Robosoccer": {
+            "long":"In this event, wireless robots race around a scaled-down football arena, striving to score more goals than the opponents.\n\nRobot Specifications:\nNo. of robots allowed - 2 per team (wireless only, wired robots not allowed)\nSize - 30 cm x 30 cm x 30 cm with 5% tolerance\nWeight - 5 kg with 5% tolerance\n\nPower Source - Batteries must be sealed, immobilized electrolyte type (gel cell, lithium, NiCad, or dry cells), at any point it should not cross 12 V.\n\nGameplay - The game comprises 2 halves with each half being 3 minutes long with 1 minute of half time. No ball trapping is allowed. Teams score by getting the ball in the opponent's goal. Intentional damage will lead to disqualification.\n\nReady-made robots and kits are not allowed to compete in the competition.",
+            "short":"A thrilling offline competition where wireless robots compete in a football match. Teams of three build two robots to score goals in 3-minute halves, adhering to size and power regulations."
+        },
+        "Roboknights: Mx+C V5.0 Line Following Robot": {
+            "long":"Teams will build their own autonomous robots to achieve maximum speed on a specified track. The robot must start behind the starting line and is considered to finish when any part crosses the line after a full lap, while following the black line.\n\nRobot Specifications:\nSize - 25 cm x 25 cm x 20 cm with 5% tolerance\nWeight - 2 kg with 5% tolerance\n\nPower Source - Batteries must be sealed, immobilized electrolyte type (gel cell, lithium, NiCad, or dry cells), at any point it should not cross 12 V.\n\nThe Robot must follow a black line of 25 mm width on a white surface. It should also be able to handle acute angled turns, switchbacks, hairpins, line gaps and intersections.\n\nThe robot must be autonomous. No wireless communication between bot and operator will be allowed. Bluetooth, RF Module, etc are not allowed on both.\n\nReady-made robots and kits are not allowed to compete in the competition",
+            "short":"Teams build autonomous robots for a high-speed line-following race on a specified track. Robots must handle acute turns and intersections while following a black line, with strict size and weight constraints."
+        }
     }
 }
