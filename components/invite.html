@@ -98,24 +98,31 @@
                     }
                     return string
                 }
-
+                function Filter(string) {
+                    var array=[".", "&", ",", ":", "/"]
+                    for (let index = 0; index < array.length; index++) {
+                        const element = array[index];
+                        string=string.replaceAll(element, "")
+                    }
+                    return string
+                }
                 lines.forEach((line) => {
                     if (line.startsWith('# ')) {
                         var title = trim(line.substring(2), ["#", "*"])
-                        var id = trim(title.replace(/\s+/g, '-').toLowerCase(), ["#", "*"])
+                        var id = Filter(trim(title.replace(/\s+/g, '-').toLowerCase(), ["#", "*"]))
                         const item = document.createElement('li');
                         item.setAttribute("class", "w-full flex")
                         item.innerHTML = `<a href="#${id}" class="font-semibold px-2 py-[2px] w-full border border-transparent rounded-md hover:bg-black/[0.03] hover:border-black/[0.06]">${title}</a>`;
                         navList.appendChild(item);
                     } else if (line.startsWith('## ')) {
                         const title = trim(line.substring(3), ["#", "*"])
-                        const id = trim(title.replace(/\s+/g, '-').toLowerCase(), ["#", "*"])
+                        const id = Filter(trim(title.replace(/\s+/g, '-').toLowerCase(), ["#", "*"]))
                         const item = document.createElement('li');
                         item.innerHTML = `<a href="#${id}" class="ml-2 font-medium px-2 py-[2px] w-full border border-transparent rounded-md hover:bg-black/[0.03] hover:border-black/[0.06]">${title}</a>`;
                         navList.appendChild(item);
                     } else if (line.startsWith('### ')) {
                         const title = trim(line.substring(4), ["#", "*"])
-                        const id = trim(title.replace(/\s+/g, '-').toLowerCase(), ["#", "*"])
+                        const id = Filter(trim(title.replace(/\s+/g, '-').toLowerCase(), ["#", "*"]))
                         const item = document.createElement('li');
                         item.innerHTML = `<a href="#${id}" class="ml-7 hover:underline">${title}</a>`;
                         navList.appendChild(item);
