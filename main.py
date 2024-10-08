@@ -210,4 +210,8 @@ def submit_registrations():
     accounts.set(request.cookies["email"], account)
     return make_response(True)
 
+@app.get("/invite")
+def invite():
+    return render("invite", locals() | globals())
+
 app.run(host="0.0.0.0", port=int(sys.argv[1]))

@@ -7,7 +7,7 @@
         <a href="/">Home</a>
         <a href="/events">Events</a>
         <py>
-            if (request.path != "/login") and (request.cookies["email"] == "exun@dpsrkp.net"):
+            if ("email" in request.cookies) and (request.path != "/login") and (request.cookies["email"] == "exun@dpsrkp.net"):
                 return "<a href='/admin'>Admin</a>"
             else:
                 return ""
