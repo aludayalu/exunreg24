@@ -29,6 +29,8 @@
                         return "You have no registrations"
                     out=""
                     for event in registrations:
+                        if len(registrations[event])==0:
+                            continue
                         event_name=events.get(event)["name"]
                         out+=render("summary/summary_card", locals() | globals()).render
                     return out
