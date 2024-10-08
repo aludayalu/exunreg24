@@ -90,11 +90,6 @@ def account_details():
 
 @app.get("/")
 def home():
-    if not authd():
-        return redirect("/login")
-    account=account_details()
-    if account==None:
-        return redirect("/complete_signup")
     return render("index", locals() | globals())
 
 @app.get("/login")
