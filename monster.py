@@ -40,7 +40,7 @@ class Render():
         self.render=render
 
 class Flask(Flask):
-    def __init__(self, import_name: str, static_url_path: str = None, static_folder: str | PathLike = "static", static_host: str = None, host_matching: bool = False, subdomain_matching: bool = False, template_folder: str = "templates", instance_path: str = None, instance_relative_config: bool = False, root_path: str = None):
+    def __init__(self, import_name, static_url_path = None, static_folder = "static", static_host = None, host_matching = False, subdomain_matching = False, template_folder = "templates", instance_path = None, instance_relative_config = False, root_path = None):
         super().__init__(import_name, static_url_path, static_folder, static_host, host_matching, subdomain_matching, template_folder, instance_path, instance_relative_config, root_path)
         @self.route('/<path:path>')
         def catch_all(path):
