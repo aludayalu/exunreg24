@@ -222,4 +222,13 @@ def submit_registrations():
 def invite():
     return render("invite", locals() | globals())
 
+@app.get("/summary")
+def summary():
+    if not authd():
+        return redirect("/login")
+    account=account_details()
+    if account==None:
+        return redirect("/complete_signup")
+    return render("summary/summary", locals() | globals())
+
 app.run(host="0.0.0.0", port=int(sys.argv[1]))
