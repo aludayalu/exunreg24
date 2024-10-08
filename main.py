@@ -177,6 +177,10 @@ def event_page():
     except:
         return redirect("/events")
     event=events.get(id)
+    participant_details={}
+    for x in account["registrations"]:
+        for y in account["registrations"][x]:
+            participant_details[y["email"]]=y
     if event==None:
         return redirect("/events")
     return render("events/event", locals() | globals())

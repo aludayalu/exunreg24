@@ -25,6 +25,9 @@
         }
         var modalOpen=Signal("modalOpen", false)
     </script>
+    <script>
+        var participant_details=<py>participant_details</py>
+    </script>
     <py>
         return open("components/toast.html").read()
     </py>
@@ -131,7 +134,6 @@
                     <py>
                         registrations=account['registrations']
                         id=hashlib.sha256(event['name'].encode()).hexdigest()[:6]
-                        print(registrations, id)
                         if id in registrations:
                             registrations=registrations[id]
                         else:
