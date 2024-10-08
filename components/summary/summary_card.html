@@ -33,7 +33,7 @@
                     if i==len(event_registrations)-1:
                         row=last
                     row=row.replace("{name}", event_registrations[i]["name"])
-                    row=row.replace("{class}", event_registrations[i]["class"])
+                    row=row.replace("{class}", str(event_registrations[i]["class"]))
                     row=row.replace("{i}", str(i+1))
                     out+=row
                 return out
