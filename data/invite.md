@@ -157,8 +157,3 @@ You are welcome to mail us any time at <exun@dpsrkp.net>
 - Participants represent their school and its nationality regardless of their current residence.
 
 - In case of a tie for the overall position, the team which has more podium placements shall be awarded the trophy.
-
-\
-
-
-<!--EndFragment-->
