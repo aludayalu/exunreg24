@@ -81,7 +81,7 @@ Registration can be done at [**reg.exunclan.com**](https://reg.exunclan.com/). O
 
 Teams can be edited by the representative on the website itself by clicking on the "Registration Panel" button on the event details page.
 
-We will be setting up the [**queries.exunclan.com**](https://queries.exunclan.com) ****website that will serve as the primary mode for addressing queries. It will receive the quickest responses. Only the registered participants and the team representatives will be able to use the platform.
+For any queries you may contact us at **exun@dpsrkp.net**
 
 Participants are strongly encouraged to complete registration at the earliest, as they must be registered before the respective deadlines to participate in events with preliminary rounds.
 
