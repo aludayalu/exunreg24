@@ -30,6 +30,19 @@
                         <button class="text-black py-2.5 px-10 rounded-xl text-sm md:text-base font-semibold text-black/[0.95] hover:scale-[1.02] transition w-fit border border-[#338EF7]" onclick="window.location.href='/invite'">
                             View Invite
                         </button>
+                        <py>
+                            out="""<button class="text-black py-2.5 px-10 rounded-xl text-sm md:text-base font-semibold text-black/[0.95] hover:scale-[1.02] transition w-fit border border-[#338EF7]" onclick="window.location.href='/summary'">
+                                Registration Summary
+                            </button>"""
+                            if authd():
+                                account=account_details()
+                                if account!=None:
+                                    regs=0
+                                    for x in account["registrations"]:
+                                        regs+=len(account["registrations"][x])
+                                    if regs!=0:
+                                        return out
+                        </py>
                     </div>
                 </div>
                 
