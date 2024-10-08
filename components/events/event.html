@@ -24,15 +24,20 @@
             document.getElementById('participants').scrollHeight=document.getElementById('participants').scrollTop=document.getElementById('participants').scrollHeight
         }
         var modalOpen=Signal("modalOpen", urlParams.get("open")=="true")
+    </script>
+
+    <script>
+        var participant_details=<py>participant_details</py>
+    </script>
+
+    <script defer>
         if (modalOpen.Value()) {
             setTimeout(()=>{
                 document.getElementById("modal_0").showModal()
             }, 1000)
         }
     </script>
-    <script>
-        var participant_details=<py>participant_details</py>
-    </script>
+
     <py>
         return open("components/toast.html").read()
     </py>
