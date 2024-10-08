@@ -24,6 +24,7 @@
                 (["institution_name", "address", "principals_name"]).forEach(element => {
                     extra+="&"+element+"="+encodeURIComponent(document.getElementById(element).value)
                 })
+                extra+="&individual="+encodeURIComponent(GetSignal("Individual").Value())
                 fetch("/api/complete_signup?fullname="+encodeURIComponent(document.getElementById("fullname").value)+extra).then(async (x)=>{
                     x=await x.json()
                     if (x) {

@@ -160,7 +160,8 @@ def api_for_completing_signup():
     fullname=args["fullname"]
     phone_number=args["phone_number"]
     principals_email=args["principals_email"]
-    out={"name":fullname, "phone_number":phone_number, "principals_email":principals_email, "registrations":{}, "email":email}
+    individual=args["individual"]
+    out={"name":fullname, "phone_number":phone_number, "principals_email":principals_email, "registrations":{}, "email":email, "individual":individual}
     for x in ["institution_name", "address", "principals_name"]:
         out[x]=args[x]
     accounts.set(email, out)
