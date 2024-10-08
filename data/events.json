@@ -22,7 +22,7 @@
         "CubXL Pyraminx":"cubxl.svg",
         "CubXL Surprise":"cubxl.svg",
         "Roboknights: Robosoccer":"robotics.svg",
-        "Roboknights: Mx+C V5.0  Line Following Robot":"robotics.svg"
+        "Roboknights: Mx+C V5.0 Line Following Robot":"robotics.svg"
     },
     "default": {
         "open_to_all":false,
