@@ -219,6 +219,8 @@ def submit_registrations():
     account=account_details()
     if account==None:
         return redirect("/complete_signup")
+    for x in data["data"]:
+        print(x)
     account["registrations"][data["id"]]=data["data"]
     accounts.set(request.cookies["email"], account)
     return make_response(True)

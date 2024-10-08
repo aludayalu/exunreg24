@@ -215,12 +215,17 @@
                                     Toast("Invalid Email in participant #"+String(i+1))
                                     return
                                 }
+                                var classes=<py>event['eligibility']</py>
                                 if (index==2 && String(inputs[2].value).length!=10) {
                                     Toast("Invalid phone number in participant #"+String(i+1))
                                     return
                                 }
                                 if (index==3 && !(12>=inputs[3].value && inputs[3].value>=6)) {
                                     Toast("Invalid Class (6-12) in participant #"+String(i+1))
+                                    return
+                                }
+                                if (index==3 && !(classes[1]>=inputs[3].value && inputs[3].value>=classes[0])) {
+                                    Toast("Ineligible class for participants #"+String(i+1)+" for this event")
                                     return
                                 }
                                 var element = inputs[index];
