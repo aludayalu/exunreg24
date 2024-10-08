@@ -52,36 +52,7 @@
         </div>
 
         <script>
-            const markdownText = `# Main Section
-Welcome to the Markdown Test Document!
-## Subsection 1
-This subsection includes various elements:
-
-# Hello Section
-
-### List Example
-- Item 1
-- Item 2
-- Subitem 1
-- Subitem 2
-### Numbered List
-1. First Item
-2. Second Item
-## Subsection 2
-Here are some other features:
-### Code Block
-\`\`\`javascript
-console.log('Hello, World!');
-\`\`\`
-### Additional Formatting
-You can also add **bold text**, *italic text*, and [links](https://example.com).
-### Table Example
-| Header 1 | Header 2 | Header 3 |
-|----------|----------|----------|
-| Row 1   | Data 1   | Data 2   |
-| Row 2   | Data 3   | Data 4   |
-| Row 3   | Data 5   | Data 6   |
-`;
+            const markdownText = `<py>escapeString(open("data/invite.md").read())</py>`
 
             const htmlContent = marked(markdownText);
             document.getElementById('html-content').innerHTML = htmlContent;
