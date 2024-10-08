@@ -17,10 +17,12 @@ app.config['COMPRESS_MIN_SIZE'] = 500
 Compress(app)
 
 def redirect(path):
-    return make_response(f"""<script>window.location.href="{path}"</script>""")
+    resp = Response(f"""<script>window.location.href="{path}"</script>""")
+    resp.headers["Access-Control-Allow-Origin"] = "*"
+    return resp
 
 def make_response(data, mimetype=None, status=None):
-    if type(data) in [str, int, float, bool, list, dict]:
+    if type(data) in [str,int, float, bool, list, dict]:
         data = json.dumps(data)
     resp = Response(data, mimetype=mimetype, status=status)
     resp.headers["Access-Control-Allow-Origin"] = "*"
@@ -229,6 +231,7 @@ def summary():
     account=account_details()
     if account==None:
         return redirect("/complete_signup")
+    registrations=account["registrations"]
     return render("summary/summary", locals() | globals())
 
 app.run(host="0.0.0.0", port=int(sys.argv[1]))
