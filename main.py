@@ -130,10 +130,7 @@ def submit_otp():
 
 @app.get("/events")
 def events_page():
-    if not authd():
-        return redirect("/login")
-    account=account_details()
-    if account==None:
+    if authd() and account_details()==None:
         return redirect("/complete_signup")
     return render("events/events_page", locals() | globals())
 
