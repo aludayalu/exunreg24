@@ -46,9 +46,10 @@
                 <div class="w-full justify-center flex flex-wrap gap-8">
                     <post>
                         out=""
-                        for event in events.get_all():
-                            event_id=event[0]
-                            event=json.loads(event[1])
+                        all_events=events.get_all()
+                        for event in all_events:
+                            event_id=event
+                            event=all_events[event]
                             current=render("events/event_card", locals() | globals()).render.replace("{image}", event["image"]).replace("{name}", event["name"]).replace("{mode}", event["mode"]).replace("{participants}", str(event["participants"])).replace("{id}", event_id)
                             if event["open_to_all"]:
                                 current=current.replace("{classes}", "open to all")
