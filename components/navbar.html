@@ -8,7 +8,13 @@
         <a href="/events">Events</a>
         <py>
             if ("email" in request.cookies) and (request.path != "/login") and (request.cookies["email"] == "exun@dpsrkp.net"):
-                return "<a href='/admin'>Admin</a>"
+                return '<a href="/admin">Admin</a>'
+            else:
+                return ""
+        </py>
+        <py>
+            if ("email" in request.cookies) and authd() and account_details()!=None:
+                return '<a href="/summary">Registration Summary</a>'
             else:
                 return ""
         </py>
