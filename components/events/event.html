@@ -30,14 +30,6 @@
         var participant_details=<py>participant_details</py>
     </script>
 
-    <script defer>
-        if (modalOpen.Value()) {
-            setTimeout(()=>{
-                document.getElementById("modal_0").showModal()
-            }, 3000)
-        }
-    </script>
-
     <py>
         return open("components/toast.html").read()
     </py>
@@ -56,6 +48,20 @@
                 }
             }, 10)
         </script>
+        <py>
+            out="""
+            <script defer>
+                if (modalOpen.Value()) {
+                    setTimeout(()=>{
+                        document.getElementById("modal_0").showModal()
+                    }, 3000)
+                }
+            </script>
+            """
+            if "email" in account:
+                return out
+            return ""
+        </py>
     </head>
     <body>
         <py>
@@ -80,7 +86,7 @@
                 <div class="flex flex-col gap-2 sm:pl-5 pb-5 w-full">
                     <div class="flex items-center justify-between">
                         <p class="text-4xl font-semibold hidden sm:block"><py>event['name']</py></p>
-                        <button class="py-[8px] rounded-xl px-6 py-2 bg-[#338EF7] text-white text-sm lg:text-base font-semibold hover:scale-[1.02] transition shadow-[#338EF7]/[0.6] shadow-lg whitespace-nowrap ml-5 mb-5 hidden sm:block" onclick="modal_0.showModal();modalOpen.setValue(true)">Registration Panel</button>
+                        <button class="py-[8px] rounded-xl px-6 py-2 bg-[#338EF7] text-white text-sm lg:text-base font-semibold hover:scale-[1.02] transition shadow-[#338EF7]/[0.6] shadow-lg whitespace-nowrap ml-5 mb-5 hidden sm:block" onclick="<py>'modal_0.showModal();modalOpen.setValue(true)' if 'email' in account else 'window.location.href=\'/login\''</py>">Registration Panel</button>
                     </div>
                     <div class="flex flex-col justify-center mb-1.5 items-center sm:items-start">
                         <p class="text-lg font-medium">Max Participants allowed: <py>event['participants']</py></p>
@@ -96,7 +102,9 @@
                     
                     <p class="text-black/80 text-sm text-center sm:text-left sm:text-base"><py>event['descriptions']['short'][:300]</py></p>
 
-                    <button class="py-[8px] rounded-xl px-6 py-2 bg-[#338EF7] text-white text-sm lg:text-base font-semibold hover:scale-[1.02] transition shadow-[#338EF7]/[0.6] shadow-lg whitespace-nowrap mt-3.5 block sm:hidden" onclick="modal_0.showModal();modalOpen.setValue(true)">
+                    <button class="py-[8px] rounded-xl px-6 py-2 bg-[#338EF7] text-white text-sm lg:text-base font-semibold hover:scale-[1.02] transition shadow-[#338EF7]/[0.6] shadow-lg whitespace-nowrap mt-3.5 block sm:hidden" onclick="
+                    <py>'modal_0.showModal();modalOpen.setValue(true)' if 'email' in account else 'window.location.href=\'/login\''</py>
+                    ">
                         Registration Panel
                     </button>
                 </div>

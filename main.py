@@ -171,11 +171,12 @@ def name_hash(x):
 
 @app.get("/event")
 def event_page():
-    if not authd():
-        return redirect("/login")
-    account=account_details()
-    if account==None:
+    if authd() and account_details()==None:
         return redirect("/complete_signup")
+    if authd():
+        account=account_details()
+    else:
+        account={"registrations":{}}
     args=dict(request.args)
     try:
         id=args["id"]
@@ -184,14 +185,15 @@ def event_page():
     event=events.get(id)
     ignore=[]
     participant_details={}
-    for x in account["registrations"]:
-        for y in account["registrations"][x]:
-            if y["email"] in participant_details and name_hash(participant_details[y["email"]]["name"])!=name_hash(y["name"]):
-                ignore.append(y["email"])
-                del participant_details[y["email"]]
-                continue
-            if y["email"] not in ignore:
-                participant_details[y["email"]]=y
+    if account!=None:
+        for x in account["registrations"]:
+            for y in account["registrations"][x]:
+                if y["email"] in participant_details and name_hash(participant_details[y["email"]]["name"])!=name_hash(y["name"]):
+                    ignore.append(y["email"])
+                    del participant_details[y["email"]]
+                    continue
+                if y["email"] not in ignore:
+                    participant_details[y["email"]]=y
     if event==None:
         return redirect("/events")
     return render("events/event", locals() | globals())
