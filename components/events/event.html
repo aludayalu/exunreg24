@@ -183,6 +183,7 @@
                                 var out=String(participantsHTML)
                                 out=out.replaceAll("{name}", x["name"])
                                 out=out.replaceAll("{i}", String(i))
+                                out=out.replaceAll("{n}", String(i+1))
                                 out=out.replace("{class}", String(x["class"]))
                                 out=out.replace("{phone}", x["phone"])
                                 out=out.replace("{email}", x["email"])
@@ -207,16 +208,20 @@
                             var inputs=Array.from(x.children).slice(0, 4)
                             for (let index = 0; index < inputs.length; index++) {
                                 if (index==0 && !isValidEmail(inputs[0].value)) {
-                                    Toast("Invalid Email in participant #"+String(i))
+                                    Toast("Invalid Email in participant #"+String(i+1))
+                                    return
+                                }
+                                if (index==2 && String(inputs[2].value).length!=10) {
+                                    Toast("Invalid phone number in participant #"+String(i+1))
                                     return
                                 }
                                 if (index==3 && !(12>=inputs[3].value && inputs[3].value>=6)) {
-                                    Toast("Invalid Class (6-12) in participant #"+String(i))
+                                    Toast("Invalid Class (6-12) in participant #"+String(i+1))
                                     return
                                 }
                                 var element = inputs[index];
                                 if (element.value=="") {
-                                    Toast("Missing field value in participant #"+String(i))
+                                    Toast("Missing field value in participant #"+String(i+1))
                                     return
                                 }
                             }
