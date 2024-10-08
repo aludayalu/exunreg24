@@ -115,21 +115,23 @@
                         document.getElementById(id).style.color="#456484"
                         const item = document.createElement('li');
                         item.setAttribute("class", "w-full flex")
-                        item.innerHTML = `<a href="#${id}" class="font-bold w-full block px-2 py-[2px] w-full border border-transparent rounded-md hover:bg-black/[0.03] hover:border-black/[0.06] truncate">${title}</a>`;
+                        item.innerHTML = `<a href="#${id}" class="font-bold flex-1 block px-2 py-[2px] w-full border border-transparent rounded-md hover:bg-black/[0.03] hover:border-black/[0.06] truncate">${title}</a>`;
                         navList.appendChild(item);
                     } else if (line.startsWith('## ')) {
                         const title = trim(line.substring(3), ["#", "*"])
                         const id = Filter(trim(title.replace(/\s+/g, '-').toLowerCase(), ["#", "*"]))
                         document.getElementById(id).style.color="#456484"
                         const item = document.createElement('li');
-                        item.innerHTML = `<a href="#${id}" class="ml-3 w-full block font-medium px-2 py-[2px] w-full border border-transparent rounded-md hover:bg-black/[0.03] hover:border-black/[0.06] truncate">${title}</a>`;
+                        item.setAttribute("class", "w-full flex")
+                        item.innerHTML = `<a href="#${id}" class="ml-3 flex-1 block font-medium px-2 py-[2px] w-full border border-transparent rounded-md hover:bg-black/[0.03] hover:border-black/[0.06] truncate">${title}</a>`;
                         navList.appendChild(item);
                     } else if (line.startsWith('### ')) {
                         const title = trim(line.substring(4), ["#", "*"])
                         const id = Filter(trim(title.replace(/\s+/g, '-').toLowerCase(), ["#", "*"]))
                         document.getElementById(id).style.color="#456484"
                         const item = document.createElement('li');
-                        item.innerHTML = `<a href="#${id}" class="ml-8 font-light hover:underline w-full block truncate">${title}</a>`;
+                        item.setAttribute("class", "w-full flex")
+                        item.innerHTML = `<a href="#${id}" class="ml-8 font-light hover:underline flex-1 block truncate">${title}</a>`;
                         navList.appendChild(item);
                     }
                 });
