@@ -3,7 +3,7 @@ from monster import render, Flask, escapeString
 import sys, json
 import hashlib, base64
 import resend, secrets_parser
-import litedb
+import litedb, re
 from flask_compress import Compress
 
 accounts=litedb.get_conn("accounts")
@@ -211,6 +211,13 @@ def admin():
     else:
         return redirect("/")
 
+
+def is_valid_email(email):
+    pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+    if re.match(pattern, email):
+        return True
+    return False
+
 @app.post("/submit_registrations")
 def submit_registrations():
     data = request.get_json()
@@ -219,8 +226,15 @@ def submit_registrations():
     account=account_details()
     if account==None:
         return redirect("/complete_signup")
+    event=events.get(data["id"])
     for x in data["data"]:
-        print(x)
+        if not is_valid_email(x["email"]):
+            return make_response(False)
+        x["class"]=int(x["class"])
+        if not (event["eligibility"][1]>=x["class"] and x["class"]>=event["eligibility"][0]):
+            return make_response(False)
+        if len(str(x["phone"]))!=10:
+            return make_response(False)
     account["registrations"][data["id"]]=data["data"]
     accounts.set(request.cookies["email"], account)
     return make_response(True)

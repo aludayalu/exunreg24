@@ -241,8 +241,13 @@
                             }), "headers": {
                                 "Content-Type":"application/json"
                             }
-                        }).then((x)=>{
-                            Toast("Registrations Update Successfully", 5000, "#17C964")
+                        }).then(async (x)=>{
+                            x=await x.json()
+                            if (x) {
+                                Toast("Registrations Update Successfully", 5000, "#17C964")
+                            } else {
+                                Toast("Registration Submission Failed. Kindly contact exun@dpsrkp.net", 10000)
+                            }
                         })
                     }
                 </script>
