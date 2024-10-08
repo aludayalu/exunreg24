@@ -12,7 +12,9 @@
         </post>
     </head>
     <body>
-
+        <py>
+            render("navbar", locals() | globals())
+        </py>
 
         <div class="w-full flex flex-col gap-24 pt-10">
             <div class="flex flex-col-reverse lg:flex-row justify-center gap-10 lg:gap-24 pr-8 lg:pr-14 pl-8 sm:pl-20 lg:pl-40">
