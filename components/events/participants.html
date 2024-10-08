@@ -3,49 +3,46 @@
         Participant #{i}
     </p>
     <div style="padding: 10px;">
-        <div class="wrapper">
-            <input class="w-full px-2.5 py-3 text-sm bg-black/[0.06] border border-black/[0.08] focus:outline-none rounded-lg"
+        <input class="w-full px-2.5 py-3 text-sm bg-black/[0.06] border border-black/[0.08] focus:outline-none rounded-lg"
             placeholder="Participant Email (required)"
             value="{email}"
             style="margin-bottom: 5px;"
-            >
-            </input>
-        </div>
-        <div class="wrapper">
-            <input class="w-full px-2.5 py-3 text-sm bg-black/[0.06] border border-black/[0.08] focus:outline-none rounded-lg disabled:bg-black/[0.2] disabled:cursor-not-allowed"
+        >
+        </input>
+
+        <input class="w-full px-2.5 py-3 text-sm bg-black/[0.06] border border-black/[0.08] focus:outline-none rounded-lg disabled:bg-black/[0.2] disabled:cursor-not-allowed"
             placeholder="Participant Name" disabled
             title="Kindly fill the participant's email to proceed"
             value="{name}"
             style="margin-bottom: 5px;"
-            >
-            </input>
-        </div>
-        <div class="wrapper">
-            <input class="w-full px-2.5 py-3 text-sm bg-black/[0.06] border border-black/[0.08] focus:outline-none rounded-lg disabled:bg-black/[0.2] disabled:cursor-not-allowed"
+        >
+        </input>
+
+        <input class="w-full px-2.5 py-3 text-sm bg-black/[0.06] border border-black/[0.08] focus:outline-none rounded-lg disabled:bg-black/[0.2] disabled:cursor-not-allowed"
             placeholder="Participant Phone Number" disabled
             title="Kindly fill the participant's email to proceed"
             value="{phone}"
             type="number"
             style="margin-bottom: 5px;"
             >
-            </input>
-        </div>
-        <div class="wrapper">
-            <input class="w-full px-2.5 py-3 text-sm bg-black/[0.06] border border-black/[0.08] focus:outline-none rounded-lg disabled:bg-black/[0.2] disabled:cursor-not-allowed"
+        </input>
+
+
+        <input class="w-full px-2.5 py-3 text-sm bg-black/[0.06] border border-black/[0.08] focus:outline-none rounded-lg disabled:bg-black/[0.2] disabled:cursor-not-allowed"
             placeholder="Participant Class" type="number" disabled
             title="Kindly fill the participant's email to proceed"
             value="{class}"
             style="margin-bottom: 5px;"
             >
-            </input>
-        </div>
+        </input>
+
         <script>
             (()=>{
                 var inputs=[
-                    document.currentScript.parentElement.children.item(0).children.item(0),
-                    document.currentScript.parentElement.children.item(1).children.item(0),
-                    document.currentScript.parentElement.children.item(2).children.item(0),
-                    document.currentScript.parentElement.children.item(3).children.item(0)
+                    document.currentScript.parentElement.children.item(0),
+                    document.currentScript.parentElement.children.item(1),
+                    document.currentScript.parentElement.children.item(2),
+                    document.currentScript.parentElement.children.item(3)
                 ]
                 inputs[1].oninput=(x)=>{
                     ChangeField({i}, "name", x.target.value)
@@ -68,6 +65,12 @@
                 }
                 inputs[0].oninput=(event)=>{
                     ChangeField({i}, "email", event.target.value)
+                    if (participant_details[event.target.value]) {
+                        var out=participant_details[event.target.value]
+                        inputs[1].value=out["name"]
+                        inputs[2].value=out["phone"]
+                        inputs[3].value=out["class"]
+                    }
                     if (isValidEmail(event.target.value)) {
                         inputs.slice(1).forEach((x)=>{
                             x.removeAttribute("title")
