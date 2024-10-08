@@ -202,6 +202,10 @@
                     }
                     function SubmitRegistration() {
                         var array= Array.from(document.getElementById("participants").children)
+                        if (array.length><py>event['participants']</py>) {
+                            Toast("Number of participants cannot be more than <py>event['participants']</py> for this event")
+                            return
+                        }
                         for (let i = 0; i < array.length; i++) {
                             var x = array[i];
                             x=x.children.item(1)
