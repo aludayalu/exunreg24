@@ -259,6 +259,10 @@
                     </button>
                     <button style="margin-right: 10px;" class="py-[8px] rounded-xl px-6 py-2 bg-[#338EF7] text-white text-sm lg:text-base font-semibold hover:scale-[1.02] transition shadow-[#338EF7]/[0.6] shadow-lg whitespace-nowrap"
                     onclick="
+                    if (<py>event['participants']</py>==participants.Value().length) {
+                        Toast(`Maximum participants (<py>event['participants']</py>) already added for this event`)
+                        return
+                    }
                     participants.setValue([...participants.Value(), {'name':'', 'email':'', 'phone':'', 'class':''}]);
                     setTimeout(scrollParticipants, 100)
                     "

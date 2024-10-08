@@ -10,6 +10,9 @@
         <post>
             return tailwind+daisyui
         </post>
+        <py>
+            return open("components/toast.html").read()
+        </py>
         <script>
             var email=""
             function isValidEmail(email) {
@@ -20,15 +23,41 @@
             function SubmitForm() {
                 var extra=""
                 extra+="&phone_number="+encodeURIComponent(document.getElementById("phone_number").value);
+                if (!isValidEmail(document.getElementById("email").value)) {
+                    Toast("Invalid email")
+                    return
+                }
+                if (String(document.getElementById("phone_number").value).length!=10) {
+                    Toast("Invalid phone number provided")
+                    return
+                }
                 extra+="&principals_email="+encodeURIComponent(document.getElementById("email").value);
+                to_stop=false
+                if (document.getElementById("fullname").value.trim()=="") {
+                    Toast("Fields cannot be empty")
+                    return
+                }
                 (["institution_name", "address", "principals_name"]).forEach(element => {
+                    if (to_stop) {
+                        return
+                    }
+                    if (document.getElementById(element).value.trim()=="") {
+                        Toast("Fields cannot be empty")
+                        to_stop=true
+                        return
+                    }
                     extra+="&"+element+"="+encodeURIComponent(document.getElementById(element).value)
                 })
+                if (to_stop) {
+                    return
+                }
                 extra+="&individual="+encodeURIComponent(GetSignal("Individual").Value())
                 fetch("/api/complete_signup?fullname="+encodeURIComponent(document.getElementById("fullname").value)+extra).then(async (x)=>{
                     x=await x.json()
                     if (x) {
                         window.location.href="/"
+                    } else {
+                        Toast("Complete Form Registration Submission Failed. Kindly contact exun@dpsrkp.net", 10000)
                     }
                 })
             }

@@ -157,12 +157,17 @@ def api_for_completing_signup():
         return make_response(False)
     args=dict(request.args)
     email=request.cookies["email"]
-    fullname=args["fullname"]
-    phone_number=args["phone_number"]
-    principals_email=args["principals_email"]
-    individual=args["individual"]
+    fullname=args["fullname"].strip()
+    phone_number=args["phone_number"].strip()
+    principals_email=args["principals_email"].strip()
+    individual=args["individual"].strip()
+    for x in [fullname, phone_number, principals_email, individual]:
+        if x=="":
+            return make_response(False)
     out={"name":fullname, "phone_number":phone_number, "principals_email":principals_email, "registrations":{}, "email":email, "individual":individual}
     for x in ["institution_name", "address", "principals_name"]:
+        if args[x].strip()=="":
+            return make_response(False)
         out[x]=args[x]
     accounts.set(email, out)
     return make_response(True)
