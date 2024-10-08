@@ -186,9 +186,7 @@
                         for (let i = 0; i < array.length; i++) {
                             var x = array[i];
                             x=x.children.item(1)
-                            var inputs=Array.from(x.children).slice(0, 4).map((x)=>{
-                                return x.children.item(0)
-                            })
+                            var inputs=Array.from(x.children).slice(0, 4)
                             for (let index = 0; index < inputs.length; index++) {
                                 if (index==0 && !isValidEmail(inputs[0].value)) {
                                     Toast("Invalid Email in participant #"+String(i))

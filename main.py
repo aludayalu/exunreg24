@@ -164,6 +164,9 @@ def api_for_completing_signup():
     accounts.set(email, out)
     return make_response(True)
 
+def name_hash(x):
+    return hashlib.sha256((x.replace(" ", "").replace("\t", "").lower()).encode()).hexdigest()
+
 @app.get("/event")
 def event_page():
     if not authd():
@@ -177,10 +180,16 @@ def event_page():
     except:
         return redirect("/events")
     event=events.get(id)
+    ignore=[]
     participant_details={}
     for x in account["registrations"]:
         for y in account["registrations"][x]:
-            participant_details[y["email"]]=y
+            if y["email"] in participant_details and name_hash(participant_details[y["email"]]["name"])!=name_hash(y["name"]):
+                ignore.append(y["email"])
+                del participant_details[y["email"]]
+                continue
+            if y["email"] not in ignore:
+                participant_details[y["email"]]=y
     if event==None:
         return redirect("/events")
     return render("events/event", locals() | globals())

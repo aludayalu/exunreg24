@@ -68,8 +68,11 @@
                     if (participant_details[event.target.value]) {
                         var out=participant_details[event.target.value]
                         inputs[1].value=out["name"]
+                        ChangeField({i}, "name", inputs[1].value)
                         inputs[2].value=out["phone"]
+                        ChangeField({i}, "phone", inputs[2].value)
                         inputs[3].value=out["class"]
+                        ChangeField({i}, "class", inputs[3].value)
                     }
                     if (isValidEmail(event.target.value)) {
                         inputs.slice(1).forEach((x)=>{
