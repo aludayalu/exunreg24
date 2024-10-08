@@ -56,6 +56,8 @@
                     x=await x.json()
                     if (x) {
                         window.location.href="/"
+                    } else {
+                        Toast("Registration Submission Failed. Kindly contact exun@dpsrkp.net", 10000)
                     }
                 })
             }
