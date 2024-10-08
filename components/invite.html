@@ -85,7 +85,6 @@ You can also add **bold text**, *italic text*, and [links](https://example.com).
 
             const htmlContent = marked(markdownText);
             document.getElementById('html-content').innerHTML = htmlContent;
-            generateNavigation(markdownText);
 
             function generateNavigation(mdText) {
                 const lines = mdText.split('\n');
@@ -115,6 +114,8 @@ You can also add **bold text**, *italic text*, and [links](https://example.com).
                     }
                 });
             }
+
+            generateNavigation(markdownText)
         </script>
 
         <py>
