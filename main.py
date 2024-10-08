@@ -1,4 +1,4 @@
-from flask import request, redirect, Response
+from flask import request, Response
 from monster import render, Flask, escapeString
 import sys, json
 import hashlib, base64
@@ -15,6 +15,9 @@ app.config['COMPRESS_LEVEL'] = 9
 app.config['COMPRESS_MIN_SIZE'] = 500
 
 Compress(app)
+
+def redirect(path):
+    return make_response(f"""<script>window.location.href="{path}"</script>""")
 
 def make_response(data, mimetype=None, status=None):
     if type(data) in [str, int, float, bool, list, dict]:
