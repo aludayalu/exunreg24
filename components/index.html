@@ -12,9 +12,7 @@
         </post>
     </head>
     <body>
-        <py>
-            render("navbar", locals() | globals())
-        </py>
+
 
         <div class="w-full flex flex-col gap-24 pt-10">
             <div class="flex flex-col-reverse lg:flex-row justify-center gap-10 lg:gap-24 pr-8 lg:pr-14 pl-8 sm:pl-20 lg:pl-40">
@@ -31,20 +29,7 @@
                         <button class="text-black py-2.5 px-10 rounded-xl text-sm md:text-base font-semibold text-black/[0.95] hover:scale-[1.02] transition w-fit border border-[#338EF7]" onclick="window.location.href='/invite'">
                             View Invite
                         </button>
-                        <py>
-                            out="""<button class="text-black py-2.5 px-10 rounded-xl text-sm md:text-base font-semibold text-black/[0.95] hover:scale-[1.02] transition w-fit border border-[#338EF7]" onclick="window.location.href='/summary'">
-                                Registration Summary
-                            </button>"""
-                            if authd():
-                                account=account_details()
-                                if account!=None:
-                                    regs=0
-                                    for x in account["registrations"]:
-                                        regs+=len(account["registrations"][x])
-                                    if regs!=0:
-                                        return out
-                            return ""
-                        </py>
+
                     </div>
                 </div>
                 
@@ -57,7 +42,7 @@
                 <h1 class="text-5xl font-bold">Our Events</h1>
 
                 <div class="w-full justify-center flex flex-wrap gap-8">
-                    <py>
+                    <post>
                         out=""
                         for event in events.get_all():
                             event_id=event[0]
@@ -69,7 +54,7 @@
                                 current=current.replace("{classes}", str(event["eligibility"][0])+"th - "+str(event["eligibility"][1])+"th")
                             out+=current
                         return out
-                    </py>
+                    </post>
                 </div>            
             </div>            
 
