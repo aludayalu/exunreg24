@@ -14,28 +14,31 @@
             return tailwind+daisyui
         </post>
     </head>
-    <body>
+    <body class="min-h-screen flex flex-col">
         <py>
             render("navbar", locals() | globals())
         </py>
 
-        <div class="w-full flex flex-col gap-24 pt-10">
-            <div class="w-full px-8 sm:px-20 lg:px-40 justify-center flex flex-wrap gap-10">
-                <py>
-                    n_registrations=0
-                    for event in registrations:
-                        n_registrations+=len(registrations[event])
-                    if n_registrations==0:
-                        return "You have no registrations"
-                    out=""
-                    for event in registrations:
-                        if len(registrations[event])==0:
-                            continue
-                        event_name=events.get(event)["name"]
-                        out+=render("summary/summary_card", locals() | globals()).render
-                    return out
-                </py>
-            </div>
+        <div class="flex-1 w-full flex flex-col gap-24 pt-10">
+            <py>
+                n_registrations=0
+                for event in registrations:
+                    n_registrations+=len(registrations[event])
+                if n_registrations==0:
+                    return '''<div class="flex-1 flex flex-col gap-8 justify-center items-center text-3xl font-semibold">
+                        You have no registrations
+                        <button class="text-white py-2.5 sm:px-10 px-6 rounded-xl text-sm md:text-base font-semibold text-black/[0.95] hover:scale-[1.02] bg-[#338EF7] transition shadow-[#338EF7]/[0.6] shadow-md w-fit" onclick="window.location='/events'">
+                            Explore Events
+                        </button>
+                    </div>'''
+                out=""
+                for event in registrations:
+                    if len(registrations[event])==0:
+                        continue
+                    event_name=events.get(event)["name"]
+                    out+=render("summary/summary_card", locals() | globals()).render
+                return '<div class="w-full px-8 sm:px-20 lg:px-40 justify-center flex flex-wrap gap-10">' + out + '</div>'
+            </py>
         </div>
             
         <py>render("footer")</py>
