@@ -61,6 +61,14 @@
                     }
                 })
             }
+
+            function PartialValidation() {
+                if (String(document.getElementById("phone_number").value).length!=10) {
+                    Toast("Invalid phone number provided")
+                    return false
+                }
+                return true
+            }
         </script>
         
         <script>
@@ -105,7 +113,7 @@
                             <input type="checkbox" class="ui-checkbox" style="margin-right: 7.5px;" oninput="Individual.setValue(event.target.checked)"></input>
                             <p class="text-sm">Individual Registration?</p>
                         </div>
-                        <button class="text-white py-2.5 px-7 rounded-xl text-base font-semibold text-black/[0.95] hover:scale-[1.02] bg-[#338EF7] transition shadow-[#338EF7]/[0.6] shadow-lg" onclick="view.setValue(1)">
+                        <button class="text-white py-2.5 px-7 rounded-xl text-base font-semibold text-black/[0.95] hover:scale-[1.02] bg-[#338EF7] transition shadow-[#338EF7]/[0.6] shadow-lg" onclick="if (PartialValidation()) {view.setValue(1)}">
                             Continue
                         </button>
                     </div>
