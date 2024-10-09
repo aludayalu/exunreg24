@@ -89,6 +89,9 @@
                         <button class="py-[8px] rounded-xl px-6 py-2 bg-[#338EF7] text-white text-sm lg:text-base font-semibold hover:scale-[1.02] transition shadow-[#338EF7]/[0.6] shadow-lg whitespace-nowrap ml-5 mb-5 hidden sm:block" onclick="<py>'modal_0.showModal();modalOpen.setValue(true)' if 'email' in account else 'window.location.href=\'/login\''</py>">Registration Panel</button>
                     </div>
                     <div class="flex flex-col justify-center mb-1.5 items-center sm:items-start">
+                        <p class="text-lg font-medium">Points: <py>event['points']</py></p>
+                        <p class="text-lg font-medium">Independent Registration: <py>event['independant_registration']</py></p>
+                        <p class="text-lg font-medium">Open to All: <py>event['open_to_all']</py></p>
                         <p class="text-lg font-medium">Max Participants allowed: <py>event['participants']</py></p>
                         <p class="text-lg font-medium">
                             <py>

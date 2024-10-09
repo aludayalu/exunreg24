@@ -12,7 +12,6 @@
         "Girls In Tech":"girls in tech.svg",
         "Group Discussion":"GD.svg",
         "ExML":"exML.svg",
-        "CyberSecurity":"Build.svg",
         "SpaceTech":"Spacetech.svg",
         "DomainSquare+ Gaming: PC":"gaming.svg",
         "DomainSquare+ Gaming: Surprise":"gaming.svg",
@@ -86,10 +85,6 @@
             "long":"ExML 2024 is an exciting event that challenges participants to explore the frontiers of artificial intelligence. In this dynamic competition, teams will face a complex AI-based task that requires not only technical expertise but also strategic thinking and real-time innovation. The problem presented will assess the participants' abilities to develop intelligent systems capable of adapting to evolving and unpredictable conditions. Performance will be measured based on the technical proficiency of the solutions as well as the creativity and innovation behind them. This ensures that the most inventive and effective systems are recognized and rewarded, making ExML 2024 a premier platform for showcasing AI talent and ingenuity.",
             "short":"ExML 2024 is a fast-paced competition where teams tackle complex AI tasks, showcasing their technical skills and innovative thinking in real-time to develop adaptable intelligent systems."
         },
-        "CyberSecurity": {
-            "long":"",
-            "short":""
-        },
         "SpaceTech": {
             "long":"SpaceTech is an exciting event that immerses students in the captivating realm of space exploration and technology. This competition challenges participants to innovate and develop solutions inspired by actual space missions and cutting-edge technologies. Students will tackle prompts designed to push the boundaries of what is possible in space systems and engineering. Teams will explore various concepts, presenting their ideas through comprehensive proposals, presentations, and technical solutions. SpaceTech emphasizes creativity, problem-solving, and collaboration, making it the ideal platform for students who are passionate about space and eager to explore its limitless possibilities. Get ready to unleash your creativity, venture into the unknown, and elevate your passion for space to new heights!",
             "short":"SpaceTech invites students to explore space exploration and technology by innovating solutions inspired by space missions. Participants will present detailed proposals and technical solutions while fostering creativity and collaboration."
@@ -130,28 +125,6 @@
             "long":"Teams will build their own autonomous robots to achieve maximum speed on a specified track. The robot must start behind the starting line and is considered to finish when any part crosses the line after a full lap, while following the black line.\n\nRobot Specifications:\nSize - 25 cm x 25 cm x 20 cm with 5% tolerance\nWeight - 2 kg with 5% tolerance\n\nPower Source - Batteries must be sealed, immobilized electrolyte type (gel cell, lithium, NiCad, or dry cells), at any point it should not cross 12 V.\n\nThe Robot must follow a black line of 25 mm width on a white surface. It should also be able to handle acute angled turns, switchbacks, hairpins, line gaps and intersections.\n\nThe robot must be autonomous. No wireless communication between bot and operator will be allowed. Bluetooth, RF Module, etc are not allowed on both.\n\nReady-made robots and kits are not allowed to compete in the competition",
             "short":"Teams build autonomous robots for a high-speed line-following race on a specified track. Robots must handle acute turns and intersections while following a black line, with strict size and weight constraints."
         }
-    },
-    "dates":{
-        "SpaceTech": "October 26, 2024, 00:01 IST - November 7, 2024, 11:59 IST",
-        "ExML": "October 27, 2024, 00:01 IST - November 3, 2024, 11:59 IST",
-        "Build: Unreality": "October 28, 2024, 00:01 IST - November 5, 2024, 23:59 IST",
-        "Build: Hackathon": "November 2, 2024, 00:01 IST - November 5, 2024, 23:59 IST",
-        "Build: Designathon": "November 2, 2024, 00:01 IST - November 5, 2024, 23:59 IST",
-        "CubXL 2x2": "November 2, 2024, 00:01 IST - November 5, 2024, 23:59 IST",
-        "CubXL 3x3": "November 2, 2024, 00:01 IST - November 5, 2024, 23:59 IST",
-        "CubXL Pyraminx": "November 2, 2024, 00:01 IST - November 5, 2024, 23:59 IST",
-        "CubXL Surprise": "November 2, 2024, 00:01 IST - November 5, 2024, 23:59 IST",
-        "Hardware": "October 28, 2024, 00:01 IST - November 5, 2024, 23:59 IST",
-        "Sudocrypt": "October 28, 2024, 09:00 IST - October 29, 2024, 21:00 IST",
-        "DomainSquare+ Gaming: Quiz": "October 31, 2024, 00:01 IST - November 5, 2024, 23:59 IST",
-        "DomainSquare+ Gaming: PC": "October 31, 2024, 00:01 IST - November 5, 2024, 23:59 IST",
-        "DomainSquare+ Gaming: Surprise": "October 31, 2024, 00:01 IST - November 5, 2024, 23:59 IST",
-        "Girls In Tech": "November 3, 2024, 19:00 IST - November 3, 2024, 22:00 IST",
-        "Group Discussion": "November 4, 2024, 19:00 IST - November 4, 2024, 22:00 IST",
-        "Quiz": "November 5, 2024, 19:00 IST - November 5, 2024, 20:30 IST",
-        "Crossword": "November 5, 2024, 21:30 IST - November 5, 2024, 22:00 IST",
-        "Turing Test": "November 6, 2024, 17:00 IST - November 6, 2024, 22:00 IST",
-        "Competitive Programming": "TBD - TBD"
     },
     "participants":{
         "Build: Hackathon": 4,

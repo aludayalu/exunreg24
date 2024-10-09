@@ -12,7 +12,6 @@ for event in data["events"]:
             "long":data["descriptions"][event]["long"],
             "short":data["descriptions"][event]["short"]},
         "open_to_all":data["open_to_all"][event],
-        "dates":data["dates"][event],
         "eligibility":data["eligibility"][event],
         "participants":data["participants"][event],
         "mode":data["mode"][event],
