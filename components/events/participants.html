@@ -45,6 +45,7 @@
                     document.currentScript.parentElement.children.item(3)
                 ]
                 inputs[1].oninput=(x)=>{
+                    x.target.value=x.target.value.toUpperCase()
                     ChangeField({i}, "name", x.target.value)
                 }
                 inputs[2].oninput=(x)=>{
