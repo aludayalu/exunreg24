@@ -6,6 +6,7 @@
     <div class="flex gap-7 sm:gap-10 items-center">
         <a href="/">Home</a>
         <a href="/events">Events</a>
+        <a href="https://exun.co/24/schedule">Schedule</a>
         <py>
             if ("email" in request.cookies) and (request.path != "/login") and (request.cookies["email"] == "exun@dpsrkp.net"):
                 return '<a href="/admin">Admin</a>'
