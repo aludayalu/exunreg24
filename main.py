@@ -233,6 +233,7 @@ def submit_registrations():
         return redirect("/complete_signup")
     event=events.get(data["id"])
     for x in data["data"]:
+        x["name"]=x["name"].upper()
         if not is_valid_email(x["email"]):
             return make_response(False)
         x["class"]=int(x["class"])
