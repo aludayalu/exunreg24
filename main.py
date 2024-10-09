@@ -232,6 +232,8 @@ def submit_registrations():
     if account==None:
         return redirect("/complete_signup")
     event=events.get(data["id"])
+    if not event['independant_registration'] and account!=None and "individual" in account and account["individual"]=='true':
+        return make_response(False)
     for x in data["data"]:
         x["name"]=x["name"].upper()
         if not is_valid_email(x["email"]):
