@@ -1,5 +1,14 @@
-<script type="text/javascript" src="toast/toastify.js"></script>
-<link rel="stylesheet" type="text/css" href="toast/toastify.css"></link>
+<script>
+    <post>
+    return open("public/toast/toastify.js").read()
+    </post>
+</script>
+
+<style>
+    <post>
+        return open("public/toast/toastify.css").read()
+    </post>
+</style>
 
 <script>
     function Toast(text, duration=10000, background="#F31260") {
