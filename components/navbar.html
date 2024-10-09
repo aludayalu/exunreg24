@@ -4,6 +4,11 @@
         <a href="/"><img class="w-28 lg:w-36" src="exun.png" alt="Exun Clan"></img></a>
     </div>
     <div class="flex gap-7 sm:gap-10 items-center">
+        <script>
+            if (window.innerHeight<window.innerWidth) {
+                document.currentScript.insertAdjacentHTML("afterend", '<a href="/">Home</a>')
+            }
+        </script>
         <a href="/events">Events</a>
         <a href="https://exun.co/24/schedule">Schedule</a>
         <py>
