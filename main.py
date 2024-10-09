@@ -247,9 +247,9 @@ def submit_registrations():
     accounts.set(request.cookies["email"], account)
     return make_response(True)
 
-@app.get("/invite")
-def invite():
-    return render("invite", locals() | globals())
+@app.get("/brochure")
+def brochure():
+    return render("brochure", locals() | globals())
 
 @app.get("/summary")
 def summary():
