@@ -1,5 +1,8 @@
 <html>
     <script>document.currentScript.parentElement.setAttribute("data-theme", "light")</script>
+    <py>
+        return open("components/toast.html").read()
+    </py>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
         <post>return "<"+"style>"+open("public/main.css").read()+"<"+"/style>"</post>
@@ -52,6 +55,8 @@
                             return
                         }
                         window.location.href="/complete_signup"
+                    } else {
+                        Toast("Incorrect OTP")
                     }
                 })
             }
