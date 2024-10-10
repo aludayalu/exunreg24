@@ -104,7 +104,7 @@
                     <div class="flex flex-col justify-center mb-1.5 items-center sm:items-start">
                         <p class="text-lg font-medium">Points: <py>event['points']</py></p>
                         <p class="text-lg font-medium">Independent Registration: <py>'Allowed' if event['independant_registration'] else 'Not Allowed'</py></p>
-                        <p class="text-lg font-medium">Max Participants allowed: <py>event['participants'] if event['name'] != "Girls In Tech" else 'Infinity' if event['name'] != 'DomainSquare+ Gaming: PC' else str(event['participants']) + " (2 teams of 1 person each)"</py></p>
+                        <p class="text-lg font-medium">Max Participants allowed: <py>event['participants'] if event['name'] != "Girls In Tech" else 'Infinite' if event['name'] != 'DomainSquare+ Gaming: PC' else str(event['participants']) + " (2 teams of 1 person each)"</py></p>
                         <p class="text-lg font-medium">
                             <py>
                                 if event['open_to_all']:
