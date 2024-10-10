@@ -20,13 +20,13 @@ So, who should participate in Exun 2024? If you are someone, or know someone, wh
 
 ## **Events**
 
-Let's start with a highlight: STEM competitions: we have over 20 events in disciplines from competitions in creative fields such as Web & App development to 2D & 3D Design (Build), to technical fields like Machine Learning (ExML), Computational Linguistics (Turing Test), and Competitive Programming (CP). 
+We have 25 events in disciplines like creative fields such as Web & App development to 2D & 3D Design (Build), to technical fields like Machine Learning (ExML), Computational Linguistics (Turing Test), and Competitive Programming (CP).
 
 Are you interested in some other kinds of events as well? With our wide array of options, we've got you covered! We have the Girls in Tech event, where participants will learn a new technical skill through workshops and then participate in a contest. We also have the Quiz, Crossword, and Surprise events for the inquisitive.
 
-We have also teamed up with other clubs in our school to offer you a chance to show off your skillset: DomainSquare+, the Gaming society of our school, with 3 renowned and remarkable events where you can put your gaming skills to the absolute test; Roboknights, who are hosting 2 events based on robotics and engineering concepts; and CubXL, who are organizing 4 events with exciting cubing prizes.
+We have also teamed up with four other clubs in our school to offer you a chance to show off your skillset: DomainSquare+, the Gaming society of our school; Roboknights, the robotics club; CubXL, the cubing club and CyberX, the Cybersecurity Club.
 
-Please check our [**Events**](https://reg.exunclan.com/invite/events) page for details of the full spectrum of events Exun 2024 has to offer. Most events will have preliminary rounds which will be conducted prior to the offline days. (More details can be found at [**exun.co/24/schedule**](http://reg.exunclan.com/24/schedule)) while other events will fully happen onsite on November 4-5, so be sure to check that out!
+Please check our [**Events**](https://reg.exunclan.com/invite/events) page for details of the full spectrum of events Exun 2024 has to offer. Most events will have preliminary rounds which will be conducted prior to the offline days. (More details can be found at [**exun.co/24/schedule**](http://reg.exunclan.com/24/schedule)) while other events will fully happen onsite on November 9-10, so be sure to check that out!
 
 
 ## **Prizes & Overall Trophy**
@@ -100,7 +100,7 @@ You are welcome to mail us any time at <exun@dpsrkp.net>
 
 ## **General Instructions**
 
-- Plagiarism is strictly prohibited for all events under Exun 2024 and may lead to disqualification from the specific event.
+- **Plagiarism is strictly prohibited for all events** under Exun 2024 and may lead to disqualification from the specific event.
 
 - Schools/Individuals must register for all events they want to participate in, late registration for an event will not be allowed in any circumstance.
 
@@ -145,10 +145,43 @@ You are welcome to mail us any time at <exun@dpsrkp.net>
 
 ## **Prizes & Overall Trophy Rules**
 
-- The school which accumulates the maximum points, based on the points tally, will bag the prize ‘Exun 2024 Overall Trophy’.
+- The school which accumulates the maximum points, based on the points tally (further details on breakdown are given at the end of the webpage). will bag the prize Exun 2024 Overall Trophy.
 
 - Any changes must be specified (mentioned) clearly and verified by the host school teacher incharge
 
 - Participants represent their school and its nationality regardless of their current residence.
 
 - In case of a tie for the overall position, the team which has more podium placements shall be awarded the trophy.
+- 
+- 
+
+# **Event Data**
+
+|         |                                                  |                 |               |                      |             |                      |
+| :-----: | :----------------------------------------------: | :-------------: | :-----------: | :------------------: | :---------: | :------------------: |
+| **Eno** |                     **Event**                    | **Eligibility** | **Max Teams** | **Max participants** |   **Mode**  | **Team Point Value** |
+|  1  |               Build: Hackathon               |     6-12    |     1     |         4        |  Hybrid |        30        |
+|  2  |              Build: Designathon              |     6-12    |     1     |         3        |  Hybrid |        25        |
+|  3  |               Build: Unreality               |     Open    |     1     |         4        |  Online |        20        |
+|  4  |            Competitive Programming           |     Open    |     1     |         1        |  Online |        20        |
+|  5  |                   Sudocrypt                  |     Open    |     1     |         1        |  Online |        30        |
+|  6  |                  Turing Test                 |     Open    |     1     |         1        |  Online |        20        |
+|  7  |                     Quiz                     |     9-12    |     1     |         2        |  Hybrid |        30        |
+|  8  |                   Crossword                  |     9-12    |     1     |         2        |  Hybrid |        30        |
+|  9  |                   Hardware                   |     9-12    |     1     |         2        |  Hybrid |        30        |
+|  10 |                 Girls In Tech                |     6-12    |     1     |  Infinite        |  Hybrid |        20        |
+|  11 |               Group Discussion               |     9-12    |     1     |         1        |  Hybrid |        25        |
+|  12 |                     ExML                     |     Open    |     1     |         2        |  Online |        20        |
+|  13 |                   SpaceTech                  |     Open    |     1     |         2        |  Online |        20        |
+|  14 |           DomainSquare+ Gaming: PC           |     9-12    |     1     |         2        |  Hybrid |        20        |
+|  15 |        DomainSquare+ Gaming: Surprise        |     9-12    |     2     |         1        |  Hybrid |        20        |
+|  16 |          DomainSquare+ Gaming: Quiz          |     9-12    |     1     |         2        |  Online |        20        |
+|  17 |                   CubXL 2x2                  |     6-12    |     1     |         1        |  Hybrid |        10        |
+|  18 |                   CubXL 3x3                  |     6-12    |     1     |         1        |  Hybrid |        15        |
+|  19 |                CubXL Pyraminx                |     6-12    |     1     |         1        |  Hybrid |        10        |
+|  20 |                CubXL Surprise                |     6-12    |     1     |         1        | Offline |        10        |
+|  21 |            Roboknights: Robosoccer           |     9-12    |     1     |         3        | Offline |        30        |
+|  22 | Roboknights: Mx+C V5.0 Line Following Robot  |     9-12    |     1     |         3        | Offline |        20        |
+|  23 |             CyberX: Code Vanguard            |     9-12    |     1     |         1        |  Hybrid |        20        |
+|  24 |            CyberX: Firewall Fusion           |     6-12    |     1     |         4        | Offline |        10        |
+|  25 |           CyberX: Phishing Phantom           |     9-12    |     1     |         2        |  Hybrid |        10        |
