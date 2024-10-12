@@ -15,16 +15,16 @@
         "SpaceTech":"Spacetech.svg",
         "DomainSquare+ Gaming: PC":"ds+ pc gaming.svg",
         "DomainSquare+ Gaming: Surprise":"gaming.svg",
-        "DomainSquare+ Gaming: Quiz":"ds+.svg",
+        "DomainSquare+ Gaming: Quiz":"ds+ quiz.svg",
         "CubXL 2x2":"cubxl 2x2.svg",
         "CubXL 3x3":"cubxl.svg",
         "CubXL Pyraminx":"pyraminx.svg",
         "CubXL Surprise":"cubxl surp.svg",
         "Roboknights: Robosoccer":"robotics.svg",
         "Roboknights: Mx+C V5.0 Line Following Robot":"robotics.svg",
-        "CyberX: Code Vanguard":"cybersec 1",
+        "CyberX: Code Vanguard":"cybersec 1.svg",
         "CyberX: Firewall Fusion":"theatre cybersec.svg",
-        "CyberX: Phishing Phantom":"cybersec 2"
+        "CyberX: Phishing Phantom":"cybersec 2.svg"
     },
     "default": {
         "open_to_all":false,
