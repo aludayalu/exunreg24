@@ -1,6 +1,6 @@
 import smtplib
 from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
+from email.mime.multipart import MIMEMultipart, MIMEImage
 import secrets_parser, time
 import threading
 
