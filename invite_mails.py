@@ -19,4 +19,4 @@ def send_mail(to, subject, html, reply_to="exun@dpsrkp.net"):
     email = resend.Emails.send(params)
     return email
 
-send_mail("aarav@dayal.org", "test", "test")
+send_mail("aarav@dayal.org", "test", open("data/email.invite").read())
