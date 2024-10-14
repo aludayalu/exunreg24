@@ -1,7 +1,6 @@
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from email.mime.image import MIMEImage
 import secrets_parser, time
 import threading
 
@@ -22,10 +21,6 @@ def internal_mail(to, subject, html):
     msg['To'] = to
     msg['Subject'] = subject
     msg.attach(MIMEText(html, 'html'))
-    with open("public/mail/pfp.jpeg", "rb") as img_file:
-        img = MIMEImage(img_file.read())
-        img.add_header('Content-ID', '<profile_picture>')
-        msg.attach(img)
     try:
         server.sendmail(smtp_user, to, msg.as_string())
         return True
