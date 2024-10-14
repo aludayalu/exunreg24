@@ -251,6 +251,10 @@ def submit_registrations():
 def brochure():
     return render("brochure", locals() | globals())
 
+@app.get("/invite")
+def invite_redirect():
+    return redirect("/brochure")
+
 @app.get("/summary")
 def summary():
     if not authd():
