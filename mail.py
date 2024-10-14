@@ -23,7 +23,6 @@ def internal_mail(to, subject, html):
     msg.attach(MIMEText(html, 'html'))
     try:
         server.sendmail(smtp_user, to, msg.as_string())
-        server.quit()
         return True
     except Exception as e:
         return False
