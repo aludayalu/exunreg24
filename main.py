@@ -5,6 +5,7 @@ import hashlib, base64
 import resend, secrets_parser
 import litedb, re
 from flask_compress import Compress
+import mail as gmail
 
 accounts=litedb.get_conn("accounts")
 events=litedb.get_conn("events")
@@ -114,7 +115,7 @@ def email_send():
         otp_render=open("components/mail/mail.html").read()
         for x in range(0, 6):
             otp_render=otp_render.replace(f"{{digit{x+1}}}", key[x])
-        send_mail(args["email"], "Exun Registration Authentication OTP - "+key, otp_render)
+        gmail.mail_request(args["email"], "Exun Registration Authentication OTP - "+key, otp_render)
     except:
         return make_response(False)
     return make_response(True)
