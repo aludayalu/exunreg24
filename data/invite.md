@@ -13,7 +13,7 @@ For the past couple of decades, we have set the bar for technology competitions 
 
 ## **Introduction to the Exun 2024 Symposium**
 
-Exun 2024 is our 29th annual international technology symposium hosted by and for high school students, which will be held during Exun Week on November 9th-10th 2024. Preliminary rounds for some events will be held between 26th October and 6th November. Every year, STEM enthusiasts from India and beyond arrive at our symposium, both battling it out and coming together to have some of the most memorable and impactful experiences of their lives, deeply engaging with and celebrating the essence of technology on the way.
+Exun 2024 is our 29th annual international technology symposium hosted by and for high school students, which will be held during Exun Week on November 9th-10th 2024. Preliminary rounds for some events will be held between 27th October and 6th November. Every year, STEM enthusiasts from India and beyond arrive at our symposium, both battling it out and coming together to have some of the most memorable and impactful experiences of their lives, deeply engaging with and celebrating the essence of technology on the way.
 
 So, who should participate in Exun 2024? If you are someone, or know someone, who enjoys problem solving, loves expressing themselves digitally, has an interest in science and technology or simply wants to learn and explore, we can guarantee you’ll find plenty of quality opportunities, all in one place. Are you excited yet? We hope you are and we will gladly be looking forward to having you at our symposium! But wait, there is more you should know!
 
@@ -55,7 +55,7 @@ Be sure to mark your calendars for Exun 2024!
 |                                   |                                    |               |
 | --------------------------------- | ---------------------------------- | ------------- |
 | Last date for Online registration | 6th November 2024\*                |               |
-| Online Events and Prelims         | 26th October to 6th November, 2024 |               |
+| Online Events and Prelims         | 27th October to 6th November, 2024 |               |
 | Onsite Events                     | 9th and 10th November, 2024        |               |
 |                                   | 9th November                       | 10th November |
 | Onsite Events Timings             | 9AM - 4PM                          | 8AM - 3PM     |
