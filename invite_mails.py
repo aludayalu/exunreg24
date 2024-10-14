@@ -4,6 +4,7 @@ import hashlib, base64
 import resend, secrets_parser
 import litedb, re
 from flask_compress import Compress
+import time
 
 resend.api_key = secrets_parser.parse("variables.txt")["RESEND"]
 salt = secrets_parser.parse("variables.txt")["SALT"]
@@ -19,4 +20,4 @@ def send_mail(to, subject, html, reply_to="exun@dpsrkp.net"):
     email = resend.Emails.send(params)
     return email
 
-send_mail("aarav@dayal.org", "test", open("data/email_invite.html").read())
+send_mail("aarav@dayal.org", str(time.time()), open("data/email_invite.html").read())
