@@ -138,7 +138,7 @@
         },
         "CyberX: Phishing Phantom":{
           "long": "Participants will receive two pieces of communication: one genuine and one crafted through social engineering tactics. Their task is to identify the deceptive piece and create a PowerPoint presentation outlining their findings and suggested preventive measures.",
-          "short": ""
+          "short": "Participants will receive two communications—one genuine and one deceptive. They must identify the deceptive piece and create a PowerPoint presentation with their findings and preventive measures."
         }
 
     },
@@ -280,7 +280,7 @@
         "Roboknights: Robosoccer": [9, 12],
         "Roboknights: Mx+C V5.0 Line Following Robot": [9, 12],
         "CyberX: Code Vanguard": [9,12],
-        "CyberX: Firewall Fusion": [6,12],
+        "CyberX: Firewall Fusion": [6,8],
         "CyberX: Phishing Phantom": [9,12]
     },
     "open_to_all" : {

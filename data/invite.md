@@ -183,14 +183,17 @@ You are welcome to mail us any time at <exun@dpsrkp.net>
 |  21 |            Roboknights: Robosoccer           |     9-12    |     1     |         3        | Offline |        30        |
 |  22 | Roboknights: Mx+C V5.0 Line Following Robot  |     9-12    |     1     |         3        | Offline |        20        |
 |  23 |             CyberX: Code Vanguard            |     9-12    |     1     |         1        |  Hybrid |        20        |
-|  24 |            CyberX: Firewall Fusion           |     6-12    |     1     |         4        | Offline |        10        |
+|  24 |            CyberX: Firewall Fusion           |     6-8     |     1     |         4        | Offline |        10        |
 |  25 |           CyberX: Phishing Phantom           |     9-12    |     1     |         2        |  Hybrid |        10        |
 
 ## **Girls In Tech Scoring:**
 
 **Participants will be shuffled into random teams of 2 for the final event. Each winning participant’s school will be awarded half of the total points. More details below**
-|   Position  |    Points    |
-| :--------: | :----------------------: |
-|  **First** | Team Point Value X 3 |
-| **Second** | Team Point Value X 2 |
-|  **Third** | Team Point Value X 1|
+
+## **Score Distribution**
+
+| Position | Points |
+| :-: | :-: |
+| First | Team Point Value X 3 |
+| Second | Team Point Value X 2 |
+| Third | Team Point Value X 1 |
