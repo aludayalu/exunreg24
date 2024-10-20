@@ -14,3 +14,5 @@ def callback(mail):
 for email in emails:
     break
     mail.mail_request(f"{email}", "Exun 2024 Registration Invite", open("data/email_invite.html").read(), callback)
+
+mail.mail_request("shreyansh.a.007@gmail.com", "Exun 2024 Registration Invite", open("data/email_invite.html").read(), callback)
