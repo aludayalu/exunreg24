@@ -21,8 +21,7 @@
                 for event in all_events:
                     event_id=event
                     event=all_events[event]
-                    current=render("events/event_card", locals() | globals()).render.replace("{image}", event["image"]).replace("{name}", event["name"]).replace("{mode}", event["mode"]).replace("{participants}",
-str(event["participants"]) if event['name']!='Girls In Tech' else 'Infinite').replace("{id}", event_id)
+                    current=render("events/event_card", locals() | globals()).render.replace("{image}", event["image"]).replace("{name}", event["name"]).replace("{mode}", event["mode"]).replace("{participants}", str(event["participants"]) if event['name']!='Girls In Tech' else 'Infinite').replace("{id}", event_id)
                     if event["open_to_all"]:
                         current=current.replace("{classes}", "open to all")
                     else:
