@@ -21,9 +21,10 @@ events_order=list(json.loads(open("data/events.json").read())["events"].keys())
 
 def order_events(events):
     sorted_events=[None]*len(events)
-    for event_name in events:
-        sorted_events[events_order.index(event_name)]=events[event_name]
-    return sorted_events
+    for event_id in events:
+        event_name=events[event_id]["name"]
+        sorted_events[events_order.index(event_name)]=[event_id, events[event_id]]
+    return dict(sorted_events)
 
 def redirect(path):
     resp = Response(f"""<script>window.location.href="{path}"</script>""")
