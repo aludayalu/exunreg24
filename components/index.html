@@ -21,10 +21,10 @@
 
         <div class="w-full flex flex-col gap-24 pt-10">
             <div class="flex flex-col-reverse lg:flex-row justify-center gap-10 lg:gap-24 pr-5 sm:pr-8 lg:pr-14 pl-5 sm:pl-8 lg:pl-14">
-                <div class="flex flex-col w-full lg:w-1/2 gap-5 sm:gap-10"> 
+                <div class="flex flex-col w-full lg:w-1/2 gap-5 sm:gap-10">
                     <p class="text-4xl sm:text-5xl font-bold text-center lg:text-left">Exun 2024</p>
                     <p class="text-2xl sm:text-3xl font-bold text-center lg:text-left">The biggest tech symposium of India</p>
-                    
+
                     <p class="text-center lg:text-left">Exun 2024, a plethora of events and a profusion of memories, awaits you. The 29th iteration of Exun Clan's annual international technology symposium is being organized on 9th and 10th November, with the preliminary rounds starting from 28th October. Budding from the success of Exun 2023 with over 22,000 participants both from India and across the globe, we hope Exun 2024 scales to new heights. Check out our list of events below, with something for every variety of tech enthusiasts!</p>
 
                     <div class="flex gap-6 justify-center lg:justify-start">
@@ -36,8 +36,8 @@
                         </button>
                     </div>
                 </div>
-                
-                <div class="flex w-full lg:w-1/2 justify-center items-center"> 
+
+                <div class="flex w-full lg:w-1/2 justify-center items-center">
                     <img src="mainillus.webp" class="w-[250px] lg:w-[300px] h-fit"></img>
                 </div>
             </div>
@@ -48,7 +48,7 @@
                 <div class="w-full justify-center flex flex-wrap gap-8">
                     <post>
                         out=""
-                        all_events=events.get_all()
+                        all_events=order_events(events.get_all())
                         for event in all_events:
                             event_id=event
                             event=all_events[event]
@@ -60,11 +60,11 @@
                             out+=current
                         return out
                     </post>
-                </div>            
-            </div>            
+                </div>
+            </div>
 
         </div>
-            
+
         <py>render("footer")</py>
     </body>
 </html>

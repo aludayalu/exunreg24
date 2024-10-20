@@ -17,6 +17,14 @@ app.config['COMPRESS_MIN_SIZE'] = 500
 
 Compress(app)
 
+events_order=list(json.loads(open("data/events.json").read())["events"].keys())
+
+def order_events(events):
+    sorted_events=[None]*len(events)
+    for event_name in events:
+        sorted_events[events_order.index(event_name)]=events[event_name]
+    return sorted_events
+
 def redirect(path):
     resp = Response(f"""<script>window.location.href="{path}"</script>""")
     resp.headers["Access-Control-Allow-Origin"] = "*"
