@@ -26,7 +26,7 @@ Are you interested in some other kinds of events as well? With our wide array of
 
 We have also teamed up with four other clubs in our school to offer you a chance to show off your skillset: DomainSquare+, the Gaming society of our school; Roboknights, the robotics club; CubXL, the cubing club and CyberX, the Cybersecurity Club.
 
-Please check our [**Events**](https://reg.exunclan.com/invite/events) page for details of the full spectrum of events Exun 2024 has to offer. Most events will have preliminary rounds which will be conducted prior to the offline days. (More details can be found at [**exun.co/24/schedule**](http://reg.exunclan.com/24/schedule)) while other events will fully happen onsite on November 9-10, so be sure to check that out!
+Please check our [**Events**](https://reg.exunclan.com/events) page for details of the full spectrum of events Exun 2024 has to offer. Most events will have preliminary rounds which will be conducted prior to the offline days. (More details can be found at [**exun.co/24/schedule**](http://exun.co/24/schedule)) while other events will fully happen onsite on November 9-10, so be sure to check that out!
 
 
 ## **Prizes & Overall Trophy**
@@ -61,7 +61,7 @@ Be sure to mark your calendars for Exun 2024!
 | Onsite Events Timings             | 9AM - 4PM                          | 8AM - 3PM     |
 | Onsite Events Reporting Time      | 8:30AM                             | 7:30AM        |
 
-**\*:** For events with an online preliminary round, registrations end 12 hours before the submission deadline. See the schedule at [**exun.co/24/schedule**](http://reg.exunclan.com/24/schedule)
+**\*:** For events with an online preliminary round, registrations end 12 hours before the submission deadline. See the schedule at [**exun.co/24/schedule**](http://exun.co/24/schedule)
 
 
 ## **Independent vs School Participation**
@@ -117,7 +117,7 @@ You are welcome to mail us any time at <exun@dpsrkp.net>
 
 - Online registration shall remain open till 6nd November 2024, 11:59PM IST for events without preliminary rounds, and close 12 hours before the preliminary rounds end for events which have one.
 
-- The preliminary rounds’ deadline will differ so be sure to check respective deadlines at [**exun.co/24/schedule**](http://reg.exunclan.com/24/schedule)**.** Teams will not be allowed to edit their participants’ names after the preliminary round under any circumstances.
+- The preliminary rounds’ deadline will differ so be sure to check respective deadlines at [**exun.co/24/schedule**](http://exun.co/24/schedule)**.** Teams will not be allowed to edit their participants’ names after the preliminary round under any circumstances.
 
 - School Registration: Schools can register their teams on [**reg.exunclan.com**](https://reg.exunclan.com/). They are also eligible to win the overall prize.
 
@@ -152,8 +152,8 @@ You are welcome to mail us any time at <exun@dpsrkp.net>
 - Participants represent their school and its nationality regardless of their current residence.
 
 - In case of a tie for the overall position, the team which has more podium placements shall be awarded the trophy.
-- 
-- 
+-
+-
 
 # **Event Data**
 
