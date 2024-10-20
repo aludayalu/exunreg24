@@ -68,7 +68,7 @@ Be sure to mark your calendars for Exun 2024!
 
 Participants can either represent their respective schools (counted as "school participation"), or represent a team or go themselves for an event without affiliation to any school (counted as "independent participation") with a customized team name.
 
-Independent participation will only be allowed for events that will be completely online, i.e., Sudocrypt v14.0, ExML, Turing Test, Build: Unreality, Spacetech and Competitive Programming Prelims.
+Independent participation will only be allowed for events that will be completely online, i.e., Sudocrypt v14.0, ExML, Turing Test, Build: Unreality and Competitive Programming Prelims.
 
 Points won by teams and individuals under school participation will be counted towards their overall total points tally. Points will not be passed down to the nearest school team if independent participation takes place.
 
@@ -172,19 +172,18 @@ You are welcome to mail us any time at <exun@dpsrkp.net>
 |  10 |                 Girls In Tech                |     6-12    |     1     |  Infinite        |  Hybrid |        20        |
 |  11 |               Group Discussion               |     9-12    |     1     |         1        |  Hybrid |        25        |
 |  12 |                     ExML                     |     Open    |     1     |         2        |  Online |        20        |
-|  13 |                   SpaceTech                  |     Open    |     1     |         2        |  Online |        20        |
-|  14 |           DomainSquare+ Gaming: PC           |     9-12    |     1     |         2        |  Hybrid |        20        |
-|  15 |        DomainSquare+ Gaming: Surprise        |     9-12    |     2     |         1        |  Hybrid |        20        |
-|  16 |          DomainSquare+ Gaming: Quiz          |     9-12    |     1     |         2        |  Online |        20        |
-|  17 |                   CubXL 2x2                  |     6-12    |     1     |         1        |  Hybrid |        10        |
-|  18 |                   CubXL 3x3                  |     6-12    |     1     |         1        |  Hybrid |        15        |
-|  19 |                CubXL Pyraminx                |     6-12    |     1     |         1        |  Hybrid |        10        |
-|  20 |                CubXL Surprise                |     6-12    |     1     |         1        | Offline |        10        |
-|  21 |            Roboknights: Robosoccer           |     9-12    |     1     |         3        | Offline |        30        |
-|  22 | Roboknights: Mx+C V5.0 Line Following Robot  |     9-12    |     1     |         3        | Offline |        20        |
-|  23 |             CyberX: Code Vanguard            |     9-12    |     1     |         1        |  Hybrid |        20        |
-|  24 |            CyberX: Firewall Fusion           |     6-12    |     1     |         4        | Offline |        10        |
-|  25 |           CyberX: Phishing Phantom           |     9-12    |     1     |         2        |  Hybrid |        10        |
+|  13 |           DomainSquare+ Gaming: PC           |     9-12    |     1     |         2        |  Hybrid |        20        |
+|  14 |        DomainSquare+ Gaming: Surprise        |     9-12    |     2     |         1        |  Hybrid |        20        |
+|  15 |          DomainSquare+ Gaming: Quiz          |     9-12    |     1     |         2        |  Online |        20        |
+|  16 |                   CubXL 2x2                  |     6-12    |     1     |         1        |  Hybrid |        10        |
+|  17 |                   CubXL 3x3                  |     6-12    |     1     |         1        |  Hybrid |        15        |
+|  18 |                CubXL Pyraminx                |     6-12    |     1     |         1        |  Hybrid |        10        |
+|  19 |                CubXL Surprise                |     6-12    |     1     |         1        | Offline |        10        |
+|  20 |            Roboknights: Robosoccer           |     9-12    |     1     |         3        | Offline |        30        |
+|  21 | Roboknights: Mx+C V5.0 Line Following Robot  |     9-12    |     1     |         3        | Offline |        20        |
+|  22 |             CyberX: Code Vanguard            |     9-12    |     1     |         1        |  Hybrid |        20        |
+|  23 |            CyberX: Firewall Fusion           |     6-12    |     1     |         4        | Offline |        10        |
+|  24 |           CyberX: Phishing Phantom           |     9-12    |     1     |         2        |  Hybrid |        10        |
 
 ## **Girls In Tech Scoring:**
 
