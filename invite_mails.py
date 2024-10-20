@@ -1,23 +1,16 @@
+import threading
 from monster import render, Flask, escapeString
 import sys, json
 import hashlib, base64
-import resend, secrets_parser
-import litedb, re
-from flask_compress import Compress
-import time
+import secrets_parser, mail, smtplib
 
-resend.api_key = secrets_parser.parse("variables.txt")["RESEND"]
-salt = secrets_parser.parse("variables.txt")["SALT"]
+emails=open("out_mails.txt").read().split("\n")
+done=open("done.txt").read().split("\n")
 
-def send_mail(to, subject, html, reply_to="exun@dpsrkp.net"):
-    params = {
-        "from": "Exun Clan <exun@exun.co>",
-        "to": [to],
-        "subject": subject,
-        "html": html,
-        "reply_to": reply_to
-    }
-    email = resend.Emails.send(params)
-    return email
+def callback(mail):
+    done.append(mail["to"])
+    open("done.txt", "w").write("\n".join(done))
 
-send_mail("mukesh.kumar@dpsrkp.net", "Exun 2024 Registration Invite - "+str(time.time()), open("data/email_invite.html").read())
+for email in emails:
+    break
+    mail.mail_request(f"{email}", "Exun 2024 Registration Invite", open("data/email_invite.html").read(), callback)
