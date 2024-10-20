@@ -189,8 +189,9 @@ You are welcome to mail us any time at <exun@dpsrkp.net>
 ## **Girls In Tech Scoring:**
 
 **Participants will be shuffled into random teams of 2 for the final event. Each winning participant’s school will be awarded half of the total points.**
-|   Position  |    Points    |
+|     |        |
 | :--------: | :----------------------: |
+|   Position  |    Points    |
 |  **First** | Team Point Value X 3 |
 | **Second** | Team Point Value X 2 |
 |  **Third** | Team Point Value X 1|
