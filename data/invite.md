@@ -13,7 +13,7 @@ For the past couple of decades, we have set the bar for technology competitions 
 
 ## **Introduction to the Exun 2024 Symposium**
 
-Exun 2024 is our 29th annual international technology symposium hosted by and for high school students, which will be held during Exun Week on November 9th-10th 2024. Preliminary rounds for some events will be held between 27th October and 6th November. Every year, STEM enthusiasts from India and beyond arrive at our symposium, both battling it out and coming together to have some of the most memorable and impactful experiences of their lives, deeply engaging with and celebrating the essence of technology on the way.
+Exun 2024 is our 29th annual international technology symposium hosted by high school students, which will be held during Exun Week on November 9th-10th 2024. Preliminary rounds for some events will be held between 27th October and 6th November. Every year, STEM enthusiasts from India and beyond arrive at our symposium, both battling it out and coming together to have some of the most memorable and impactful experiences of their lives, deeply engaging with and celebrating the essence of technology on the way.
 
 So, who should participate in Exun 2024? If you are someone, or know someone, who enjoys problem solving, loves expressing themselves digitally, has an interest in science and technology or simply wants to learn and explore, we can guarantee you’ll find plenty of quality opportunities, all in one place. Are you excited yet? We hope you are and we will gladly be looking forward to having you at our symposium! But wait, there is more you should know!
 
@@ -188,7 +188,7 @@ You are welcome to mail us any time at <exun@dpsrkp.net>
 
 ## **Girls In Tech Scoring:**
 
-**Participants will be shuffled into random teams of 2 for the final event. Each winning participant’s school will be awarded half of the total points. More details below**
+**Participants will be shuffled into random teams of 2 for the final event. Each winning participant’s school will be awarded half of the total points.**
 |   Position  |    Points    |
 | :--------: | :----------------------: |
 |  **First** | Team Point Value X 3 |
