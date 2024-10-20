@@ -2,4 +2,3 @@ __pycache__
 variables.txt
 databases/
 *.txt
-sortmails.py
