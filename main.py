@@ -274,5 +274,3 @@ def summary():
         return redirect("/complete_signup")
     registrations=account["registrations"]
     return render("summary/summary", locals() | globals())
-
-app.run(host="0.0.0.0", port=int(sys.argv[1]))
