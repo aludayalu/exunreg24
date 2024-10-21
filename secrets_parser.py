@@ -1,4 +1,4 @@
-import json
+import json, os
 
 def parse(path):
     env={}
@@ -8,4 +8,4 @@ def parse(path):
         if "=" in x:
             splitted_x=x.split("=", 1)
             env[splitted_x[0]]=json.loads(splitted_x[1])
-    return env
+    return env | dict(os.environ)
