@@ -1,11 +1,12 @@
 from flask import request, Response
+from mailserver import SALT
 from monster import render, Flask, escapeString
 import sys, json
 import hashlib, base64
 import resend, secrets_parser
 import litedb, re
+import requests
 from flask_compress import Compress
-import mail as gmail
 
 accounts=litedb.get_conn("accounts")
 events=litedb.get_conn("events")
@@ -18,6 +19,8 @@ app.config['COMPRESS_MIN_SIZE'] = 500
 Compress(app)
 
 events_order=list(json.loads(open("data/events.json").read())["events"].keys())
+
+DB_IP=secrets_parser.parse("variables.txt")["DB_IP"]
 
 def order_events(events):
     sorted_events=[None]*len(events)
@@ -124,7 +127,7 @@ def email_send():
         otp_render=open("components/mail/mail.html").read()
         for x in range(0, 6):
             otp_render=otp_render.replace(f"{{digit{x+1}}}", key[x])
-        gmail.mail_request(args["email"], "Exun Registration Authentication OTP - "+key, otp_render)
+        requests.get("http://"+DB_IP+":5555/mail?salt="+SALT+"&to="+escapeString(args["email"])+"&subject="+escapeString("Exun Registration Authentication OTP - "+key)+"&html="+otp_render)
     except:
         return make_response(False)
     return make_response(True)
