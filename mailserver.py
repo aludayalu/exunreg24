@@ -11,5 +11,3 @@ def mail():
         gmail.mail_request(args["to"], args["subject"], args["html"])
         return "true"
     return "false"
-
-app.run(host="0.0.0.0", port=5555)
