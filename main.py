@@ -124,10 +124,7 @@ def email_send():
     try:
         args=dict(request.args)
         key="".join([str(x) for x in otp(args["email"])])
-        otp_render=open("components/mail/mail.html").read()
-        for x in range(0, 6):
-            otp_render=otp_render.replace(f"{{digit{x+1}}}", key[x])
-        requests.get("http://"+DB_IP+":5555/mail?salt="+SALT+"&to="+escapeString(args["email"])+"&subject="+escapeString("Exun Registration Authentication OTP - "+key)+"&html="+otp_render)
+        requests.get("http://"+DB_IP+":5555/mail?salt="+SALT+"&to="+escapeString(args["email"])+"&subject="+escapeString("Exun Registration Authentication OTP - "+key)+"&key="+key)
     except:
         return make_response(False)
     return make_response(True)
