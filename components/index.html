@@ -4,6 +4,7 @@
     </script>
     <script>
         document.title="Exun 2024 - Reg"
+        var isMobile=Signal("isMobile", window.innerHeight>window.innerWidth)
     </script>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
@@ -38,7 +39,12 @@
                 </div>
 
                 <div class="flex w-full lg:w-1/2 justify-center items-center">
-                    <img src="mainillus.webp" class="w-[250px] lg:w-[300px] h-fit object-cover"></img>
+                    <if isMobile>
+                        <img src="mainillus.webp" style="height: 320px;"></img>
+                    </if>
+                    <if isMobile condition="!isMobile.Value()">
+                        <img src="mainillus.webp" class="lg:w-[300px]"></img>
+                    </if>
                 </div>
             </div>
 
