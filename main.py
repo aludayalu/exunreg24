@@ -125,7 +125,8 @@ def email_send():
         args=dict(request.args)
         key="".join([str(x) for x in otp(args["email"])])
         requests.get("http://"+DB_IP+":5555/mail?salt="+SALT+"&to="+escapeString(args["email"])+"&subject="+escapeString("Exun Registration Authentication OTP - "+key)+"&key="+key)
-    except:
+    except Exception as e:
+
         return make_response(False)
     return make_response(True)
 
