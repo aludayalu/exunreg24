@@ -32,6 +32,7 @@ def internal_mail(to, subject, html):
             server = smtplib.SMTP(smtp_server, smtp_port)
             server.starttls()
             server.login(smtp_user, smtp_password)
+            return "resend"
         except:
             traceback.print_exc()
         return False
@@ -54,7 +55,16 @@ def mail_thread():
         mail=mail_queue[0]
         mail_queue=mail_queue[1:]
         queue_lock.release()
-        if internal_mail(mail["to"], mail["subject"], mail["html"]):
-            mail["callback"](mail)
+        i=0
+        while True:
+            i+=1
+            if i==3:
+                break
+            response=internal_mail(mail["to"], mail["subject"], mail["html"])
+            if response=="resend":
+                continue
+            if response:
+                mail["callback"](mail)
+            break
 
 threading.Thread(target=mail_thread).start()
