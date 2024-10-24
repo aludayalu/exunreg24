@@ -17,6 +17,7 @@ smtp_password = GMAIL_PASSWORD
 server = None
 
 def internal_mail(to, subject, html):
+    global server
     msg = MIMEMultipart()
     msg['From'] = "Exun Clan <exun@dpsrkp.net>"
     msg['To'] = to
@@ -27,6 +28,12 @@ def internal_mail(to, subject, html):
         return True
     except Exception as e:
         traceback.print_exc()
+        try:
+            server = smtplib.SMTP(smtp_server, smtp_port)
+            server.starttls()
+            server.login(smtp_user, smtp_password)
+        except:
+            traceback.print_exc()
         return False
 
 def mail_request(to, subject, html, callback=lambda request:None):
