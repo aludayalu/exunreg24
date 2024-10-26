@@ -54,7 +54,7 @@
                         const url = new URL(currentUrl);
                         const params = new URLSearchParams(url.search);
                         if (params.get("redirect")=="queries") {
-                            window.location="https://queries.exunclan.com/auth?auth_token="+encodeURIComponent(getCookie("auth_token"))
+                            window.location="https://queries.exunclan.com/auth?auth_token="+encodeURIComponent(getCookie("auth_token"))+"&email="+encodeURIComponent(email)
                             return
                         }
                         window.location.href="/complete_signup"
