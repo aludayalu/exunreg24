@@ -22,7 +22,6 @@
         "Roboknights: Robosoccer":"robotics.svg",
         "Roboknights: Mx+C V5.0 Line Following Robot":"robotics.svg",
         "CyberX: Code Vanguard":"cybersec_1.svg",
-        "CyberX: Firewall Fusion":"theatre_cybersec.svg",
         "CyberX: Phishing Phantom":"cybersec_2.svg"
     },
     "default": {
@@ -127,10 +126,6 @@
           "long": "Participants will begin by performing scanning and reconnaissance to identify live hosts, open ports, and active services across the network. Tools such as Nmap and Netcat can be used to map out the network architecture and discover potential vulnerabilities. Once the network is mapped, participants will move to the exploitation phase, analyzing identified services and network protocols for weaknesses. Exploit vulnerable services such as FTP, SSH, SMB, or outdated web servers to gain initial access to target systems. After gaining a foothold, the next objective is to escalate privileges by exploiting local vulnerabilities and move laterally within the network, accessing additional machines or higher-privilege accounts. The final and critical part of the competition is creating a penetration testing report. Participants will document the vulnerabilities they found, explain how they exploited them, and propose mitigation strategies. The report should include clear proof-of-concept evidence, screenshots, or logs to support findings.",
           "short": "Participants will scan the network for live hosts and vulnerabilities using tools like Nmap and Netcat. After exploiting weaknesses in services such as FTP or SSH, they’ll escalate privileges and move laterally within the network. Finally, they’ll create a report detailing vulnerabilities, exploits, and suggested fixes, with proof-of-concept evidence."
         },
-        "CyberX: Firewall Fusion":{
-          "long": "A dynamic event dedicated to raising awareness about cyber threats and the risks they pose to society. In this event, teams will creatively enact scenarios to educate and inform the audience about various cybersecurity issues. Each team, consisting of 2-4 members, will use their creativity and knowledge to highlight the importance of cybersecurity in today’s digital age.",
-          "short": "A dynamic event where teams of 2-4 creatively showcase scenarios to raise awareness about cybersecurity threats and risks. Through engaging presentations, participants will educate the audience on the importance of cybersecurity in the digital age."
-        },
         "CyberX: Phishing Phantom":{
           "long": "Participants will receive two pieces of communication: one genuine and one crafted through social engineering tactics. Their task is to identify the deceptive piece and create a PowerPoint presentation outlining their findings and suggested preventive measures.",
           "short": ""
@@ -161,7 +156,6 @@
         "Roboknights: Robosoccer": 3,
         "Roboknights: Mx+C V5.0 Line Following Robot": 3,
         "CyberX: Code Vanguard": 1,
-        "CyberX: Firewall Fusion": 4,
         "CyberX: Phishing Phantom": 2
     },
     "mode":
@@ -189,7 +183,6 @@
         "Roboknights: Robosoccer": "Offline",
         "Roboknights: Mx+C V5.0 Line Following Robot": "Offline",
         "CyberX: Code Vanguard": "Hybrid",
-        "CyberX: Firewall Fusion": "Offline",
         "CyberX: Phishing Phantom": "Hybrid"
     },
     "points": {
@@ -216,7 +209,6 @@
         "Roboknights: Robosoccer": 30,
         "Roboknights: Mx+C V5.0 Line Following Robot": 20,
         "CyberX: Code Vanguard": 20,
-        "CyberX: Firewall Fusion": 10,
         "CyberX: Phishing Phantom": 10
     },
     "individual" : {
@@ -243,7 +235,6 @@
         "Roboknights: Robosoccer": false,
         "Roboknights: Mx+C V5.0 Line Following Robot": false,
         "CyberX: Code Vanguard": false,
-        "CyberX: Firewall Fusion": false,
         "CyberX: Phishing Phantom": false
     },
     "eligibility" : {
@@ -270,7 +261,6 @@
         "Roboknights: Robosoccer": [9, 12],
         "Roboknights: Mx+C V5.0 Line Following Robot": [9, 12],
         "CyberX: Code Vanguard": [9,12],
-        "CyberX: Firewall Fusion": [6,12],
         "CyberX: Phishing Phantom": [9,12]
     },
     "open_to_all" : {
@@ -297,7 +287,6 @@
         "Roboknights: Robosoccer": false,
         "Roboknights: Mx+C V5.0 Line Following Robot": false,
         "CyberX: Code Vanguard": false,
-        "CyberX: Firewall Fusion": false,
         "CyberX: Phishing Phantom": false
     }
 }

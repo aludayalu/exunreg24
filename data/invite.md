@@ -182,8 +182,7 @@ You are welcome to mail us any time at <exun@dpsrkp.net>
 |  20 |            Roboknights: Robosoccer           |     9-12    |     1     |         3        | Offline |        30        |
 |  21 | Roboknights: Mx+C V5.0 Line Following Robot  |     9-12    |     1     |         3        | Offline |        20        |
 |  22 |             CyberX: Code Vanguard            |     9-12    |     1     |         1        |  Hybrid |        20        |
-|  23 |            CyberX: Firewall Fusion           |     6-12    |     1     |         4        | Offline |        10        |
-|  24 |           CyberX: Phishing Phantom           |     9-12    |     1     |         2        |  Hybrid |        10        |
+|  23 |           CyberX: Phishing Phantom           |     9-12    |     1     |         2        |  Hybrid |        10        |
 
 ## **Girls In Tech Scoring:**
 
