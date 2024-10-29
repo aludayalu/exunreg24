@@ -15,9 +15,9 @@ state=litedb.get_conn("state")
 events_raw=open("data/events.json").read()
 events_json=json.loads(events_raw)
 
-if state.get("db_state")!=hashlib.sha256(events_raw).hexdigest():
+if state.get("db_state")!=hashlib.sha256(events_raw.encode()).hexdigest():
     import migrate
-    state.set("db_state", hashlib.sha256(events_raw).hexdigest())
+    state.set("db_state", hashlib.sha256(events_raw.encode()).hexdigest())
 
 app = Flask(__name__)
 
