@@ -11,6 +11,14 @@ from flask_compress import Compress
 accounts=litedb.get_conn("accounts")
 events=litedb.get_conn("events")
 
+state=litedb.get_conn("state")
+events_raw=open("data/events.json").read()
+events_json=json.loads(events_raw)
+
+if state.get("db_state")!=hashlib.sha256(events_raw).hexdigest():
+    import migrate
+    state.set("db_state", hashlib.sha256(events_raw).hexdigest())
+
 app = Flask(__name__)
 
 app.config['COMPRESS_LEVEL'] = 9
@@ -18,7 +26,7 @@ app.config['COMPRESS_MIN_SIZE'] = 500
 
 Compress(app)
 
-events_order=list(json.loads(open("data/events.json").read())["events"].keys())
+events_order=list(events_json["events"].keys())
 
 DB_IP=secrets_parser.parse("variables.txt")["DB_IP"]
 
