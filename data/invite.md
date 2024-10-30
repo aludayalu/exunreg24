@@ -157,42 +157,5 @@ You are welcome to mail us any time at <exun@dpsrkp.net>
 
 # **Event Data**
 
-|         |                                                  |                 |               |                      |             |                      |
-| :-----: | :----------------------------------------------: | :-------------: | :-----------: | :------------------: | :---------: | :------------------: |
-| **Eno** |                     **Event**                    | **Eligibility** | **Max Teams** | **Max participants** |   **Mode**  | **Team Point Value** |
-|  1  |               Build: Hackathon               |     6-12    |     1     |         4        |  Hybrid |        30        |
-|  2  |              Build: Designathon              |     6-12    |     1     |         3        |  Hybrid |        25        |
-|  3  |               Build: Unreality               |     Open    |     1     |         4        |  Online |        20        |
-|  4  |            Competitive Programming           |     Open    |     1     |         1        |  Online |        20        |
-|  5  |                   Sudocrypt                  |     Open    |     1     |         1        |  Online |        30        |
-|  6  |                  Turing Test                 |     Open    |     1     |         1        |  Online |        20        |
-|  7  |                     Quiz                     |     9-12    |     1     |         2        |  Hybrid |        30        |
-|  8  |                   Crossword                  |     9-12    |     1     |         2        |  Hybrid |        30        |
-|  9  |                   Hardware                   |     9-12    |     1     |         2        |  Hybrid |        30        |
-|  10 |                 Girls In Tech                |     6-12    |     1     |  Infinite        |  Hybrid |        20        |
-|  11 |               Group Discussion               |     9-12    |     1     |         1        |  Hybrid |        25        |
-|  12 |                     ExML                     |     Open    |     1     |         2        |  Online |        20        |
-|  13 |           DomainSquare+ Gaming: PC           |     9-12    |     1     |         2        |  Hybrid |        20        |
-|  14 |        DomainSquare+ Gaming: Surprise        |     9-12    |     2     |         1        |  Hybrid |        20        |
-|  15 |          DomainSquare+ Gaming: Quiz          |     9-12    |     1     |         2        |  Online |        20        |
-|  16 |                   CubXL 2x2                  |     6-12    |     1     |         1        |  Hybrid |        10        |
-|  17 |                   CubXL 3x3                  |     6-12    |     1     |         1        |  Hybrid |        15        |
-|  18 |                CubXL Pyraminx                |     6-12    |     1     |         1        |  Hybrid |        10        |
-|  19 |                CubXL Surprise                |     6-12    |     1     |         1        | Offline |        10        |
-|  20 |            Roboknights: Robosoccer           |     9-12    |     1     |         3        | Offline |        30        |
-|  21 | Roboknights: Mx+C V6.0 Line Following Robot  |     9-12    |     1     |         3        | Offline |        20        |
-|  22 |             CyberX: Code Vanguard            |     9-12    |     1     |         1        |  Hybrid |        20        |
-|  23 |           CyberX: Phishing Phantom           |     9-12    |     1     |         2        |  Hybrid |        10        |
+Please head over to [**exun.co/24/events**](https://exun.co/24/events) for further details about each events and points.
 
----
-
-|  Position   |       Points        |
-|:-----------:|:-------------------:|
-|  **First**  | Team Point Value × 3 |
-| **Second**  | Team Point Value × 2 |
-|  **Third**  | Team Point Value × 1 |
-
-
-## **Girls In Tech Scoring:**
-
-**Participants will be shuffled into random teams of 2 for the final event. Each winning participant’s school will be awarded half of the total points.**
