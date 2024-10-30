@@ -13,20 +13,20 @@ For the past couple of decades, we have set the bar for technology competitions 
 
 ## **Introduction to the Exun 2024 Symposium**
 
-Exun 2024 is our 29th annual international technology symposium hosted by high school students, which will be held during Exun Week on November 9th-10th 2024. Preliminary rounds for some events will be held between 27th October and 6th November. Every year, STEM enthusiasts from India and beyond arrive at our symposium, both battling it out and coming together to have some of the most memorable and impactful experiences of their lives, deeply engaging with and celebrating the essence of technology on the way.
+Exun 2024 is our 29th annual international technology symposium hosted by high school students, which will be held during Exun Week during November 2nd-10th 2024. Preliminary/Online rounds for some events will be held between 2nd November and 6th November. Every year, STEM enthusiasts from India and beyond arrive at our symposium, both battling it out and coming together to have some of the most memorable and impactful experiences of their lives, deeply engaging with and celebrating the essence of technology on the way.
 
 So, who should participate in Exun 2024? If you are someone, or know someone, who enjoys problem solving, loves expressing themselves digitally, has an interest in science and technology or simply wants to learn and explore, we can guarantee you’ll find plenty of quality opportunities, all in one place. Are you excited yet? We hope you are and we will gladly be looking forward to having you at our symposium! But wait, there is more you should know!
 
 
 ## **Events**
 
-We have 25 events in disciplines like creative fields such as Web & App development to 2D & 3D Design (Build), to technical fields like Machine Learning (ExML), Computational Linguistics (Turing Test), and Competitive Programming (CP).
+- We have 23 events in disciplines like creative fields such as Web & App development to 2D & 3D Design (Build), to technical fields like Machine Learning (ExML), Computational Linguistics (Turing Test), and Competitive Programming (CP).
 
-Are you interested in some other kinds of events as well? With our wide array of options, we've got you covered! We have the Girls in Tech event, where participants will learn a new technical skill through workshops and then participate in a contest. We also have the Quiz, Crossword, and Surprise events for the inquisitive.
+- Are you interested in some other kinds of events as well? With our wide array of options, we've got you covered! We have the Girls in Tech event, where participants will learn a new technical skill through workshops and then participate in a contest. We also have the Quiz, Crossword, and Surprise events for the inquisitive.
 
-We have also teamed up with four other clubs in our school to offer you a chance to show off your skillset: DomainSquare+, the Gaming society of our school; Roboknights, the robotics club; CubXL, the cubing club and CyberX, the Cybersecurity Club.
+- We have also teamed up with four other clubs in our school to offer you a chance to show off your skillset: DomainSquare+, the Gaming society of our school; Roboknights, the robotics club; CubXL, the cubing club and CyberX, the Cybersecurity Club.
 
-Please check our [**Events**](https://reg.exunclan.com/events) page for details of the full spectrum of events Exun 2024 has to offer. Most events will have preliminary rounds which will be conducted prior to the offline days. (More details can be found at [**exun.co/24/schedule**](http://exun.co/24/schedule)) while other events will fully happen onsite on November 9-10, so be sure to check that out!
+- Please check our [**Events**](https://reg.exunclan.com/events) page for details of the full spectrum of events Exun 2024 has to offer. Most events will have preliminary rounds which will be conducted prior to the offline days. (More details can be found at [**exun.co/24/schedule**](http://exun.co/24/schedule)) while other events will fully happen onsite on November 9-10, so be sure to check that out!
 
 
 ## **Prizes & Overall Trophy**
@@ -180,16 +180,19 @@ You are welcome to mail us any time at <exun@dpsrkp.net>
 |  18 |                CubXL Pyraminx                |     6-12    |     1     |         1        |  Hybrid |        10        |
 |  19 |                CubXL Surprise                |     6-12    |     1     |         1        | Offline |        10        |
 |  20 |            Roboknights: Robosoccer           |     9-12    |     1     |         3        | Offline |        30        |
-|  21 | Roboknights: Mx+C V5.0 Line Following Robot  |     9-12    |     1     |         3        | Offline |        20        |
+|  21 | Roboknights: Mx+C V6.0 Line Following Robot  |     9-12    |     1     |         3        | Offline |        20        |
 |  22 |             CyberX: Code Vanguard            |     9-12    |     1     |         1        |  Hybrid |        20        |
 |  23 |           CyberX: Phishing Phantom           |     9-12    |     1     |         2        |  Hybrid |        10        |
 
-## **Girls In Tech Scoring:**
-
-**Participants will be shuffled into random teams of 2 for the final event. Each winning participant’s school will be awarded half of the total points.**
+---
 
 |  Position   |       Points        |
 |:-----------:|:-------------------:|
 |  **First**  | Team Point Value × 3 |
 | **Second**  | Team Point Value × 2 |
 |  **Third**  | Team Point Value × 1 |
+
+
+## **Girls In Tech Scoring:**
+
+**Participants will be shuffled into random teams of 2 for the final event. Each winning participant’s school will be awarded half of the total points.**
